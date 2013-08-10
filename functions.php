@@ -58,3 +58,23 @@ function _exclude_meta_key_in_posts_where( $where ) {
     global $wpdb;
     return $where . " AND $wpdb->posts.ID NOT IN ( SELECT DISTINCT post_id FROM $wpdb->postmeta WHERE meta_key = '_gridlock' AND meta_value > '' )";
 }
+function gazelle_set_post_views($postID) {
+  $count_key = 'gazelle_views_count';
+  $count = get_post_meta($postID, $count_key, true);
+  if ($count == '') {
+    $count = 0;
+  }
+  update_post_meta($postID, $count_key, ++$count);
+}
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+function gazelle_track_post_views ($post_Id) {
+  if (!is_single() ) return;
+  if ( empty ($post_id) ) {
+    global $post;
+    $post_id = $post->ID;
+  }
+  gazelle_set_post_views($post_id);
+}
+add_action( 'wp_head', 'gazelle_track_post_views');
+
