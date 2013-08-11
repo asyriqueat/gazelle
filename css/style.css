@@ -29,6 +29,9 @@ body, html {
 .text-opinion {
   color: #86a201; }
 
+.river {
+  padding: 0px 10px; }
+
 .colorbox {
   height: 10px;
   width: 10px;
@@ -52,7 +55,7 @@ body, html {
 
 .article-container {
   padding: 10px 0px;
-  margin: 0px 10px;
+  margin: 0px;
   border: solid;
   border-color: #bbbbbb;
   border-width: 0px;
@@ -156,6 +159,9 @@ body, html {
       margin-bottom: -80px; }
 
 @media screen and (min-width: 768px) {
+  .river {
+    padding: 0px; }
+
   .editors-row {
     padding-left: 0px;
     padding-right: 0px; }
@@ -170,10 +176,10 @@ body, html {
       border: solid;
       border-color: #bbbbbb;
       border-width: 0px;
-      padding: 0px 15px; }
+      padding: 0px 15px;
+      border-width: 0px 0px 1px 0px; }
       .editors-row .pick-label:last-child {
-        height: 74px;
-        border-width: 0px 0px 1px 0px; }
+        height: 74px; }
         .editors-row .pick-label:last-child.active {
           height: 73px;
           margin: 0px; }

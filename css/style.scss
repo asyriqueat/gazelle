@@ -42,6 +42,9 @@ body, html {
 .text-opinion {
   color: $green;
 }
+.river {
+  padding: 0px 10px;
+}
 
 .colorbox {
   height: 10px;
@@ -70,7 +73,7 @@ body, html {
 }
 .article-container {
   padding: 10px 0px;
-  margin: 0px 10px;
+  margin: 0px;
   border: solid;
   border-color: $light-grey;
   border-width: 0px;
@@ -210,6 +213,9 @@ body, html {
 }
 
 @media screen and (min-width: 768px) {
+  .river {
+    padding: 0px;
+  }
   .editors-row {
     padding-left: 0px;
     padding-right: 0px;
@@ -230,9 +236,9 @@ body, html {
       border-color: $light-grey;
       border-width: 0px;
       padding: 0px 15px;
+      border-width: 0px 0px 1px 0px;
       &:last-child {
         height: 74px;
-        border-width: 0px 0px 1px 0px;
         &.active {
           height: 73px;
           margin: 0px;
