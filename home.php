@@ -18,13 +18,7 @@ get_header(); ?>
           $editor_query = new WP_Query(current_issue(array_merge(get_option("gridlock_query"), array("post_status" => "publish", "tag" => "pick", "posts_per_page" => 4 ))));
           while ( $editor_query->have_posts() ) : $editor_query->the_post();
             global $authordata;
-            $image_url = false;
-            if (has_post_thumbnail()) {
-              $image_url =  wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), array(300, 300), false, ''); 
-              $image_url = $image_url[0];
-            } else {
-              $image_url = catch_image();
-            }
+            $image_url = catch_image();
             $category = get_cat();
             $pick = array("title" => '<a href="' . get_permalink() . '">' . '<h6>' . get_the_title() . '</h6>' . '</a>',
                         "link" => get_permalink(),

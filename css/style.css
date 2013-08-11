@@ -10,6 +10,8 @@ body, html {
   body h1, body h2, body h3, body h4, body h5, body h6, html h1, html h2, html h3, html h4, html h5, html h6 {
     font-family: 'Lora', serif;
     font-weight: 600; }
+  body .text-muted, html .text-muted {
+    font-family: 'Lora', serif; }
   body small, html small {
     font-family: 'Roboto Condensed', sans-serif; }
   body img, html img {
@@ -60,7 +62,7 @@ body, html {
   border-color: #bbbbbb;
   border-width: 0px;
   border-bottom-width: 0px; }
-  .article-container h4 {
+  .article-container h5 {
     margin-bottom: 0px; }
   .article-container em {
     font-style: normal; }
@@ -91,17 +93,19 @@ body, html {
   border: solid;
   border-width: 0px 0px 8px 0px;
   border-color: #71bcbe; }
+  .row.row-article a:hover, .row.row-article h5:hover {
+    color: #71bcbe; }
   .row.row-article.row-features {
     border-color: #d8ba2e; }
-    .row.row-article.row-features a:hover {
+    .row.row-article.row-features a:hover, .row.row-article.row-features h5:hover {
       color: #d8ba2e; }
   .row.row-article.row-opinion {
     border-color: #cc9656; }
-    .row.row-article.row-opinion a:hover {
+    .row.row-article.row-opinion a:hover, .row.row-article.row-opinion h5:hover {
       color: #cc9656; }
   .row.row-article.row-news {
     border-color: #86a201; }
-    .row.row-article.row-news a:hover {
+    .row.row-article.row-news a:hover, .row.row-article.row-news h5:hover {
       color: #86a201; }
 
 #commentform label {
@@ -151,7 +155,7 @@ body, html {
       left: 0px; }
       .editors-row #editor-images .carousel-caption .hidden-sm {
         font-size: 0.8em; }
-      .editors-row #editor-images .carousel-caption h4, .editors-row #editor-images .carousel-caption a {
+      .editors-row #editor-images .carousel-caption h5, .editors-row #editor-images .carousel-caption a {
         color: white; }
     .editors-row #editor-images .carousel-control span {
       font-size: 100px;
@@ -265,9 +269,7 @@ body, html {
         display: block;
         width: 100%;
         padding-left: 10px; }
-        .article-container .article-image .image-overlay .image-overlay-text h4 {
-          color: white; }
-        .article-container .article-image .image-overlay .image-overlay-text h4:hover {
+        .article-container .article-image .image-overlay .image-overlay-text h5 {
           color: white; }
     .article-container.article-small, .article-container.article-medium:first-child {
       border: solid;
