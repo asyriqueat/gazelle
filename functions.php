@@ -78,3 +78,15 @@ function gazelle_track_post_views ($post_Id) {
 }
 add_action( 'wp_head', 'gazelle_track_post_views');
 
+function colorbox ($categoryname) { ?>
+  <div class="colorbox colorbox-<?php echo strtolower($categoryname); ?>">
+  </div>
+<?php }
+function get_cat() {
+  $categories = get_the_category();
+  if (!empty($categories)) {
+   return $categories[0]->cat_name;
+  } else {
+   return '';
+  }
+}

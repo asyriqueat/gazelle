@@ -25,11 +25,13 @@ get_header(); ?>
             } else {
               $image_url = catch_image();
             }
+            $category = get_cat();
             $pick = array("title" => '<a href="' . get_permalink() . '">' . '<h6>' . get_the_title() . '</h6>' . '</a>',
                         "link" => get_permalink(),
                         "excerpt" => get_the_excerpt(),
                         "author" => '<a href="' . get_author_posts_url($authordata->ID) . '" ><small class="text-muted">' . get_the_author_meta('display_name') . '</small></a>',
-                        "image" => $image_url );
+                        "image" => $image_url,
+                        "category" => $category );
             $editors[] = $pick;
           endwhile; ?>
         <div class="row">
@@ -67,6 +69,7 @@ get_header(); ?>
             <?php for ($i = 0 ; $i < 4 ; $i++) {  ?>
               <div id="pick-<?php echo $i; ?>" class="pick-label row <?php echo ($i == 0 ? "active" : ""); ?>" data-slide-to="<?php echo $i; ?>" data-target="#editors-pick" >
                 <?php echo $editors[$i]["title"]; ?>
+                <?php echo colorbox($editors[$i]["category"]); ?>
                 <?php echo $editors[$i]["author"]; ?>
               </div>
             <?php } ?>
@@ -82,10 +85,11 @@ get_header(); ?>
           <div id="top-articles" class="tab-pane active fade in">
             <ul>
             <?php
-              $popular = new WP_Query(current_issue(array_merge(get_option("gridlock_query"), array('posts_per_page' => 4, 'orderby' => 'meta_value', 'meta_key' => 'gazelle_views_count', 'order' => 'DESC', "post_status" => "publish", ))));
+              $popular = new WP_Query(current_issue(array_merge(get_option("gridlock_query"), array('posts_per_page' => 5, 'orderby' => 'meta_value', 'meta_key' => 'gazelle_views_count', 'order' => 'DESC', "post_status" => "publish", ))));
               while ( $popular->have_posts() ) : $popular->the_post();
                 echo "<li class='list-unstyled'>";
                   echo '<a href="' . get_permalink() . '">' . '<h6>' . get_the_title() . '</h6>' . '</a>';
+                  echo colorbox(get_cat());
                   echo '<a href="' . get_author_posts_url($authordata->ID) . '" ><small class="text-muted">' . get_the_author_meta('display_name') . '</small></a>';
                 echo "</li>";
               endwhile;
