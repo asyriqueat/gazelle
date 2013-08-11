@@ -10,6 +10,15 @@ body, html {
 img {
   max-width: 100%; }
 
+.text-features {
+  color: #d8ba2e; }
+
+.text-news {
+  color: #cc9656; }
+
+.text-opinion {
+  color: #86a201; }
+
 .colorbox {
   height: 10px;
   width: 10px;
@@ -44,13 +53,17 @@ img {
     border-width: 0px;
     border-right-width: 1px; }
   .article-container .article-image {
+    padding-left: 0px;
+    padding-right: 10px;
     height: 240px; }
     .article-container .article-image .image {
       height: 240px; }
     .article-container .article-image .image-overlay {
       display: none; }
   .article-container .article-description {
-    min-height: 240px; }
+    min-height: 240px;
+    padding-right: 0px;
+    padding-left: 10px; }
     .article-container .article-description p {
       font-size: 0.7em; }
 
@@ -61,10 +74,16 @@ img {
   border-width: 0px 0px 5px 0px; }
   .row.row-article.row-features {
     border-color: #d8ba2e; }
+    .row.row-article.row-features a:hover {
+      color: #d8ba2e; }
   .row.row-article.row-opinion {
     border-color: #cc9656; }
+    .row.row-article.row-opinion a:hover {
+      color: #cc9656; }
   .row.row-article.row-news {
     border-color: #86a201; }
+    .row.row-article.row-news a:hover {
+      color: #86a201; }
 
 #commentform label {
   margin-right: 30px; }
@@ -156,23 +175,30 @@ img {
           color: white; }
     .editors-row .pick-label:last-child {
       border-bottom: 0px; }
-    .editors-row #top-side .tab-content {
-      padding: 10px;
-      height: 258px;
-      border: solid;
-      border-width: 0px 1px 1px 1px;
-      border-color: #bbbbbb; }
-      .editors-row #top-side .tab-content ul {
-        padding-left: 10px; }
-        .editors-row #top-side .tab-content ul h6 {
-          margin-bottom: 3px; }
-        .editors-row #top-side .tab-content ul small {
-          margin-bottom: 10px; }
-    .editors-row #top-side .nav-tabs {
-      border-color: #bbbbbb; }
-      .editors-row #top-side .nav-tabs li.active a {
-        border-color: #bbbbbb;
-        border-bottom-color: white; }
+
+  .tab-content {
+    padding: 10px;
+    height: 258px;
+    border: solid;
+    border-width: 0px 1px 1px 1px;
+    border-color: #bbbbbb; }
+    .tab-content ul {
+      padding-left: 10px; }
+      .tab-content ul h6 {
+        margin-bottom: 3px; }
+      .tab-content ul small {
+        margin-bottom: 10px; }
+
+  .sidebar.row {
+    margin-top: 50px; }
+    .sidebar.row #editor-box {
+      height: 230px; }
+
+  .nav-tabs {
+    border-color: #bbbbbb; }
+    .nav-tabs li.active a {
+      border-color: #bbbbbb;
+      border-bottom-color: white; }
 
   .gridlock-row {
     padding: 15px 0px;

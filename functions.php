@@ -90,3 +90,16 @@ function get_cat() {
    return '';
   }
 }
+function top_articles() {
+  global $authordata;
+  echo "<ul>";
+  $popular = new WP_Query(get_issue(array_merge(get_option("gridlock_query"), array('posts_per_page' => 5, 'orderby' => 'meta_value', 'meta_key' => 'gazelle_views_count', 'order' => 'DESC', "post_status" => "publish", ))));
+  while ( $popular->have_posts() ) : $popular->the_post();
+    echo "<li class='list-unstyled'>";
+      echo '<a href="' . get_permalink() . '">' . '<h6>' . get_the_title() . '</h6>' . '</a>';
+      echo colorbox(get_cat());
+      echo '<a href="' . get_author_posts_url($authordata->ID) . '" ><small class="text-muted">' . get_the_author_meta('display_name') . '</small></a>';
+    echo "</li>";
+  endwhile;
+  echo "</ul>";
+}

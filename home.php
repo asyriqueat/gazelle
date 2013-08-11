@@ -15,7 +15,7 @@ get_header(); ?>
           // editor's pick
           $editors = array();
           $pick_id = get_term_by("name", "pick", "post_tag")->term_id;
-          $editor_query = new WP_Query(current_issue(array_merge(get_option("gridlock_query"), array("post_status" => "publish", "tag" => "pick" ))));
+          $editor_query = new WP_Query(current_issue(array_merge(get_option("gridlock_query"), array("post_status" => "publish", "tag" => "pick", "posts_per_page" => 4 ))));
           while ( $editor_query->have_posts() ) : $editor_query->the_post();
             global $authordata;
             $image_url = false;
@@ -39,19 +39,19 @@ get_header(); ?>
             <div id="editors-pick" class="carousel vertical slide">
               <div class="carousel-inner">
               <?php 
-              for ($i = 0 ; $i < 4 ; $i++) { 
-                $pick = $editors[$i]; ?>
-                  <div class="item <?php  echo ($i == 0 ? "active" : ""); ?>">
+            $first = true;
+            foreach ($editors as $pick) { ?>
+                  <div class="item <?php if ($first == true) { echo "active"; $first = false;} ?>">
                     <a href="<?php echo $pick["link"]; ?>">
                       <div style="background-image: url(<?php echo $pick["image"] ?>)" class="image" ></div>
                     </a>
                     <div class="carousel-caption">
                       <span class="visible-sm">
-                        <?php echo $editors[$i]["title"]; ?>
-                        <?php echo $editors[$i]["author"]; ?>
+                        <?php echo $pick["title"]; ?>
+                        <?php echo $pick["author"]; ?>
                       </span>
                       <span class="hidden-sm">
-                        <?php echo $editors[$i]["excerpt"]; ?>
+                        <?php echo $pick["excerpt"]; ?>
                       </span>
                     </div>
                   </div>
@@ -83,18 +83,7 @@ get_header(); ?>
         </ul>
         <div class="tab-content">
           <div id="top-articles" class="tab-pane active fade in">
-            <ul>
-            <?php
-              $popular = new WP_Query(current_issue(array_merge(get_option("gridlock_query"), array('posts_per_page' => 5, 'orderby' => 'meta_value', 'meta_key' => 'gazelle_views_count', 'order' => 'DESC', "post_status" => "publish", ))));
-              while ( $popular->have_posts() ) : $popular->the_post();
-                echo "<li class='list-unstyled'>";
-                  echo '<a href="' . get_permalink() . '">' . '<h6>' . get_the_title() . '</h6>' . '</a>';
-                  echo colorbox(get_cat());
-                  echo '<a href="' . get_author_posts_url($authordata->ID) . '" ><small class="text-muted">' . get_the_author_meta('display_name') . '</small></a>';
-                echo "</li>";
-              endwhile;
-            ?>
-            </ul>
+            <?php top_articles(); ?>
           </div>
           <div id="past-issue" class="tab-pane fade">
             <?php
@@ -177,13 +166,12 @@ get_header(); ?>
       <?php } ?>
     </div>
     <div class="row other-row">
-      div.col-12
       <?php
         // other posts
         add_filter( 'posts_where', '_exclude_meta_key_in_posts_where' );    
         $other_query = new WP_Query(current_issue(array_merge(get_option("gridlock_query"), array("post_status" => "publish", "tag__not_in" => $pick_id))));
         while ( $other_query->have_posts() ) : $other_query->the_post(); 
-          echo the_title();
+          //echo the_title();
         endwhile;
         remove_filter( 'posts_where', '_exclude_meta_key_in_posts_where' );
       ?>

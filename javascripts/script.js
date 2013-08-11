@@ -1,4 +1,7 @@
 $(function() {
+  $(document).on("click", "a", function (e) {
+    e.stopPropagation();
+  });
   $(document).on("click", ".pick-label", function(e) {
     var new_row = $(e.target);
     var old_row = $(".pick-label.active");
@@ -6,6 +9,7 @@ $(function() {
       new_row.toggleClass("active");
       old_row.toggleClass("active");
     }
+    $('.carousel').carousel('pause');
   });
   $('.carousel').carousel({
     interval: 3000

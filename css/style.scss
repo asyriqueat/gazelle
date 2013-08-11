@@ -20,6 +20,16 @@ img {
   max-width: 100%;
 }
 
+.text-features {
+  color: $yellow;
+}
+.text-news {
+  color: $peach;
+}
+.text-opinion {
+  color: $green;
+}
+
 .colorbox {
   height: 10px;
   width: 10px;
@@ -59,6 +69,8 @@ img {
     border-right-width: 1px;
   }
   .article-image {
+    padding-left: 0px;
+    padding-right: 10px;
     height: 240px;
     .image {
       height: 240px;
@@ -69,6 +81,8 @@ img {
   }
   .article-description {
     min-height: 240px;
+    padding-right: 0px;
+    padding-left: 10px;
     p {
       font-size: 0.7em;
     }
@@ -84,12 +98,21 @@ img {
       border-width: 0px 0px 5px 0px;
     &.row-features {
       border-color: $yellow;
+      a:hover {
+        color: $yellow;
+      }
     }
     &.row-opinion {
       border-color: $peach;
+      a:hover {
+        color: $peach;
+      }
     }
     &.row-news {
       border-color: $green;
+      a:hover {
+        color: $green;
+      }
     }
   }
 }
@@ -214,31 +237,34 @@ img {
     .pick-label:last-child {
       border-bottom: 0px;
     }
-    #top-side {
-      .tab-content {
-        padding: 10px;
-        height: 258px;
-        border: solid;
-        border-width: 0px 1px 1px 1px;
-        border-color: $light-grey;
-        ul {
-          padding-left: 10px;
-          h6 {
-            margin-bottom: 3px;
-          }
-          small {
-            margin-bottom: 10px;
-          }
-        }
+  }
+  .tab-content {
+    padding: 10px;
+    height: 258px;
+    border: solid;
+    border-width: 0px 1px 1px 1px;
+    border-color: $light-grey;
+    ul {
+      padding-left: 10px;
+      h6 {
+        margin-bottom: 3px;
       }
-      .nav-tabs {
-        border-color: $light-grey;
-        li.active a {
-          border-color: $light-grey;
-          border-bottom-color: white;
-        }
+      small {
+        margin-bottom: 10px;
       }
-      
+    }
+  }
+  .sidebar.row {
+    margin-top: 50px;
+    #editor-box {
+      height: 230px;
+    }
+  }
+  .nav-tabs {
+    border-color: $light-grey;
+    li.active a {
+      border-color: $light-grey;
+      border-bottom-color: white;
     }
   }
   .gridlock-row {
