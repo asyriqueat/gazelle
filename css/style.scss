@@ -338,6 +338,15 @@ body, html {
         }
       }
     }
+    &.article-small, &.article-medium:first-child {
+      border: solid;
+      border-width: 0px;
+      border-color: #bbbbbb;
+      border-right-width: 1px;
+    }
+    &.article-small:last-child {
+      border: 0px;
+    }
   }
   .navbar-form {
     width: 30%;
