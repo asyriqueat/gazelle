@@ -5,10 +5,14 @@
  * Authored by Lingliang Zhang
  */
 body, html {
-  height: 100%; }
-
-img {
-  max-width: 100%; }
+  height: 100%;
+  font-family: 'Roboto Condensed', sans-serif; }
+  body h1, body h2, body h3, body h4, body h5, body h6, html h1, html h2, html h3, html h4, html h5, html h6 {
+    font-family: 'Lora', serif; }
+  body small, html small {
+    font-family: 'Roboto Condensed', sans-serif; }
+  body img, html img {
+    max-width: 100%; }
 
 .text-features {
   color: #d8ba2e; }
