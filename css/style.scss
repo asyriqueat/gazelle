@@ -275,7 +275,7 @@ img {
     }
   }
   .article-container {
-    border-width: 0px 0px 1px 0px;
+    border-width: 0px 0px 0px 0px;
     padding: 0px 15px;
     margin: 0px;
     .article-description.hidden-large {
@@ -305,15 +305,6 @@ img {
           }
         }
       }
-    }
-    &.article-small, &.article-medium:first-child {
-      border: solid;
-      border-width: 0px;
-      border-color: $light-grey;
-      border-right-width: 1px;
-    }
-    &.article-small:last-child {
-      border: 0px;
     }
   }
   .navbar-form {
