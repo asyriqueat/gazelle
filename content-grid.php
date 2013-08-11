@@ -29,7 +29,7 @@
                 <div class="image-overlay-text">
                   <h4 class="article-title"> <?php the_title(); ?> </h4>
                 </div>
-              </div>    
+              </div>
             </div>
           </div>
         </a>

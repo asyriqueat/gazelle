@@ -17,6 +17,7 @@ body, html {
   font-family: 'Roboto Condensed', sans-serif;
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Lora', serif;
+    font-weight: 600;
   }
   small {
     font-family: 'Roboto Condensed', sans-serif;
@@ -24,8 +25,14 @@ body, html {
   img {
     max-width: 100%;
   }
+  a {
+    color: black;
+  }
 }
 
+.text-uncategorized {
+  color: $blue;
+}
 .text-features {
   color: $yellow;
 }
@@ -42,6 +49,7 @@ body, html {
   float: left;
   margin-top: 5px;
   margin-right: 5px;
+  background-color: $blue;
   &.colorbox-features {
     background-color: $yellow;
   }
@@ -67,6 +75,12 @@ body, html {
   border-color: $light-grey;
   border-width: 0px;
   border-bottom-width: 0px;
+  h4 {
+    margin-bottom: 0px;
+  }
+  em {
+      font-style: normal;
+  }
   .article-small:first {
     background: red;
     border-color: $light-grey;
@@ -101,7 +115,8 @@ body, html {
   }
   &.row-article {
       border: solid;
-      border-width: 0px 0px 5px 0px;
+      border-width: 0px 0px 8px 0px;
+      border-color: $blue;
     &.row-features {
       border-color: $yellow;
       a:hover {
