@@ -7,6 +7,8 @@
 body, html {
   height: 100%;
   font-family: 'Roboto Condensed', sans-serif; }
+  body #home, html #home {
+    margin-top: 70px; }
   body h1, body h2, body h3, body h4, body h5, body h6, html h1, html h2, html h3, html h4, html h5, html h6 {
     font-family: 'Lora', serif;
     font-weight: 600; }
@@ -316,3 +318,227 @@ body, html {
     border-color: #bbbbbb;
     border-width: 1px 0px 1px 1px;
     box-sizing: border-box; } }
+#masthead #title {
+  position: absolute;
+  margin-top: -120px;
+  margin: 20px 0% 0 20%; }
+  @media screen and (max-width: 1500px) {
+    #masthead #title {
+      margin: 20px 0% 0 21%; } }
+  @media screen and (max-width: 1400px) {
+    #masthead #title {
+      margin: 20px 0% 0 23%; } }
+  @media screen and (max-width: 1300px) {
+    #masthead #title {
+      margin: 20px 0% 0 25%; } }
+  @media screen and (max-width: 1200px) {
+    #masthead #title {
+      margin: 20px 0% 0 19%; } }
+  @media screen and (max-width: 1000px) {
+    #masthead #title {
+      margin: 20px 0% 0 18%; } }
+  @media screen and (max-width: 900px) {
+    #masthead #title {
+      margin: 20px 0% 0 12%; } }
+  @media screen and (max-width: 768px) {
+    #masthead #title {
+      margin: 20px 0% 0 14%; } }
+  @media screen and (max-width: 700px) {
+    #masthead #title {
+      margin: 20px 0% 0 6%; } }
+#masthead #issue {
+  line-height: 0.4em;
+  position: absolute;
+  margin-top: 55px;
+  margin-left: 71%; }
+  @media screen and (max-width: 1500px) {
+    #masthead #issue {
+      top: 33px;
+      margin-left: 74%; } }
+  @media screen and (max-width: 1400px) {
+    #masthead #issue {
+      margin-left: 77%; } }
+  @media screen and (max-width: 1300px) {
+    #masthead #issue {
+      top: 30px;
+      margin-left: 79%; } }
+  @media screen and (max-width: 1200px) {
+    #masthead #issue {
+      top: 30px;
+      margin-left: 74%; } }
+  @media screen and (max-width: 1000px) {
+    #masthead #issue {
+      display: none; } }
+  #masthead #issue .issuenumber {
+    background-color: #00FFFF;
+    padding: 5px;
+    font-size: 1.5em;
+    color: #fff;
+    font-family: "Gotham",sans-serif; }
+  #masthead #issue .date {
+    font-family: "Gotham",sans-serif;
+    font-size: 0.8em; }
+
+#nav {
+  margin-top: 130px; }
+  #nav #logo {
+    position: absolute;
+    height: 30%;
+    width: 75%;
+    margin-top: -114px; }
+    @media screen and (max-width: 800px) {
+      #nav #logo {
+        display: none; } }
+    #nav #logo img {
+      width: 135px;
+      right: 0;
+      position: absolute;
+      margin-right: 95%; }
+      @media screen and (max-width: 1500px) {
+        #nav #logo img {
+          margin-right: 90%; } }
+      @media screen and (max-width: 1400px) {
+        #nav #logo img {
+          margin-right: 86%; } }
+      @media screen and (max-width: 1300px) {
+        #nav #logo img {
+          margin-right: 83%; } }
+      @media screen and (max-width: 1200px) {
+        #nav #logo img {
+          margin-right: 88%; } }
+      @media screen and (max-width: 1100px) {
+        #nav #logo img {
+          margin-right: 84%; } }
+      @media screen and (max-width: 1000px) {
+        #nav #logo img {
+          margin-right: 89%; } }
+  #nav ul {
+    list-style: none;
+    background-color: #000;
+    width: 75%;
+    padding-left: 18%;
+    margin-left: 2%;
+    font-family: "Gotham",sans-serif;
+    text-transform: uppercase;
+    position: absolute; }
+    @media screen and (max-width: 1500px) {
+      #nav ul {
+        margin-left: 6%; } }
+    @media screen and (max-width: 1400px) {
+      #nav ul {
+        margin-left: 9%; } }
+    @media screen and (max-width: 1300px) {
+      #nav ul {
+        margin-left: 11%; } }
+    @media screen and (max-width: 1200px) {
+      #nav ul {
+        margin-left: 7%; } }
+    @media screen and (max-width: 1100px) {
+      #nav ul {
+        margin-left: 11%; } }
+    @media screen and (max-width: 900px) {
+      #nav ul {
+        padding-left: 13%; } }
+    @media screen and (max-width: 1000px) {
+      #nav ul {
+        margin-left: 6%; } }
+    @media screen and (max-width: 768px) {
+      #nav ul {
+        margin-left: 8%;
+        width: 87%; } }
+    @media screen and (max-width: 800px) {
+      #nav ul {
+        margin-left: 8%;
+        width: 80%;
+        padding-left: 16%; } }
+    @media screen and (max-width: 768px) {
+      #nav ul {
+        margin-left: 8%;
+        width: 87%;
+        padding-left: 18%; } }
+  #nav li {
+    display: inline;
+    color: #fff;
+    font-size: 2.4em;
+    line-height: 1.6em;
+    margin-right: 5px;
+    text-align: center; }
+    @media screen and (max-width: 1500px) {
+      #nav li {
+        font-size: 1.9em;
+        line-height: 2em; } }
+    @media screen and (max-width: 800px) {
+      #nav li {
+        font-size: 1.52em;
+        line-height: 2.5em; } }
+    @media screen and (max-width: 700px) {
+      #nav li {
+        font-size: 1.3em;
+        line-height: 2.9em; } }
+    @media screen and (max-width: 600px) {
+      #nav li {
+        font-size: 1em; } }
+  #nav #news {
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    padding-right: 30px;
+    padding-left: 30px; }
+    @media screen and (max-width: 1500px) {
+      #nav #news {
+        border-left: 1px solid #fff;
+        border-right: 1px solid #fff;
+        padding-right: 20px;
+        padding-left: 20px; } }
+    @media screen and (max-width: 1200px) {
+      #nav #news {
+        padding-right: 5px;
+        padding-left: 10px; } }
+  #nav #opinions {
+    padding-right: 20px; }
+    @media screen and (max-width: 1500px) {
+      #nav #opinions {
+        padding-right: 20px; } }
+    @media screen and (max-width: 1200px) {
+      #nav #opinions {
+        padding-right: 5px; } }
+  #nav #featured {
+    padding-left: 30px; }
+    @media screen and (max-width: 1500px) {
+      #nav #featured {
+        padding-left: 20px; } }
+    @media screen and (max-width: 1200px) {
+      #nav #featured {
+        padding-left: 5px; } }
+  #nav #largesearch {
+    border: none; }
+    #nav #largesearch input {
+      font-size: 1.5em;
+      line-height: 2.2em;
+      width: 2%;
+      right: 0%;
+      margin-left: 2px;
+      top: 0;
+      position: absolute;
+      background-image: url("https://cdn4.iconfinder.com/data/icons/brightmix/128/monotone_search_zoom.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+      outline: transparent;
+      padding-left: 53px; }
+      @media screen and (max-width: 600px) {
+        #nav #largesearch input {
+          font-size: 1em;
+          line-height: 2.4em; } }
+  #nav ul:before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    border-top: 53px solid transparent;
+    border-right: 25px solid black; }
+    @media screen and (max-width: 700px) {
+      #nav ul:before {
+        border-top: 52px solid transparent; } }
+    @media screen and (max-width: 600px) {
+      #nav ul:before {
+        border-top: 40px solid transparent; } }

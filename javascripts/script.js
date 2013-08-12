@@ -23,4 +23,47 @@ $(function() {
       $('#editor-labels .active:not(:last-child)').removeClass('active').next().addClass('active'); 
     }
   });
+  	var searching = false;
+	$(document).on("click", "input", function(e) {
+	
+
+    e.preventDefault();
+    var searchbar = $(e.target);
+    if (!searching) {
+      if(innerWidth > 800){
+        	searchbar.animate({width: '80%'});
+		}if(innerWidth < 800){
+        	searchbar.animate({width: '80%'});
+		}
+        searching = true;
+    } else {
+        searchbar.animate({width: '2%'});
+        searching = false;
+    }
+
+		
+});
+			
+$(document).on("blur", "input", function(e) {
+  	searchbar.animate({width: '2%'});
+   searching = false;
+});
+
+$(document).on("focus", "input", function(e) {
+   if (!searching) {
+        // opening
+        if (innerWidth > 2000) {
+            searchbar.animate({width: '18%'});
+        } else if(innerWidth < 2000){
+        	searchbar.animate({width: '15%'});
+    	} else if(innerWidth > 1500){
+        	searchbar.animate({width: '13%'});
+		} else if(innerWidth > 800){
+        	searchbar.animate({width: '40%'});
+		}if(innerWidth < 800){
+        	searchbar.animate({width: '50%'});
+		}
+        searching = true;
+		}
+	});				
 });

@@ -24,24 +24,41 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="main" class="container">
-  <div id="header" class="page-header">
-    <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr ( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-      <?php bloginfo( 'name' ); ?>
-    </a>
-    </h1>
-  </div>
-  <div class="navbar">
-    <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <div class="nav-collapse collapse navbar-responsive-collapse">
-      <ul class="nav navbar-nav">
-        <?php wp_nav_menu_no_ul(); ?>
-      </ul>
-    </div>
-    <?php get_search_form(); ?>
-  </div>
+
+
+	<div id="masthead">
+	
+		<div id="title">
+			
+					<img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-frc3/v/999591_10151641256479563_1817972351_n.jpg?oh=1f8d5f4345914e9efeff3212fb1870e5&oe=5209F7B6&__gda__=1376382729_77f2b80ee576163f4a603ca4309b7869">
+			
+		</div>
+		<div id="issue">
+					<p><span class="issuenumber"> ISSUE 3 </span></p><br>
+					<p><span class="date"> AUG 31, 2013</span></p> 
+		</div>	
+	</div>
+		
+	<div id="nav">
+		<div id="logo">
+			<img src="http://jourdandraws.files.wordpress.com/2013/03/gazelle_logo-web.png?w=500">
+		</div>	
+			<ul>
+				
+			<li id="opinions">
+				opinions
+			</li>
+			<li id="news">
+				news
+			</li>
+			<li id="featured">
+				features
+			</li>
+			<div id="largesearch">
+				<input type="text">
+			</div>
+			</li>
+		
+	</div>
+			
   <div id="body" class="container">
