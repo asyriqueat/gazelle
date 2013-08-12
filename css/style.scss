@@ -67,6 +67,222 @@ body, html {
   }
 }
 
+#masthead{
+	#title{
+		position: absolute;
+		margin-top: -120px;
+		margin: 20px 0% 0 25%;
+		
+		@media screen and (max-width: $break-3) {
+			margin: 20px 0% 0 14%;
+
+		}
+		@media screen and (max-width: $break-4) {
+			margin: 20px 0% 0 10%;
+
+		}
+		@media screen and (max-width: $break-5) {
+			margin: 20px 0% 0 7%;
+
+		}
+		 @media screen and (max-width: $break-5) {
+			margin: 20px 0% 0 0%;
+
+		}
+
+	}	
+
+
+	
+	#issue{
+		line-height: 0.4em;
+		position: absolute;
+		margin-top: 55px;
+		margin-left:70%;
+
+		@media screen and (max-width: $break-1) {
+			top:33px;
+			margin-left: 81%;
+		}
+		@media screen and (max-width: $break-2) {
+			top:30px;
+
+		}
+		@media screen and (max-width: $break-3) {
+			display:none;
+
+		}
+
+		.issuenumber{
+				background-color:#00FFFF;
+				padding:5px;
+				font-size:1.5em;
+				color:#fff;
+				font-family:"Gotham",sans-serif;
+		}
+
+		.date{
+				font-family:"Gotham",sans-serif;
+				font-size:0.8em;
+		}
+	}
+}
+
+
+#nav{
+	margin-top:130px;
+	#logo{
+		position: absolute;
+		height: 30%;
+		width:75%;
+		margin-top: -114px;
+		@media screen and (max-width: $break-4) {
+			display:none;
+
+		}
+
+		img{
+			width: 135px;
+			right: 0;
+			position: absolute;
+			margin-right: 98%;
+			@media screen and (max-width: $break-1) {
+			margin-right: 81%;
+
+			}
+			@media screen and (max-width: $break-3) {
+			margin-right: 89%;
+
+			}
+			
+
+		}
+	}
+	ul{
+		list-style: none;
+		background-color: #000;
+		width: 75%;
+		padding-left: 13%;
+		font-family: "Gotham",sans-serif;
+		text-transform: uppercase;
+		position: absolute;
+		@media screen and (max-width: $break-1) {
+		margin-left: 13%;
+		}
+		@media screen and (max-width: $break-3) {
+			margin-left:6%;
+		}
+		@media screen and (max-width: $break-4) {
+			margin-left:8%;
+
+		}
+		
+	
+	}
+
+	li{
+		display:inline;
+		color:#fff;
+		font-size:2.4em;
+		line-height:1.6em;
+		margin-right:5px;
+		text-align:center;
+		@media screen and (max-width: $break-1) {
+			font-size:1.9em;
+			line-height:2em;
+		}
+		@media screen and (max-width: $break-4) {
+			font-size:1.52em;
+			line-height:2.5em;
+		}
+		@media screen and (max-width: $break-5) {
+			font-size: 1.3em;
+			line-height: 2.9em;
+		}
+		@media screen and (max-width: $break-6) {
+			font-size: 1em;
+		}
+	}
+	#news{
+		border-left:1px solid #fff;
+		border-right:1px solid #fff;
+		padding-right:30px;
+		padding-left:30px;
+		@media screen and (max-width: $break-1) {
+			border-left:1px solid #fff;
+			border-right:1px solid #fff;
+			padding-right:20px;
+			padding-left:20px;
+		}
+		@media screen and (max-width: $break-2) {
+			padding-right:5px;
+			padding-left:10px;
+		}
+	}
+		
+
+	#opinions{
+		padding-right:20px;
+		@media screen and (max-width: $break-1) {
+			padding-right:20px;
+		}
+		@media screen and (max-width: $break-2) {
+			padding-right:5px;
+		}
+
+	}
+
+	#featured{
+		padding-left:30px;
+		@media screen and (max-width: $break-1) {
+			padding-left:20px;
+		}
+		@media screen and (max-width: $break-2) {
+			padding-left:5px;
+		}
+	}
+
+	#largesearch{
+		border:none;
+		input{
+			font-size:1.5em;
+			line-height:2.2em;
+			width:2%;
+			right:0%;
+			margin-left:2px;
+			top:0;
+			position:absolute;
+			background-image:url('https://cdn4.iconfinder.com/data/icons/brightmix/128/monotone_search_zoom.png');
+			background-size:contain;
+			background-repeat:no-repeat;
+			border-top-left-radius:30px;
+			border-bottom-left-radius:30px;
+			outline:transparent;
+			padding-left:53px;
+			@media screen and (max-width: $break-6) {
+				font-size:1em;
+				line-height:2.4em;
+			}
+		}
+	}
+	ul:before {
+		content: '';
+		position: absolute;
+		left:-24px;
+		border-top: 53px solid transparent;
+		border-right: 25px solid black;
+		@media screen and (max-width: $break-5) {
+				border-top: 52px solid transparent;
+
+		}
+		@media screen and (max-width: $break-6) {
+				border-top: 40px solid transparent;
+
+		}
+	
+	}
+}
+
 .image {
   width: 100%;
   position: relative;
