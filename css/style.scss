@@ -476,6 +476,10 @@ body, html {
 			margin: 45px 0% 0 10%;
 
 		}
+		@media screen and (max-width: $break-60) {
+			margin: 45px 0% 0 5%;
+
+		}
 
 	}	
 

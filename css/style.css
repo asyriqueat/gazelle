@@ -343,6 +343,9 @@ body, html {
   @media screen and (max-width: 700px) {
     #masthead #title {
       margin: 45px 0% 0 10%; } }
+  @media screen and (max-width: 600px) {
+    #masthead #title {
+      margin: 45px 0% 0 5%; } }
 #masthead #issue {
   line-height: 0.4em;
   position: absolute;
