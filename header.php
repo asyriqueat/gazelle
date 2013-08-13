@@ -30,7 +30,7 @@
 	
 		<div id="title">
 			
-					<img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-frc3/v/999591_10151641256479563_1817972351_n.jpg?oh=1f8d5f4345914e9efeff3212fb1870e5&oe=5209F7B6&__gda__=1376382729_77f2b80ee576163f4a603ca4309b7869">
+					<img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-prn2/v/1080895_10151641256524563_1166059762_n.jpg?oh=10ca6d4af98f5cf3ec58319204df67e2&oe=520C54CD&__gda__=1376539519_222304d44bfc3d91e69188b7cdc99124">
 			
 		</div>
 		<div id="issue">
@@ -39,7 +39,7 @@
 		</div>	
 	</div>
 		
-	<div id="nav">
+	<div id="nav" class="container">
 		<div id="logo">
 			<img src="http://jourdandraws.files.wordpress.com/2013/03/gazelle_logo-web.png?w=500">
 		</div>	
@@ -62,3 +62,11 @@
 	</div>
 			
   <div id="body" class="container">
+
+</body>
+</html>
+
+</div><!-- closing body div -->
+</div>
+  
+<?php wp_footer(); ?>

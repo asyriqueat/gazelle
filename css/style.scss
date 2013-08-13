@@ -446,12 +446,8 @@ body, html {
 	#title{
 		position: absolute;
 		margin-top: -120px;
-		margin: 20px 0% 0 20%;
+		margin: 20px 0% 0 353px;
 		@media screen and (max-width: $break-15) {
-			margin: 20px 0% 0 21%;
-
-		}
-		@media screen and (max-width: $break-14) {
 			margin: 20px 0% 0 23%;
 
 		}
@@ -464,7 +460,7 @@ body, html {
 
 		}
 		@media screen and (max-width: $break-10) {
-			margin: 20px 0% 0 18%;
+			margin: 20px 0% 0 15%;
 
 		}
 		@media screen and (max-width: $break-90) {
@@ -477,7 +473,7 @@ body, html {
 
 		}
 		@media screen and (max-width: $break-70) {
-			margin: 20px 0% 0 6%;
+			margin: 20px 0% 0 10%;
 
 		}
 
@@ -489,23 +485,21 @@ body, html {
 		line-height: 0.4em;
 		position: absolute;
 		margin-top: 55px;
-		margin-left:71%;
-
-		@media screen and (max-width: $break-15) {
-			top:33px;
-			margin-left: 74%;
-		}
+		margin-left:1103px;
 		@media screen and (max-width: $break-14) {
-			margin-left: 77%;
+			
+			margin-left: 1067px;
+
 		}
 		@media screen and (max-width: $break-13) {
-			top:30px;
-			margin-left: 79%;
+			
+			margin-left: 1036px;
 
 		}
+		
 		@media screen and (max-width: $break-12) {
 			top:30px;
-			margin-left: 74%;
+			margin-left: 840px;
 
 		}
 		
@@ -546,80 +540,66 @@ body, html {
 			width: 135px;
 			right: 0;
 			position: absolute;
-			margin-right: 95%;
+			margin-right: 92%;
 			@media screen and (max-width: $break-15) {
-			margin-right: 90%;
-
-			}
-			@media screen and (max-width: $break-14) {
-			margin-right: 86%;
+			margin-right: 91%;
 
 			}
 			@media screen and (max-width: $break-13) {
-			margin-right: 83%;
-
-			}
-			@media screen and (max-width: $break-12) {
-			margin-right: 88%;
-
-			}
-			@media screen and (max-width: $break-11) {
-			margin-right: 84%;
-
-			}
-			@media screen and (max-width: $break-10) {
 			margin-right: 89%;
 
 			}
-			
+			@media screen and (max-width: $break-12) {
+			margin-right: 85%;
+
+			}
 
 		}
 	}
 	ul{
 		list-style: none;
 		background-color: #000;
-		width: 75%;
-		padding-left: 18%;
-		margin-left:2%;
+		width: 100%;
+		max-width: 1112px;
+		padding-left: 250px;
+		margin-left:5%;
 		font-family: "Gotham",sans-serif;
 		text-transform: uppercase;
 		position: absolute;
 		@media screen and (max-width: $break-15) {
-		margin-left: 6%;
+			padding-left: 282px;
 		}
 		@media screen and (max-width: $break-14) {
-		margin-left: 9%;
+			max-width: 1086px;
+
 		}
 		@media screen and (max-width: $break-13) {
-		margin-left: 11%;
-		}
-		@media screen and (max-width: $break-12) {
+			max-width: 1040px;
 			margin-left:7%;
 		}
-		@media screen and (max-width: $break-11) {
-			margin-left:11%;
-		}
-		@media screen and (max-width: $break-90) {
-			padding-left: 13%;
+		
+		@media screen and (max-width: $break-12) {
+			max-width: 820px;
+			padding-left: 180px;
+			margin-left:9%;
 		}
 		@media screen and (max-width: $break-10) {
-			margin-left:6%;
+			max-width: 640px;
+			padding-left: 100px;
 		}
 		@media screen and (max-width: $break-76) {
-			margin-left: 8%;
-			width: 87%;
+			max-width: 643px;
+			padding-left: 162px;
 		}
-		@media screen and (max-width: $break-80) {
+		@media screen and (max-width: $break-70) {
+			max-width: 600px;
+			padding-left: 140px;
 			margin-left:8%;
-			width: 80%;
-			padding-left: 16%;
 		}
-		@media screen and (max-width: $break-76) {
-			margin-left: 8%;
-			width: 87%;
-			padding-left: 18%;
+		@media screen and (max-width: $break-60) {	
+			max-width: 500px;
+			padding-left: 131px;
 		}
-	
 	}
 
 	li{
@@ -724,3 +704,4 @@ body, html {
 	
 	}
 }
+
