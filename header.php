@@ -25,43 +25,52 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="main" class="container">
+  <div id="header">
+    <?php $issue = get_query_var("issue") ?>
+    <?php if(empty($issue)) { 
+      $issue = get_term(get_option('current_issue'), "issue"); 
+    } else {
+      $issue = get_term_by("slug", $issue, "issue");
+    }
+    $issue_url = esc_url( get_site_url() ) . '/issue/' . $issue->slug;
+    ?>
+    <div id="masthead">
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr ( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+        <img id="title" src="<?php echo get_stylesheet_directory_uri(); ?>/images/header.jpg">
+      </a>
+      <div id="issue">
+        <a href="<?php if ( is_single() ) { echo get_site_url() . '/issue/' . $issue-> slug; } else { echo esc_url(get_site_url()) . '/issues/'; } ?>">
+          <div class="issuenumber">ISSUE&nbsp;<?php echo $issue->slug; ?></div>
+        </a>
+        <div class="date text-muted"> <?php echo $issue->description; ?></div>
+      </div>	
+    </div>
+    <div id="nav">
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr ( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/gazelle_logo.png">
+      </a>
+      <div id="navbar"></div>
+        <div class="nav-list">
+          <a href="<?php echo $issue_url . '/news/' ?>" title="News" rel="category">
+            <div class="nav-element">
+              <div id="news">News</div>
+            </div>
+          </a>
+          <a href="<?php echo $issue_url . '/features/' ?>" title="Features" rel="category">
+          <div class="nav-element">
+            <div id="features">Features</div>
+          </div>
+          </a>
+          <a href="<?php echo $issue_url . '/opinion/' ?>" title="Opinion" rel="category">
+          <div class="nav-element">
+            <div id="opinion">Opinion</div>
+          </div>
+          </a>
+        </div>
+      <?php get_search_form(); ?>
+    </div>
 
-
-	<div id="masthead">
-	
-		<div id="title">
-			
-					<img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-prn2/v/1080895_10151641256524563_1166059762_n.jpg?oh=10ca6d4af98f5cf3ec58319204df67e2&oe=520C54CD&__gda__=1376539519_222304d44bfc3d91e69188b7cdc99124">
-			
-		</div>
-		<div id="issue">
-					<p><span class="issuenumber"> ISSUE 3 </span></p><br>
-					<p><span class="date"> AUG 31, 2013</span></p> 
-		</div>	
-	</div>
-		
-	<div id="nav" class="container">
-		<div id="logo">
-			<img src="http://jourdandraws.files.wordpress.com/2013/03/gazelle_logo-web.png?w=500">
-		</div>	
-			<ul>
-				
-			<li id="opinions">
-				opinions
-			</li>
-			<li id="news">
-				news
-			</li>
-			<li id="featured">
-				features
-			</li>
-			<div id="largesearch">
-				<input type="text">
-			</div>
-			</li>
-		
-	</div>
+      
+  </div>
 			
   <div id="body" class="container">
-
-

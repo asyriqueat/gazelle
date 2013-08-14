@@ -8,7 +8,7 @@
 ?>
 
 <div id="id-<?php the_ID(); ?>" <?php post_class(); ?> >
-  <div class="row">
+  <div class="row row-article row-<?php echo strtolower(get_cat()) ?>">
     <?php 
       $image_url = false;
       if (has_post_thumbnail()) {
