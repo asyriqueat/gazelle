@@ -8,7 +8,7 @@ body, html {
   height: 100%;
   font-family: 'Roboto Condensed', sans-serif; }
   body #home, html #home {
-    margin-top: 70px; }
+    margin-top: 20px; }
   body h1, body h2, body h3, body h4, body h5, body h6, html h1, html h2, html h3, html h4, html h5, html h6 {
     font-family: 'Lora', serif;
     font-weight: 600; }
@@ -20,6 +20,30 @@ body, html {
     max-width: 100%; }
   body a, html a {
     color: black; }
+
+#iscroll {
+  overflow: hidden;
+  height: 240px;
+  padding: 0px;
+  margin: 0px 15px; }
+  #iscroll .scroller {
+    width: 2000px;
+    height: 100%; }
+    #iscroll .scroller ul {
+      list-style: none;
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 0px;
+      margin: 0px; }
+      #iscroll .scroller ul li {
+        display: block;
+        width: 300px;
+        height: 100%;
+        float: left; }
+
+#body {
+  margin-top: 5%; }
 
 .text-uncategorized {
   color: #71bcbe; }
@@ -404,6 +428,7 @@ body, html {
     list-style: none;
     background-color: #000;
     width: 100%;
+    max-height: 52px;
     max-width: 1112px;
     padding-left: 250px;
     margin-left: 5%;
@@ -442,28 +467,28 @@ body, html {
       #nav ul {
         max-width: 500px;
         padding-left: 131px; } }
-  #nav li {
-    display: inline;
-    color: #fff;
-    font-size: 2.4em;
-    line-height: 1.6em;
-    margin-right: 5px;
-    text-align: center; }
-    @media screen and (max-width: 1500px) {
-      #nav li {
-        font-size: 1.9em;
-        line-height: 2em; } }
-    @media screen and (max-width: 800px) {
-      #nav li {
-        font-size: 1.52em;
-        line-height: 2.5em; } }
-    @media screen and (max-width: 700px) {
-      #nav li {
-        font-size: 1.3em;
-        line-height: 2.9em; } }
-    @media screen and (max-width: 600px) {
-      #nav li {
-        font-size: 1em; } }
+    #nav ul li {
+      display: inline;
+      color: #fff;
+      font-size: 2.2em;
+      line-height: 1.6em;
+      margin-right: 5px;
+      text-align: center; }
+      @media screen and (max-width: 1500px) {
+        #nav ul li {
+          font-size: 1.9em;
+          line-height: 2em; } }
+      @media screen and (max-width: 800px) {
+        #nav ul li {
+          font-size: 1.52em;
+          line-height: 2.5em; } }
+      @media screen and (max-width: 700px) {
+        #nav ul li {
+          font-size: 1.28em;
+          line-height: 2.9em; } }
+      @media screen and (max-width: 600px) {
+        #nav ul li {
+          font-size: 1em; } }
   #nav #news {
     border-left: 1px solid #fff;
     border-right: 1px solid #fff;
@@ -528,6 +553,3 @@ body, html {
     @media screen and (max-width: 600px) {
       #nav ul:before {
         border-top: 40px solid transparent; } }
-
-#body {
-  margin-top: 5%; }

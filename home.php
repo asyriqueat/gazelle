@@ -170,5 +170,17 @@ get_header(); ?>
         remove_filter( 'posts_where', '_exclude_meta_key_in_posts_where' );
       ?>
     </div>
+    <div class="row other-posts">
+      <div id="iscroll" class="col-12">
+        <div class="scroller">
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 <?php get_footer(); ?>
