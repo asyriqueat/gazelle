@@ -63,10 +63,4 @@
 			
   <div id="body" class="container">
 
-</body>
-</html>
 
-</div><!-- closing body div -->
-</div>
-  
-<?php wp_footer(); ?>

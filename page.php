@@ -13,6 +13,7 @@
 
 get_header(); ?>
 
+
   <?php while ( have_posts() ) : the_post(); ?>
     <div class="row gridlock-row">
       <div class="article-container row">
