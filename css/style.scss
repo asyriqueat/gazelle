@@ -436,9 +436,9 @@ body, html {
             cursor: pointer;
           }
           &#news {
-            border-color: $peach;
+            border-color: $green;
             &:hover {
-              color: $peach;
+              color: $green;
             }
           }
           &#features {
@@ -448,9 +448,9 @@ body, html {
             }
           }
           &#opinion {
-            border-color: $green;
+            border-color: $peach;
             &:hover {
-              color: $green;
+              color: $peach;
             }
           }
         }

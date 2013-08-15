@@ -346,17 +346,17 @@ body, html {
           #header #nav .nav-list .nav-element div:hover {
             cursor: pointer; }
           #header #nav .nav-list .nav-element div#news {
-            border-color: #cc9656; }
+            border-color: #86a201; }
             #header #nav .nav-list .nav-element div#news:hover {
-              color: #cc9656; }
+              color: #86a201; }
           #header #nav .nav-list .nav-element div#features {
             border-color: #d8ba2e; }
             #header #nav .nav-list .nav-element div#features:hover {
               color: #d8ba2e; }
           #header #nav .nav-list .nav-element div#opinion {
-            border-color: #86a201; }
+            border-color: #cc9656; }
             #header #nav .nav-list .nav-element div#opinion:hover {
-              color: #86a201; }
+              color: #cc9656; }
     #header #nav form {
       position: absolute;
       margin: 0px;
