@@ -28,7 +28,7 @@
     </li>
     <li>
       <a href="<?php echo $root . '/team/' ?>" title="Our Team" rel="team">
-        <a href="#">Our Team</a>
+        Our Team
       </a>
     </li>
   </ul>

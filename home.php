@@ -160,26 +160,50 @@ get_header(); ?>
       <?php } ?>
     </div>
     <div class="row other-row">
-      <?php
-        // other posts
-        add_filter( 'posts_where', '_exclude_meta_key_in_posts_where' );    
-        $other_query = new WP_Query(current_issue(array_merge(get_option("gridlock_query"), array("post_status" => "publish", "tag__not_in" => $pick_id))));
-        while ( $other_query->have_posts() ) : $other_query->the_post(); 
-          //echo the_title();
-        endwhile;
-        remove_filter( 'posts_where', '_exclude_meta_key_in_posts_where' );
-      ?>
     </div>
-    <div class="row other-posts">
-      <div id="iscroll" class="col-12">
-        <div class="scroller">
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-            <li>Item 4</li>
-          </ul>
+    <div id="other-row" class="row">
+      <div id="other-posts" class="row">
+        <div id="other-mast">
+          <div id="other-bar">
+          </div>
+          <div id="other-headline">
+            <h4>MORE ON</h4>
+            <h5>THIS ISSUE</h5>
+          </div>
         </div>
+        <div id="other-scroll" class="col-12">
+          <div class="scroller">
+            <ul>
+              <?php
+                // other posts
+                add_filter( 'posts_where', '_exclude_meta_key_in_posts_where' );    
+                $params = current_issue(array_merge(get_option("gridlock_grid_query"), array('orderby' => 'date', 'order' => 'DESC', "post_status" => "publish", "tag__not_in" => $pick_id)));
+                $other_query = new WP_Query($params);
+                while ( $other_query->have_posts() ) : $other_query->the_post(); ?>
+                  <li>
+                    <div class="other-content row-<?php echo strtolower(get_cat()) ?>">
+                      <a href="<?php the_permalink(); ?>" title=<?php the_title(); ?>>
+                        <h6><?php the_title(); ?></h6>
+                      </a>
+                      <div>
+                        <?php echo(colorbox(get_cat())) ?>
+                        <?php echo the_author_posts_link(); ?>
+                      </div>
+                      <?php the_excerpt(); ?>
+                    </div>
+                  </li>
+                <?php endwhile;
+                remove_filter( 'posts_where', '_exclude_meta_key_in_posts_where' );
+              ?>
+            </ul>
+          </div>
+        </div>
+      <div class="left carousel-control">
+        <a class="icon-prev"></a>
+      </div>
+      <div class="right carousel-control">
+        <a class="icon-next"></a>
+      </div>
       </div>
     </div>
   </div>

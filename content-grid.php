@@ -27,7 +27,7 @@
       ?>
     <?php if ($image_url) { ?>
       <?php if ($span == 1) { ?>
-        <a href="<?php the_permalink(); ?>">
+        <a href="<?php the_permalink(); ?>" title=<?php the_title(); ?>>
           <div class="article-image col-6 col-sm-12" >
             <div class="image" style="background-image: url(<?php echo $image_url ?>)">
               <div class="image-overlay">
@@ -40,14 +40,14 @@
         </a>
         <div class="article-description col-6 col-sm-12 hidden-large">
       <?php } else if ($span == 2) { ?>
-        <a href="<?php the_permalink(); ?>">
+        <a href="<?php the_permalink(); ?>" title=<?php the_title(); ?>>
           <div class="article-image col-6">
             <div class="image" style="background-image: url(<?php echo $image_url ?>)"></div>
           </div>
         </a>
         <div class="article-description col-6">
       <?php } else if ($span == 3) { ?>
-        <a href="<?php the_permalink(); ?>">
+        <a href="<?php the_permalink(); ?>" title=<?php the_title(); ?>>
           <div class="article-image col-6 col-sm-8">
             <div class="image" style="background-image: url(<?php echo $image_url ?>)"></div>
           </div>
@@ -57,10 +57,10 @@
       <div class="article-description col-12">
     <?php } ?>
         <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gridlock' ),  the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"<?php the_title(); ?> >
-          <h5 class"article-title"> <?php echo strtoupper(get_the_title()); ?> </h5>
+          <h5 class"article-title"> <?php echo get_the_title(); ?> </h5>
         </a>
         <?php echo the_author_posts_link(); ?>
-        <p> <?php the_excerpt(); ?></p>
+        <?php the_excerpt(); ?>
       </div>
 
   </div>
