@@ -476,9 +476,8 @@ body, html {
       padding-left: 10px; }
       .tab-content ul h6 {
         margin-bottom: 3px; }
-      .tab-content ul small {
-        margin-bottom: 10px; }
-
+      .tab-content ul li:first-child h6 {
+        margin-top: 5px; }
   .sidebar.row {
     margin-top: 50px; }
     .sidebar.row #editor-box {
@@ -652,6 +651,14 @@ body, html {
   @media screen and (min-width: 768px) and (min-width: 768px) and (max-width: 1200px) {
     .tab-content {
       height: 318px; } }
+      @media screen and (min-width: 768px) and (min-width: 768px) and (max-width: 1200px) {
+        .tab-content ul h6 {
+          margin-bottom: 5px;
+          margin-top: 15px; } }
+      @media screen and (min-width: 768px) and (min-width: 768px) and (max-width: 1200px) {
+        .tab-content ul li:first-child h6 {
+          margin-top: 5px; } }
+
   @media screen and (min-width: 768px) and (min-width: 992px) {
     .article-container h5 {
       font-size: 1.1em; } }
