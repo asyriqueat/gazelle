@@ -46,9 +46,9 @@ body, html {
         cursor: pointer;
         opacity: 1; }
   #other-row .left {
-    left: 5px; }
+    left: 1px; }
   #other-row .right {
-    right: 5px; }
+    right: 1px; }
   #other-row #other-posts {
     position: relative;
     height: auto;
@@ -115,6 +115,12 @@ body, html {
                 float: left; }
             #other-row #other-scroll .scroller ul li .other-content p {
               font-size: 0.7em; }
+              @media screen and (min-width: 992px) {
+                #other-row #other-scroll .scroller ul li .other-content p {
+                  font-size: 0.8em; } }
+              @media screen and (min-width: 1200px) {
+                #other-row #other-scroll .scroller ul li .other-content p {
+                  font-size: 0.9em; } }
 
 #body {
   margin-top: 0px; }
@@ -628,6 +634,12 @@ body, html {
   @media screen and (min-width: 768px) and (min-width: 768px) and (max-width: 992px) {
     .tab-content {
       height: 318px; } }
+  @media screen and (min-width: 768px) and (min-width: 992px) {
+    .article-container h5 {
+      font-size: 1.1em; } }
+    @media screen and (min-width: 768px) and (min-width: 992px) {
+      .article-container .article-description p {
+        font-size: 1.1em; } }
   @media screen and (min-width: 768px) and (min-width: 768px) and (max-width: 992px) {
     .carousel.vertical .carousel-inner {
       height: 360px; } }

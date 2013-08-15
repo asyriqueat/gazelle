@@ -68,10 +68,10 @@ body, html {
     }
   }
   .left {
-    left: 5px;
+    left: 1px;
   }
   .right {
-    right: 5px;
+    right: 1px;
   }
   #other-posts {
     position: relative;
@@ -146,6 +146,12 @@ body, html {
             }
             p {
               font-size: 0.7em;
+              @media screen and (min-width: 992px) {
+                font-size: 0.8em;
+              }
+              @media screen and (min-width: 1200px) {
+                font-size: 0.9em;
+              }
             }
           }
         }
@@ -662,9 +668,17 @@ body, html {
     .article-description.hidden-large {
       display: none;
     }
+    h5 {
+      @media screen and (min-width: 992px) {
+        font-size: 1.1em;
+      }
+    }
     .article-description {
       p {
         font-size: 0.85em;
+        @media screen and (min-width: 992px) {
+          font-size: 1.1em;
+        }
       }
     }
     .article-image {
