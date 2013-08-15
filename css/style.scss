@@ -265,27 +265,30 @@ body, html {
       border: solid;
       border-width: 0px 0px 8px 0px;
       border-color: $blue;
-    a:hover, h5:hover {
-      color: $blue;
-    }
   }
   .row-features {
     border-color: $yellow;
     a:hover, h5:hover {
       color: $yellow;
+      text-decoration: none;
     }
   }
   .row-opinion {
     border-color: $peach;
     a:hover, h5:hover {
       color: $peach;
+      text-decoration: none;
     }
   }
   .row-news {
     border-color: $green;
     a:hover, h5:hover {
       color: $green;
+      text-decoration: none;
     }
+  }
+  small:hover {
+    text-decoration: underline;
   }
 }
 #commentform {
@@ -579,6 +582,22 @@ body, html {
           color: white;
         }
       }
+      &.row-features {
+        h6:hover {
+          color: $yellow;
+        }
+      }
+      &.row-opinion {
+        h6:hover {
+          color: $peach;
+        }
+      }
+      &.row-news{
+        h6:hover {
+          color: $green;
+        }
+      }
+
       @media screen and (min-width: 768px) and (max-width: 992px) {
         height: 90px;
         font-size: 0.9em;
@@ -621,11 +640,13 @@ body, html {
   }
   .nav-tabs {
     border-color: $light-grey;
-    .tab-content {
-      li.active a {
-        border-color: $light-grey;
-        border-bottom-color: white;
-      }
+    li a { 
+      color: rgb(85,85,85);
+    }
+    li.active a, li.active a:hover {
+      color: #000;
+      border-color: $light-grey;
+      border-bottom-color: white;
     }
   }
   .gridlock-row {
@@ -665,6 +686,23 @@ body, html {
     border-width: 0px 0px 0px 0px;
     padding: 0px 15px;
     margin: 0px;
+    &.article-small {
+      .row-features {
+        a:hover h5 {
+          color: $yellow;
+        }
+      }
+      .row-opinion {
+        a:hover h5 {
+          color: $peach;
+        }
+      }
+      .row-news{
+        a:hover h5 {
+          color: $green;
+        }
+      }
+    }
     .article-description.hidden-large {
       display: none;
     }

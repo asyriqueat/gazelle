@@ -206,20 +206,23 @@ body, html {
   border: solid;
   border-width: 0px 0px 8px 0px;
   border-color: #71bcbe; }
-  .row.row-article a:hover, .row.row-article h5:hover {
-    color: #71bcbe; }
 .row .row-features {
   border-color: #d8ba2e; }
   .row .row-features a:hover, .row .row-features h5:hover {
-    color: #d8ba2e; }
+    color: #d8ba2e;
+    text-decoration: none; }
 .row .row-opinion {
   border-color: #cc9656; }
   .row .row-opinion a:hover, .row .row-opinion h5:hover {
-    color: #cc9656; }
+    color: #cc9656;
+    text-decoration: none; }
 .row .row-news {
   border-color: #86a201; }
   .row .row-news a:hover, .row .row-news h5:hover {
-    color: #86a201; }
+    color: #86a201;
+    text-decoration: none; }
+.row small:hover {
+  text-decoration: underline; }
 
 #commentform label {
   margin-right: 30px; }
@@ -454,6 +457,12 @@ body, html {
         cursor: pointer; }
         .editors-row .pick-label.active h4, .editors-row .pick-label.active a {
           color: white; }
+      .editors-row .pick-label.row-features h6:hover {
+        color: #d8ba2e; }
+      .editors-row .pick-label.row-opinion h6:hover {
+        color: #cc9656; }
+      .editors-row .pick-label.row-news h6:hover {
+        color: #86a201; }
     .editors-row .pick-label:last-child {
       border-bottom: 0px; }
 
@@ -477,7 +486,10 @@ body, html {
 
   .nav-tabs {
     border-color: #bbbbbb; }
-    .nav-tabs .tab-content li.active a {
+    .nav-tabs li a {
+      color: #555555; }
+    .nav-tabs li.active a, .nav-tabs li.active a:hover {
+      color: #000;
       border-color: #bbbbbb;
       border-bottom-color: white; }
 
@@ -510,6 +522,12 @@ body, html {
     border-width: 0px 0px 0px 0px;
     padding: 0px 15px;
     margin: 0px; }
+    .article-container.article-small .row-features a:hover h5 {
+      color: #d8ba2e; }
+    .article-container.article-small .row-opinion a:hover h5 {
+      color: #cc9656; }
+    .article-container.article-small .row-news a:hover h5 {
+      color: #86a201; }
     .article-container .article-description.hidden-large {
       display: none; }
     .article-container .article-description p {

@@ -56,7 +56,7 @@
       <?php } } else { ?>
       <div class="article-description col-12">
     <?php } ?>
-        <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gridlock' ),  the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"<?php the_title(); ?> >
+        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
           <h5 class"article-title"> <?php echo get_the_title(); ?> </h5>
         </a>
         <?php echo the_author_posts_link(); ?>
