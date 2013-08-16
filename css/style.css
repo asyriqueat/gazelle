@@ -63,19 +63,20 @@ body, html {
       cursor: pointer;
       opacity: 1; }
 
-#archives .issue-container {
-  height: 100px;
-  border: solid;
-  border-color: #bbbbbb;
-  border-width: 1px;
-  padding: 10px;
-  text-align: center;
-  margin-right: 10px; }
-  #archives .issue-container h3 {
-    margin-top: 10px;
-    color: #71bcbe; }
-  #archives .issue-container:last-child {
-    margin-right: 0px; }
+#archives .col-12 {
+  padding-left: 10px;
+  padding-right: 10px; }
+  #archives .col-12 .issue-container {
+    height: 100px;
+    border: solid;
+    border-color: #bbbbbb;
+    border-width: 1px;
+    padding: 10px;
+    text-align: center;
+    margin-right: 10px; }
+    #archives .col-12 .issue-container h3 {
+      margin-top: 10px;
+      color: #71bcbe; }
 
 #category-row {
   padding: 0px 15px; }

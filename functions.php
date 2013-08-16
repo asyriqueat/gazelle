@@ -118,12 +118,14 @@ function archive_list() {
     <?php if($count % 3 == 0) { ?>
       <div class="row">
     <?php } ?>
-      <div class="issue-container col-12 col-sm-4">
-        <a href='<?php echo site_url() . '/issue/' . $term->slug ?>'
-              title='View all posts in <?php echo $term->name ?>'>
-          <h3><?php echo $term->name ?></h3>
-        </a>
-        <h4 class="text-muted"><?php echo $term->description; ?></h4>
+      <div class="col-12 col-sm-4">
+        <div class="issue-container">
+          <a href='<?php echo site_url() . '/issue/' . $term->slug ?>'
+                title='View all posts in <?php echo $term->name ?>'>
+            <h3><?php echo $term->name ?></h3>
+          </a>
+          <h4 class="text-muted"><?php echo $term->description; ?></h4>
+        </div>
       </div>
     <?php if(++$count % 3 == 0) { ?>
       </div>
