@@ -24,7 +24,7 @@ $(function() {
     }
   });
   setTimeout(function() {
-    myScroll = new IScroll("#other-scroll", {scrollY: false, scrollX: true, eventPassthrough: false, snap: true});
+    myScroll = new IScroll("#other-scroll", {scrollY: false, scrollX: true, eventPassthrough: true, snap: true});
     var scrollItems = $(".scroller ul li");
     myScroll.on('scrollEnd', function() {
       var check;
