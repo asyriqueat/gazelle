@@ -75,7 +75,7 @@
           $args = array(
             'orderby'       => "slug", 
             'order'         => "DESC",
-            'number'        => 6, 
+            'number'        => 4, 
             'exclude'       => get_option("exclude_issues") 
           );
           $terms = get_terms("issue", $args); ?>
