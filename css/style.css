@@ -81,7 +81,7 @@ body, html {
   padding: 0px 15px; }
   #category-row #category-head {
     width: 100%;
-    height: 130px;
+    height: 150px;
     position: relative;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -90,7 +90,7 @@ body, html {
       position: absolute;
       background-color: #71bcbe;
       height: 20px;
-      top: 50px;
+      top: 60px;
       width: 100%;
       box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -111,7 +111,8 @@ body, html {
       #category-row #category-head .category-headline h1 {
         color: black;
         font-weight: 600;
-        margin-bottom: 0px; }
+        margin-bottom: 0px;
+        font-size: 3.2em; }
       #category-row #category-head .category-headline h3 {
         color: #71bcbe;
         font-weight: 400;
