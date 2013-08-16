@@ -21,6 +21,7 @@ body, html {
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 600;
+    text-transform: uppercase;
   }
   h5 {
     margin-top: 0px;
@@ -40,38 +41,57 @@ body, html {
   }
 }
 
+.scroller {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  ul {
+    list-style: none;
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    li {
+      display: block;
+      text-align: center;
+    }
+  }
+}
+.carousel-control {
+  opacity: 1;
+  a {
+    transition: opacity .3s ease-out;
+    -moz-transition: opacity .3s ease-out;
+    -webkit-transition: opacity .3s ease-out;
+    -o-transition: opacity .3s ease-out;
+    color: black;
+    font-size: 2em;
+    opacity: 0;
+    &.active {
+      opacity: 0.5;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+    &.active:hover {
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
+}
 
 #other-row {
   padding: 15px 10px;
-  .carousel-control {
-    width: 15px;
-    background: none;
-    opacity: 1;
-    a {
-      transition: opacity .3s ease-out;
-      -moz-transition: opacity .3s ease-out;
-      -webkit-transition: opacity .3s ease-out;
-      -o-transition: opacity .3s ease-out;
-      color: black;
-      font-size: 2em;
-      opacity: 0;
-      &.active {
-        opacity: 0.5;
-      }
-      &:hover {
-        text-decoration: none;
-      }
-      &.active:hover {
-        cursor: pointer;
-        opacity: 1;
-      }
-    }
-  }
   .left {
     left: 1px;
   }
   .right {
     right: 1px;
+  }
+  .carousel-control {
+    background: none;
+    width: 20px;
   }
   #other-posts {
     position: relative;
@@ -110,26 +130,15 @@ body, html {
     height: 200px;
     padding: 0px;
     .scroller {
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
       width: 2000px;
       height: 100%;
       ul {
-        list-style: none;
-        display: block;
         width: 100%;
         height: 200px;
-        padding: 0px;
-        margin: 0px;
         li {
-          display: block;
           width: 300px;
           height: 100%;
           float: left;
-          text-align: center;
           .other-content {
             padding: 0 10px;
             text-align: center;
@@ -176,13 +185,31 @@ body, html {
   color: $blue;
 }
 .text-news {
-  color: $peach;
+  a {
+    color: $peach;
+    &:hover {
+      color: $peach;
+      text-decoration: underline;
+    }
+  }
 }
 .text-features {
-  color: $yellow;
+    a {
+    color: $yellow;
+    &:hover {
+      color: $yellow;
+      text-decoration: underline;
+    }
+  }
 }
 .text-opinion {
-  color: $green;
+  a {
+    color: $green;
+    &:hover {
+      color: $green;
+      text-decoration: underline;
+    }
+  }
 }
 .river {
   padding: 0px 10px;
@@ -331,41 +358,62 @@ body, html {
   #editors {
     padding: 0px;
   }
-  .carousel {
-    .image {
-        height: 300px;
-        @media screen and (min-width: 768px) and (max-width: 1200px) {
-          height: 360px;
-        }
-    }
-  }
-  #editor-images {
+  #top-scroll {
+    overflow: hidden;
     padding-right: 0px;
     padding-left: 0px;
-    .carousel-caption {
-      height: 75px;
-      padding: 10px;
-      background: rgba(0,0,0,0.8);
-      bottom: 0px;
+    height: 300px;
+    @media screen and (min-width: 768px) and (max-width: 1200px) {
+      height: 360px;
+    }
+    .scroller {
       width: 100%;
-      right: 0px;
-      left: 0px;
-      .hidden-sm {
-        font-size: 0.8em;
-      }
-      h5, a {
-        color: white;
+      ul {
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        li {
+          width: 100%;
+          float: left;
+          .item {
+            position: relative;
+            .image {
+              height: 300px;
+              @media screen and (min-width: 768px) and (max-width: 1200px) {
+                height: 360px;
+              }
+            }
+            .caption {
+              position: absolute;
+              bottom: 0;
+              background: rgba(0,0,0,0.8);
+              color: white;
+              padding: 10px;
+              width: 100%;
+              text-align: center;
+              h6 {
+                font-size: 1.4em;
+                text-transform: uppercase;
+              }
+              small {
+                font-size: 1.2em; 
+              }
+            }
+          }
+        }
       }
     }
-    .carousel-control span {
-      font-size: 100px;
-      margin-top: -80px;
-      margin-bottom: -80px;
+    .carousel-control a {
+      font-size: 4em;
+      width: 10px;
+      color: white;
+      top: 100px;
     }
   }
 }
 
 #header {
+  font-family: 'Roboto Condensed', sans-serif;
   a {
     text-decoration: none;
   }
@@ -546,10 +594,25 @@ body, html {
     #editors {
       padding: 0 15px;
     }
-    #editor-images {
-      .carousel-caption {
+    #top-scroll {
+        .scroller {
+          ul {
+            li {
+              float: left;
+              .item {
+                .image {
+                  }
+                }
+                .caption {
+                  font-size: 0.8em;
+                }
+              }
+            }
+          }
+        }
+      .carousel-control {
+        display: none;
       }
-    }
     #editor-labels {
       height: 300px;
       border: solid;
@@ -612,7 +675,7 @@ body, html {
         &:last-child {
           height: 89px;
           &.active {
-            height: 88px;
+            height: 89px;
           }
         }
       }
@@ -634,6 +697,7 @@ body, html {
       padding-left: 10px;
       h6 {
         margin-bottom: 3px;
+        font-weight: 400;
         @media screen and (min-width: 768px) and (max-width: 1200px) {
           margin-bottom: 5px;
           margin-top: 15px;
@@ -730,7 +794,7 @@ body, html {
     }
     .article-description {
       p {
-        font-size: 0.85em;
+        font-size: 0.8em;
         @media screen and (min-width: 992px) {
           font-size: 0.9em;
         }
@@ -894,7 +958,6 @@ body, html {
   #other-row {
     padding: 15px 15px;
     .carousel-control {
-      width: 20px;
     }
     #other-posts {
       #other-mast {

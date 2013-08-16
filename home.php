@@ -29,40 +29,41 @@ get_header(); ?>
             $editors[] = $pick;
           endwhile; ?>
         <div class="row">
-          <div id="editor-images" class="col-12 col-sm-8">
-            <div id="editors-pick" class="carousel vertical slide">
-              <div class="carousel-inner">
-              <?php 
-            $first = true;
-            foreach ($editors as $pick) { ?>
-                  <div class="item <?php if ($first == true) { echo "active"; $first = false;} ?>">
-                    <a href="<?php echo $pick["link"]; ?>">
-                      <div style="background-image: url(<?php echo $pick["image"] ?>)" class="image" ></div>
-                    </a>
-                    <div class="carousel-caption">
-                      <span class="visible-sm">
-                        <?php echo $pick["title"]; ?>
-                        <?php echo $pick["author"]; ?>
-                      </span>
-                      <span class="hidden-sm">
-                        <?php echo $pick["excerpt"]; ?>
-                      </span>
+          <div id="top-scroll" class="col-12 col-sm-8">
+            <div class="scroller">
+              <ul>
+              <?php
+                foreach ($editors as $pick) { ?>
+                  <li>
+                    <div class="item">
+                      <a href="<?php echo $pick["link"]; ?>">
+                        <div style="background-image: url(<?php echo $pick["image"] ?>)" class="image" ></div>
+                      </a>
+                      <div class="caption">
+                        <span class="visible-sm">
+                          <span class="text-<?php echo strtolower($pick["category"]) ?>"><?php echo $pick["title"]; ?></span>
+                          <?php echo $pick["author"]; ?>
+                        </span>
+                        <span class="hidden-sm">
+                          <?php echo $pick["excerpt"]; ?>
+                        </span>
+                      </div>
                     </div>
-                  </div>
-              <?php } ?>
-              </div>
-              <a class="left carousel-control" href="#editors-pick" data-slide="prev">
-                <span class="icon-prev"></span>
-              </a>
-              <a class="right carousel-control" href="#editors-pick" data-slide="next">
-                <span class="icon-next"></span>
-              </a>
+                  </li>
+                <?php } ?>
+              </ul>
+            </div>
+            <div class="left carousel-control">
+              <a class="icon-prev active"></a>
+            </div>
+            <div class="right carousel-control">
+              <a class="icon-next"></a>
             </div>
           </div>
-          <div id="editor-labels" class="hidden-sm col-sm-4">
-            <?php for ($i = 0 ; $i < 4 ; $i++) {  ?>
-              <div id="pick-<?php echo $i; ?>" class="pick-label row <?php echo ($i == 0 ? "active" : ""); ?> row-<?php echo strtolower($editors[$i]["category"])?>" data-slide-to="<?php echo $i; ?>" data-target="#editors-pick" >
-                <?php echo $editors[$i]["title"]; ?>
+              <div id="editor-labels" class="hidden-sm col-sm-4">
+                <?php for ($i = 0 ; $i < 4 ; $i++) {  ?>
+                  <div id="pick-<?php echo $i; ?>" class="pick-label row <?php echo ($i == 0 ? "active" : ""); ?> row-<?php echo strtolower($editors[$i]["category"])?>" >
+                    <?php echo $editors[$i]["title"]; ?>
                 <?php echo colorbox($editors[$i]["category"]); ?>
                 <?php echo $editors[$i]["author"]; ?>
               </div>
@@ -158,8 +159,6 @@ get_header(); ?>
       <?php if (!$finished) { // workaround for hiding the last div ?>
         <div class="gridlock-row"></div>
       <?php } ?>
-    </div>
-    <div class="row other-row">
     </div>
     <div id="other-row" class="row">
       <div id="other-posts" class="row">
