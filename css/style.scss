@@ -391,11 +391,11 @@ body, html {
     }
   }
   .row-more {
-    margin-top: 15px;
+    margin-top: 20px;
     .bar {
       background-color: $blue;
       color: white;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       text-align: center;
       padding: 2px;
       h5 {
@@ -459,6 +459,9 @@ body, html {
         }
       }
     }
+  }
+  .row-comments {
+    margin-top: 25px;
   }
 }
 
@@ -835,6 +838,9 @@ body, html {
             
         }
       }
+    }
+    .row-comments {
+      padding: 0 15px;
     }
   }
   .editors-row {

@@ -110,6 +110,9 @@
       </div>  
     </div>
   </div>
+  <div class="row row-comments">
+    <?php echo do_shortcode('[fbcomments]'); ?>
+  </div>
 </div>
 
 <div id="fb-root"></div>

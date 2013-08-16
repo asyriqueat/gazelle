@@ -295,11 +295,11 @@ body, html {
       #article .row-author .author-container h5 a {
         color: white; }
 #article .row-more {
-  margin-top: 15px; }
+  margin-top: 20px; }
   #article .row-more .bar {
     background-color: #71bcbe;
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     text-align: center;
     padding: 2px; }
     #article .row-more .bar h5 {
@@ -344,6 +344,8 @@ body, html {
           left: -10px; }
         #article .row-more #scroll-wrap #more-scroll .carousel-control.right {
           right: -10px; }
+#article .row-comments {
+  margin-top: 25px; }
 
 .image {
   width: 100%;
@@ -640,6 +642,8 @@ body, html {
       left: -20px; }
     #article .row-more .carousel-control.right {
       right: -20px; }
+  #article .row-comments {
+    padding: 0 15px; }
 
   .editors-row {
     padding-left: 0px;
