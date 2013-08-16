@@ -834,52 +834,6 @@ body, html {
   #sidebar {
     display: block;
   }
-  .carousel.vertical {
-    .item {
-    -webkit-transition: 0.6s ease-in-out top;
-       -moz-transition: 0.6s ease-in-out top;
-        -ms-transition: 0.6s ease-in-out top;
-         -o-transition: 0.6s ease-in-out top;
-            transition: 0.6s ease-in-out top;
-      img {
-        height: 400px;
-      }
-    }
-    .active {
-      top: 0;
-    }
-    .next {
-      top: 400px;
-    }
-    .prev {
-      top: 400px;
-    }
-    .next.left, .prev.right {
-      top: 0;
-    }
-    .active.left {
-      top: -400px;
-    }
-    .active.right {
-      top: 400px;
-    }
-    .item {
-      left: 0;
-    }
-    a.left, a.right {
-      display: none;
-    }
-    .carousel-inner {
-      height: 300px;
-      border: solid;
-      border-color: $light-grey;
-      border-width: 1px 0px 1px 1px;
-      box-sizing: border-box;
-      @media screen and (min-width: 768px) and (max-width: 1200px) {
-        height: 360px;
-      }
-    }
-  }
   #header {
     margin-left: 0px;
     margin-right: 0px;

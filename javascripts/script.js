@@ -90,27 +90,6 @@ $(function() {
       otherScroll.goToPage(otherScroll.currentPage.pageX + 1, 0);
     }
   });
-  $('#editors').bind('mousewheel', function(e) {
-    e.preventDefault();
-    console.log("scrolling")
-    var delta = e.originalEvent.wheelDelta;
-    console.log(delta)
-    console.log(topScroll.currentPage.pageX);
-    console.log(topScroll.currentPage.pageY);
-    if (delta > 0) {
-      if (innerWidth < 783) {
-        topScroll.goToPage(topScroll.currentPage.pageX - 1, 0);
-      } else {
-        topScroll.goToPage(0, topScroll.currentPage.pageY - 1);
-      }
-    } else {
-      if (innerWidth < 783) {
-        topScroll.goToPage(topScroll.currentPage.pageX + 1, 0);
-      } else {
-        topScroll.goToPage(0, topScroll.currentPage.pageY + 1);
-      }
-    }
-  });
   $(document).on("click", "#other-posts .icon-next", function(e) {
     otherScroll.goToPage(otherScroll.currentPage.pageX + 1, 0);
   });
@@ -123,7 +102,7 @@ $(function() {
   $(document).on("click", "#top-scroll .icon-prev", function(e) {
     topScroll.goToPage(topScroll.currentPage.pageX - 1, 0);
   });
-  $(document).on("click touchstart mousewheel", "#top-scroll", function(e) {
+  $(document).on("click touchstart", "#top-scroll", function(e) {
     topScrollMoving = false;
   });
   $(document).on("click touchstart mousewheel", "#other-posts", function(e) {
