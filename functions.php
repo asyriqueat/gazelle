@@ -93,7 +93,7 @@ function get_cat() {
 function top_articles() {
   global $authordata;
   echo "<ul>";
-  $popular = new WP_Query(get_issue(array_merge(get_option("gridlock_query"), array('posts_per_page' => 5, 'orderby' => 'meta_value', 'meta_key' => 'gazelle_views_count', 'order' => 'DESC', "post_status" => "publish", ))));
+  $popular = new WP_Query(active_issue(array_merge(get_option("gridlock_query"), array('posts_per_page' => 5, 'orderby' => 'meta_value', 'meta_key' => 'gazelle_views_count', 'order' => 'DESC', "post_status" => "publish", ))));
   while ( $popular->have_posts() ) : $popular->the_post();
     echo "<li class='list-unstyled row row-" . strtolower(get_cat()) . "'>";
       echo '<a href="' . get_permalink() . '">' . '<h6>' . get_the_title() . '</h6>' . '</a>';
@@ -103,3 +103,34 @@ function top_articles() {
   endwhile;
   echo "</ul>";
 }
+
+function archive_list() {
+  $args = array(
+    'orderby'       => "slug", 
+    'order'         => "DESC",
+    'exclude'       => get_option("exclude_issues")
+  );
+  $terms = get_terms("issue", $args); 
+  $count = 0;
+  ?>
+  <div id="archives" class="container">
+  <?php foreach ($terms as $term) {  ?>
+    <?php if($count % 3 == 0) { ?>
+      <div class="row">
+    <?php } ?>
+      <div class="issue-container col-12 col-sm-4">
+        <a href='<?php echo site_url() . '/issue/' . $term->slug ?>'
+              title='View all posts in <?php echo $term->name ?>'>
+          <h3><?php echo $term->name ?></h3>
+        </a>
+        <h4 class="text-muted"><?php echo $term->description; ?></h4>
+      </div>
+    <?php if(++$count % 3 == 0) { ?>
+      </div>
+    <?php } ?>
+  <?php } ?>
+  </div>
+  <?php
+}
+
+add_shortcode('archives', 'archive_list');

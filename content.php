@@ -32,7 +32,7 @@
           <h4 class"article-title"> <?php the_title(); ?> </h4>
         </a>
         <?php echo the_author_posts_link(); ?>
-        <p> <?php the_excerpt(); ?></p>
+        <?php the_excerpt(); ?>
       </div>
 
   </div>

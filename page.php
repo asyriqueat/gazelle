@@ -17,8 +17,7 @@ get_header(); ?>
   <?php while ( have_posts() ) : the_post(); ?>
     <div class="row gridlock-row">
       <div class="article-container row">
-        <?php get_template_part( 'content' ); ?>
-        <?php comments_template( '', true ); ?>
+        <?php get_template_part( 'content', 'page' ); ?>
       </div>
     </div>
   <?php endwhile; // end of the loop. ?>

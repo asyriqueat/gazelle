@@ -9,6 +9,11 @@ body, html {
   font-family: 'Lora', serif; }
   body #home, html #home {
     margin-top: 20px; }
+    body #home .gridlock-row, html #home .gridlock-row {
+      border: solid;
+      border-color: #bbbbbb;
+      border-width: 0px;
+      border-bottom-width: 1px; }
   body h1, body h2, body h3, body h4, body h5, body h6, html h1, html h2, html h3, html h4, html h5, html h6 {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 600;
@@ -58,6 +63,76 @@ body, html {
       cursor: pointer;
       opacity: 1; }
 
+#archives .issue-container {
+  height: 100px;
+  border: solid;
+  border-color: #bbbbbb;
+  border-width: 1px;
+  padding: 10px;
+  text-align: center;
+  margin-right: 10px; }
+  #archives .issue-container h3 {
+    margin-top: 10px;
+    color: #71bcbe; }
+  #archives .issue-container:last-child {
+    margin-right: 0px; }
+
+#category-row {
+  padding: 0px 15px; }
+  #category-row #category-head {
+    width: 100%;
+    height: 130px;
+    position: relative;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */ }
+    #category-row #category-head .category-row {
+      position: absolute;
+      background-color: #71bcbe;
+      height: 20px;
+      top: 50px;
+      width: 100%;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      /* Firefox */ }
+      #category-row #category-head .category-row.header-news {
+        background-color: #86a201; }
+      #category-row #category-head .category-row.header-features {
+        background-color: #d8ba2e; }
+      #category-row #category-head .category-row.header-opinion {
+        background-color: #cc9656; }
+    #category-row #category-head .category-headline {
+      background: white;
+      width: 180px;
+      position: absolute;
+      margin-left: -90px;
+      left: 50%;
+      text-align: center; }
+      #category-row #category-head .category-headline h1 {
+        color: black;
+        font-weight: 600;
+        margin-bottom: 0px; }
+      #category-row #category-head .category-headline h3 {
+        color: #71bcbe;
+        font-weight: 400;
+        margin-top: 10px; }
+
+/*Carousel css*/
+#other-scroll, #more-scroll {
+  overflow: hidden;
+  height: 200px;
+  padding: 0px; }
+  #other-scroll .scroller, #more-scroll .scroller {
+    width: 2000px;
+    height: 100%; }
+    #other-scroll .scroller ul, #more-scroll .scroller ul {
+      width: 100%;
+      height: 100%; }
+      #other-scroll .scroller ul li, #more-scroll .scroller ul li {
+        width: 300px;
+        height: 100%;
+        float: left; }
+
 #other-row {
   padding: 15px 10px; }
   #other-row .left {
@@ -96,52 +171,42 @@ body, html {
         left: 50%;
         top: -30px;
         height: 70px; }
-  #other-row #other-scroll {
-    overflow: hidden;
-    height: 200px;
-    padding: 0px; }
-    #other-row #other-scroll .scroller {
-      width: 2000px;
-      height: 100%; }
-      #other-row #other-scroll .scroller ul {
-        width: 100%;
-        height: 200px; }
-        #other-row #other-scroll .scroller ul li {
-          width: 300px;
-          height: 100%;
-          float: left; }
-          #other-row #other-scroll .scroller ul li .other-content {
-            padding: 0 10px;
-            text-align: center; }
-            #other-row #other-scroll .scroller ul li .other-content h6 {
-              text-transform: uppercase;
-              margin-bottom: 0px;
-              height: 25px;
-              margin-bottom: 5px; }
-            #other-row #other-scroll .scroller ul li .other-content div {
-              display: inline-block;
-              margin-bottom: 5px; }
-              #other-row #other-scroll .scroller ul li .other-content div .colorbox {
-                float: left; }
-              #other-row #other-scroll .scroller ul li .other-content div small {
-                float: left; }
-            #other-row #other-scroll .scroller ul li .other-content p {
-              font-size: 0.7em; }
-              @media screen and (min-width: 992px) {
-                #other-row #other-scroll .scroller ul li .other-content p {
-                  font-size: 0.8em; } }
-              @media screen and (min-width: 1200px) {
-                #other-row #other-scroll .scroller ul li .other-content p {
-                  font-size: 0.9em; } }
+  #other-row #other-scroll .scroller ul li .other-content {
+    padding: 0 10px;
+    text-align: center; }
+    #other-row #other-scroll .scroller ul li .other-content h6 {
+      text-transform: uppercase;
+      margin-bottom: 0px;
+      height: 25px;
+      margin-bottom: 5px; }
+    #other-row #other-scroll .scroller ul li .other-content div {
+      display: inline-block;
+      margin-bottom: 5px; }
+      #other-row #other-scroll .scroller ul li .other-content div .colorbox {
+        float: left; }
+      #other-row #other-scroll .scroller ul li .other-content div small {
+        float: left; }
+    #other-row #other-scroll .scroller ul li .other-content p {
+      font-size: 0.7em; }
+      @media screen and (min-width: 992px) {
+        #other-row #other-scroll .scroller ul li .other-content p {
+          font-size: 0.8em; } }
+      @media screen and (min-width: 1200px) {
+        #other-row #other-scroll .scroller ul li .other-content p {
+          font-size: 0.9em; } }
 
 #body {
   margin-top: 0px; }
 
 #main {
-  min-height: 95%; }
+  min-height: 95%;
+  margin-bottom: 50px; }
 
-.text-uncategorized {
+.text-uncategorized a {
   color: #71bcbe; }
+  .text-uncategorized a:hover {
+    color: #71bcbe;
+    text-decoration: underline; }
 
 .text-news a {
   color: #cc9656; }
@@ -177,6 +242,108 @@ body, html {
     background-color: #cc9656; }
   .colorbox.colorbox-news {
     background-color: #86a201; }
+
+#article .col-12 {
+  padding: 0; }
+#article .row-date {
+  margin-top: 10px; }
+  #article .row-date h5 {
+    margin-bottom: 0px;
+    font-weight: 400; }
+#article .row-title h1 {
+  margin-top: 5px;
+  margin-bottom: 5px; }
+#article .row-byline {
+  margin-bottom: 20px; }
+  #article .row-byline .colorbox {
+    height: 18px;
+    width: 18px;
+    margin-top: 1px;
+    margin-right: 10px; }
+  #article .row-byline h4 {
+    text-transform: none;
+    margin-top: 0px; }
+#article .row-content p {
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  font-weight: 300; }
+#article .row-share {
+  margin: 15px 0px; }
+#article .row-author {
+  margin-bottom: 5px; }
+  #article .row-author .author-container {
+    position: relative;
+    height: 80px; }
+    #article .row-author .author-container img {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 2; }
+    #article .row-author .author-container h5 {
+      position: absolute;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 100%;
+      background-color: #71bcbe;
+      padding-left: 100px;
+      display: block;
+      bottom: 0;
+      margin: 0;
+      z-index: 1;
+      margin: 0;
+      text-transform: none; }
+      #article .row-author .author-container h5 a {
+        color: white; }
+#article .row-more {
+  margin-top: 15px; }
+  #article .row-more .bar {
+    background-color: #71bcbe;
+    color: white;
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 2px; }
+    #article .row-more .bar h5 {
+      margin: 2px 0px; }
+    #article .row-more .bar a {
+      color: white; }
+    #article .row-more .bar.bar-news {
+      background-color: #86a201; }
+    #article .row-more .bar.bar-features {
+      background-color: #d8ba2e; }
+    #article .row-more .bar.bar-opinion {
+      background-color: #cc9656; }
+  #article .row-more #scroll-wrap {
+    position: relative; }
+    #article .row-more #scroll-wrap #more-scroll {
+      padding: 0;
+      overflow: hidden; }
+      #article .row-more #scroll-wrap #more-scroll ul li {
+        margin-right: 10px; }
+        #article .row-more #scroll-wrap #more-scroll ul li .image {
+          height: 300px; }
+          #article .row-more #scroll-wrap #more-scroll ul li .image .image-overlay {
+            width: 100%;
+            display: block;
+            min-height: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            position: absolute; }
+            #article .row-more #scroll-wrap #more-scroll ul li .image .image-overlay .image-overlay-text {
+              display: block;
+              width: 100%;
+              padding-left: 10px;
+              padding-right: 10px; }
+              #article .row-more #scroll-wrap #more-scroll ul li .image .image-overlay .image-overlay-text h5 {
+                color: white; }
+      #article .row-more #scroll-wrap #more-scroll .carousel-control {
+        background: none;
+        width: 10px; }
+        #article .row-more #scroll-wrap #more-scroll .carousel-control a {
+          font-size: 2em;
+          top: 42.5%; }
+        #article .row-more #scroll-wrap #more-scroll .carousel-control.left {
+          left: -10px; }
+        #article .row-more #scroll-wrap #more-scroll .carousel-control.right {
+          right: -10px; }
 
 .image {
   width: 100%;
@@ -461,6 +628,19 @@ body, html {
   .river {
     padding: 0px; }
 
+  #article .row-date {
+    padding-left: 2px; }
+  #article .col-12 {
+    padding: 0 15px; }
+  #article .row-author {
+    padding: 0px 15px; }
+  #article .row-more {
+    padding: 0px 15px; }
+    #article .row-more .carousel-control.left {
+      left: -20px; }
+    #article .row-more .carousel-control.right {
+      right: -20px; }
+
   .editors-row {
     padding-left: 0px;
     padding-right: 0px;
@@ -520,6 +700,8 @@ body, html {
     border-width: 0px 1px 1px 1px;
     border-color: #bbbbbb;
     height: 258px; }
+    .tab-content .issues-list small:hover {
+      text-decoration: none; }
     .tab-content ul {
       padding-left: 10px; }
       .tab-content ul h6 {
@@ -527,10 +709,12 @@ body, html {
         font-weight: 400; }
       .tab-content ul li:first-child h6 {
         margin-top: 5px; }
-  .sidebar.row {
-    margin-top: 50px; }
-    .sidebar.row #editor-box {
-      height: auto; }
+  .sidebar {
+    position: absolute; }
+    .sidebar .sidebox {
+      margin-top: 30px; }
+      .sidebar .sidebox .tab-content {
+        height: auto; }
 
   .nav-tabs {
     border-color: #bbbbbb; }
@@ -542,11 +726,7 @@ body, html {
       border-bottom-color: white; }
 
   .gridlock-row {
-    padding: 15px 0px;
-    border: solid;
-    border-color: #bbbbbb;
-    border-width: 0px;
-    border-bottom-width: 1px; }
+    padding: 15px 0px; }
 
   .article-medium .article-image {
     padding-right: 15px;
