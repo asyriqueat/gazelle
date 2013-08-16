@@ -64,7 +64,7 @@
     <div id="top-side" class="hidden-sm col-sm-4">
       <ul class="nav nav-tabs">
         <li class="active"><a href="#top-articles" data-toggle="tab">Trending</a></li>
-        <li><a href="#past-issue" data-toggle="tab">Past Issues</a></li>
+        <li><a href="#past-issue" data-toggle="tab">Other Issues</a></li>
       </ul>
       <div class="tab-content">
         <div id="top-articles" class="tab-pane active fade in">
@@ -72,6 +72,12 @@
         </div>
         <div id="past-issue" class="tab-pane fade">
           <?php
+          $currentIssue = get_query_var("issue") ?>
+          <?php if (empty($currentIssue)) { 
+            $currentIssue = get_term(get_option('current_issue'), "issue"); 
+          } else {
+            $currentIssue = get_term_by("slug", $currentIssue, "issue");
+          }
           $args = array(
             'orderby'       => "slug", 
             'order'         => "DESC",
@@ -81,10 +87,12 @@
           $terms = get_terms("issue", $args); ?>
           <ul class="issues-list list-unstyled">
           <?php foreach ($terms as $term) { ?>
+            <?php if ($currentIssue->slug != $term->slug) { ?>
             <li class="issue-item"><a href='<?php echo site_url() . '/issue/' . $term->slug ?>'
               title='View all posts in <?php echo $term->name ?>'><h6><?php echo $term->name ?></h6></a>
               <small class="text-muted"><?php echo $term->description; ?></small>
             </li>
+            <?php } ?>
           <?php } ?>
             <br/>
             <li class="issue-item"><a href='<?php echo site_url() . '/the-archives/' ?>'
