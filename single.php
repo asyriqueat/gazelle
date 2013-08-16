@@ -17,7 +17,7 @@ get_header(); ?>
 
 
 			<?php endwhile; // end of the loop. ?>
-      <?php comments_template( '', true ); ?>
+      <?php echo do_shortcode('[fbcomments]'); ?>
     </div>
     <div id="sidebar" class="col-sm-4">
       <?php get_sidebar(); ?>
