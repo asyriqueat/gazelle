@@ -16,7 +16,6 @@ function detectSize() {
 size = detectSize();
 $(window).on("resize orientationchange", function() {
   size = detectSize();
-  console.log(size);
 });
 // header functions
 $(function() {
@@ -38,7 +37,6 @@ $(function() {
       if (size != "large") {
         searchbar.width($("#nav").width() * 0.95 - 25);
       } else {
-        console.log($("#nav").width() * 0.85 - 50);
         searchbar.width($("#nav").width() * 0.85 - 50);
       }
     }
@@ -317,7 +315,7 @@ $(function() {
     setTimeout( function() {
       $(".fb-comments span").width("100%");
       $(".fb-comments span iframe").width("100%");
-    }, 500);
+    }, 2000);
   }
   function resizeMoreScroller(moreScroll) {
     var moreScrollItems = $("#more-scroll .scroller ul li");
