@@ -1032,11 +1032,13 @@ body, html {
           height: 380px;
         }
       }
-      h6 {
-        @media screen and (min-width: 768px) and (max-width: 992px)  {
-          font-size: 0.9em;
+      a {
+        h6 {
+          @media screen and (min-width: 768px) and (max-width: 992px)  {
+            font-size: 0.9em;
+          }
+            
         }
-          
       }
     }
     .pick-label {

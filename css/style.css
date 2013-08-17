@@ -971,7 +971,7 @@ body, html {
         .editors-row #editor-labels {
           height: 380px; } }
     @media screen and (min-width: 768px) and (min-width: 768px) and (max-width: 992px) {
-      .editors-row #editor-labels h6 {
+      .editors-row #editor-labels a h6 {
         font-size: 0.9em; } }
     @media screen and (min-width: 768px) and (min-width: 768px) and (max-width: 1200px) {
       .editors-row .pick-label {

@@ -11,7 +11,7 @@
           $image_url = catch_image();
           $category = get_cat();
           ob_start();
-          $pick = array("title" => '<a href="' . get_permalink() . '">' . '<h6>' . get_the_title() . '</h6>' . '</a>',
+          $pick = array("title" => '<h6>' . '<a href="' . get_permalink() . '">' . get_the_title() . '</a>'. '</h6>' ,
                       "link" => get_permalink(),
                       "excerpt" => get_the_excerpt(),
                       "author" => "<small class='text-muted'>" . coauthors_posts_links(", ", " and ") . "</small>",

@@ -88,6 +88,9 @@ $(function() {
     $(document).on("click touchstart", ".pick-label:not('.active') a", function (e) {
       e.preventDefault();
     });
+    $(document).on("click touchstart", ".pick-label:not('.active') h6", function (e) {
+      e.preventDefault();
+    });
     $(document).on("click touchstart", ".pick-label", function(e) {
       $("#editor-labels .active").removeClass("active");
       var pick = $(e.target);
@@ -316,12 +319,7 @@ $(function() {
       $(".fb-comments span").width("100%");
       $(".fb-comments span iframe").width("100%");
       console.log("times up!");
-    }, 2000);
-    setTimeout( function() {
-      $(".fb-comments span").width("100%");
-      $(".fb-comments span iframe").width("100%");
-      console.log("times up!");
-    }, 20000);
+    }, 1000);
   }
   function resizeMoreScroller(moreScroll) {
     var moreScrollItems = $("#more-scroll .scroller ul li");
