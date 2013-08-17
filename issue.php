@@ -10,7 +10,7 @@
           global $authordata;
           $image_url = false;
             if (has_post_thumbnail()) {
-              $image_url =  wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), "medium", false, ''); 
+              $image_url =  wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), "large", false, ''); 
               $image_url = $image_url[0];
             } else {
               $image_url = catch_image();
