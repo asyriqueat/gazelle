@@ -52,15 +52,15 @@
         </div>
             <div id="editor-labels" class="hidden-sm col-sm-4">
               <?php for ($i = 0 ; $i < 4 ; $i++) {  ?>
-                <div id="pick-<?php echo $i; ?>" class="pick-label row <?php echo ($i == 0 ? "active" : ""); ?> row-<?php echo strtolower($editors[$i]["category"])?>" >
+                <div id="pick-<?php echo $i; ?>" class="pick-label no-touch row <?php echo ($i == 0 ? "active" : ""); ?> row-<?php echo strtolower($editors[$i]["category"])?>" >
                   <?php echo $editors[$i]["title"]; ?>
-              <?php echo colorbox($editors[$i]["category"]); ?>
-              <?php echo $editors[$i]["author"]; ?>
+                  <?php echo colorbox($editors[$i]["category"]); ?>
+                  <?php echo $editors[$i]["author"]; ?>
+                </div>
+              <?php } ?>
             </div>
-          <?php } ?>
         </div>
       </div>
-    </div>
     <div id="top-side" class="hidden-sm col-sm-4">
       <ul class="nav nav-tabs">
         <li class="active"><a href="#top-articles" data-toggle="tab">Trending</a></li>

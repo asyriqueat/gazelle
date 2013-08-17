@@ -62,7 +62,6 @@
           <ul>
             <?php
               // other posts
-              add_filter( 'posts_where', '_exclude_meta_key_in_posts_where' );    
               $params = active_issue(array_merge(get_option("gridlock_grid_query"), array('orderby' => 'date', 'order' => 'DESC', "post_status" => "publish", "category_name" => strtolower(get_cat()))));
               $current_id = get_the_ID();
               $more_query = new WP_Query($params);

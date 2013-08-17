@@ -466,6 +466,15 @@ body, html {
   }
   .row-comments {
     margin-top: 25px;
+    .fb-comments {
+      width: 100%;
+      span {
+        width: 100%;
+        iframe {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 
@@ -516,7 +525,10 @@ body, html {
     padding-right: 0px;
     padding-left: 10px;
     p {
-      font-size: 0.9em;
+      font-size: 0.85em;
+      @media screen and (max-width: 420px) {
+        font-size: 0.67em;
+      }
       margin-top: 10px;
     }
     small {
@@ -600,7 +612,7 @@ body, html {
     padding-left: 0px;
     height: 300px;
     @media screen and (min-width: 768px) and (max-width: 1200px) {
-      height: 360px;
+      height: 380px;
     }
     .scroller {
       width: 100%;
@@ -616,7 +628,7 @@ body, html {
             .image {
               height: 300px;
               @media screen and (min-width: 768px) and (max-width: 1200px) {
-                height: 360px;
+                height: 380px;
               }
             }
             .caption {
@@ -698,7 +710,7 @@ body, html {
       box-sizing:border-box;
       @media screen and (max-width: 420px) {
         text-align: left;
-        padding-left: 10%;
+        padding-left: 4%;
       } 
       -moz-box-sizing:border-box; /* Firefox */
       .nav-element {
@@ -718,12 +730,9 @@ body, html {
           border: solid;
           border-width: 0px;
           border-bottom-width: 5px;
-          width: 60px;
+          width: 65px;
           position: relative;
           height: 30px;
-          @media screen and (max-width: 420px) {
-            width: 50px;
-          }
           &:hover {
             cursor: pointer;
           }
@@ -754,6 +763,7 @@ body, html {
       top: 0;
       right: 0;
       border: none;
+      width: 100%;
       input{
         height: 35px;
         width: 35px;
@@ -768,8 +778,61 @@ body, html {
         outline:transparent;
         border: none;
         padding-left: 35px;
-        &:hover {
+        overflow: hidden;
+        transition: width 0.5s ease-out;
+        -webkit-transition: width 0.5s ease-out;
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0,0,0);
+        -webkit-font-smoothing: antialiased;
+        -webkit-backface-visibility: hidden;
+        -webkit-perspective: 1000;
+        color: white;
+        &::-webkit-input-placeholder { /* WebKit browsers */
+            color:    white;
+        }
+        &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color:    white;
+        }
+        &::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color:    white;
+        }
+        &:-ms-input-placeholder { /* Internet Explorer 10+ */
+            color:    white;
+        }
+        &.no-touch:hover {
           cursor: pointer;
+          width: 95%;
+          @media screen and (min-width: 768px) {
+            width: 85%;
+          }
+          color: black;
+          &::-webkit-input-placeholder { /* WebKit browsers */
+              color:    #555;
+          }
+          &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+              color:    #555;
+          }
+          &::-moz-placeholder { /* Mozilla Firefox 19+ */
+              color:    #555;
+          }
+          &:-ms-input-placeholder { /* Internet Explorer 10+ */
+              color:    #555;
+          }
+        }
+        &.active {
+          color: black;
+          &::-webkit-input-placeholder { /* WebKit browsers */
+              color:    #555;
+          }
+          &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+              color:    #555;
+          }
+          &::-moz-placeholder { /* Mozilla Firefox 19+ */
+              color:    #555;
+          }
+          &:-ms-input-placeholder { /* Internet Explorer 10+ */
+              color:    #555;
+          }
         }
       }
     }
@@ -882,7 +945,7 @@ body, html {
       border-width: 1px 1px 1px 0px;
       padding: 0px;
       @media screen and (min-width: 768px) and (max-width: 1200px) {
-        height: 360px;
+        height: 380px;
       }
     }
     .pick-label {
@@ -899,7 +962,7 @@ body, html {
           margin: 0px;
         }
       }
-      &:hover {
+      &.no-touch:hover {
         background: rgba(0, 0, 0, 0.65);
         color: white;
         cursor: pointer;
@@ -932,12 +995,12 @@ body, html {
       }
 
       @media screen and (min-width: 768px) and (max-width: 1200px) {
-        height: 90px;
+        height: 95px;
         font-size: 0.9em;
         &:last-child {
-          height: 89px;
+          height: 94px;
           &.active {
-            height: 89px;
+            height: 94px;
           }
         }
       }
@@ -953,7 +1016,7 @@ body, html {
     border-color: $light-grey;
     height: 258px;
     @media screen and (min-width: 768px) and (max-width: 1200px) {
-      height: 318px;
+      height: 338px;
     }
     .issues-list {
       small:hover {
@@ -1063,6 +1126,9 @@ body, html {
         font-size: 0.8em;
         @media screen and (min-width: 992px) {
           font-size: 0.9em;
+        }
+        @media screen and (min-width: 1200px) {
+          font-size: 1.1em;
         }
       }
     }

@@ -1,15 +1,31 @@
+// global breakpoint checks
+size = '';
+
+// fix for all the browsers having different innerWidth
+function detectSize() {
+  if ($(".nav-list").css("text-align") == "left") {
+    return "small";
+  }
+  else if ($("#issue").css("display") == "none") {
+    return "medium";
+  }
+  else {
+    return "large";
+  }
+}
+size = detectSize();
+$(window).on("resize orientationchange", function() {
+  size = detectSize();
+  console.log(size);
+});
 // header functions
 $(function() {
   var searching = false;
   $(document).on("blur", ".navbar-form input", function(e) {
     var searchbar = $(".navbar-form input");
-    console.log("blurring");
     if (searching) {
-      if (innerWidth < 783) {
-        searchbar.animate({width: '35px'});
-      } else {
-        searchbar.animate({width: '50px'});
-      }
+      searchbar.removeClass("active");
+      searchbar.attr("style", "");
       searching = false;
     }
   });
@@ -17,15 +33,15 @@ $(function() {
   $(document).on("focus", ".navbar-form input", function(e) {
     var searchbar = $(".navbar-form input");
     if (!searching) {
-      var length;
-      if (innerWidth < 783) {
-        length = $("#navbar").width() - 50;
-      } else {
-        length = $("#navbar").width() - 25;
-      }
-      searchbar.animate({width: length});
+      searchbar.addClass("active");
       searching = true;
-    } 
+      if (size != "large") {
+        searchbar.width($("#nav").width() * 0.95 - 25);
+      } else {
+        console.log($("#nav").width() * 0.85 - 50);
+        searchbar.width($("#nav").width() * 0.85 - 50);
+      }
+    }
   });				
 
 });
@@ -45,10 +61,10 @@ $(function() {
       var otherScrollItems = $("#other-scroll .scroller ul li");
       otherScroll.on('scrollEnd', function() {
         var check;
-        if (innerWidth < 440) {
+        if (size == "small") {
           check = otherScrollItems.length - (otherScroll.currentPage.pageX + 1) > 0;
         }
-        else if (innerWidth < 783) {
+        else if (size == "medium") {
           check = otherScrollItems.length - (otherScroll.currentPage.pageX + 1) * 2 > 0;
         } 
         else {
@@ -71,19 +87,28 @@ $(function() {
       resizeScroller(otherScroll);
     }, 100);
 
-    //$(document).on("click", "a", function (e) {
-      //e.stopPropagation();
-    //});
+    $(document).on("click", ".pick-label:not('.active') a", function (e) {
+      console.log("hit!");
+      e.preventDefault();
+    });
     $(document).on("click", ".pick-label", function(e) {
       $("#editor-labels .active").removeClass("active");
       var pick = $(e.target);
-      pick.addClass("active");
-      var newPos = pick.attr("id").split("-")[1];
-      topScroll.goToPage(0, newPos);
+      if (!pick.hasClass("pick-label")) {
+        pick = pick.parent();
+        if (!pick.hasClass("pick-label")) {
+          pick = pick.parent();
+        }
+      }
+      setTimeout(function() {
+        pick.addClass("active");
+        var newPos = pick.attr("id").split("-")[1];
+        topScroll.goToPage(0, newPos);
+      }, 100);
     });
 
 
-    $(window).on('resize', function(e) {
+    $(window).on('resize orientationchange', function(e) {
       if (($(window).width() != oldWidth)){
         resizeScroller(otherScroll);
         topScroll = refreshTopScroll(topScroll);
@@ -123,10 +148,10 @@ $(function() {
   function resizeScroller(otherScroll) {
     var otherScrollItems = $("#other-scroll .scroller ul li");
     var width;
-    if (innerWidth < 440) {
+    if (size == "small") {
       width = otherScrollItems.width($("#other-scroll").width()).width();
     }
-    else if (innerWidth < 783) {
+    else if (size == "medium") {
       width = otherScrollItems.width($("#other-scroll").width() / 2).width();
     } else {
       width = otherScrollItems.width($("#other-scroll").width() / 3).width();
@@ -143,7 +168,7 @@ $(function() {
         oldPos = $("#editor-labels .active").attr("id").split("-")[1];
       }
       var newPos = topScroll.currentPage.pageY;
-      if (innerWidth > 783) {
+      if (size == "large") {
         if (newPos != oldPos) {
           if (oldActive.length > 0) {
             oldActive.removeClass("active");
@@ -170,7 +195,7 @@ $(function() {
     var scroller = $("#top-scroll");
     var width = topScrollItems.width(scroller.width()).width();
     var height = topScrollItems.height(scroller.height()).height();
-    if (innerWidth < 783) {
+    if (size != "large") {
       topScroll = new IScroll("#top-scroll", {scrollY: false, scrollX: true, eventPassthrough: "vertical", snap: true});
       $("#top-scroll .scroller").width(width * topScrollItems.length + 10).height(height);
     } else {
@@ -183,7 +208,7 @@ $(function() {
     topScroll.refresh();
 
     // reset horizontal arrows
-    if (innerWidth < 783) {
+    if (size != "large") {
       $("#top-scroll .active").removeClass("active");
       $("#top-scroll .icon-next").addClass("active");
     }
@@ -195,7 +220,7 @@ $(function() {
     var currentPage;
     //scroll top
     if (topScrollMoving) {
-      if (innerWidth < 783) {
+      if (size != "large") {
         currentPage = topScroll.currentPage.pageX;
         if (currentPage + 1 < topScrollLength) {
           // haven't reached end
@@ -239,10 +264,10 @@ $(function() {
       var moreScrollItems = $("#more-scroll .scroller ul li");
       moreScroll.on('scrollEnd', function() {
         var check;
-        if (innerWidth < 440) {
+        if (size == "small") {
           check = moreScrollItems.length - (moreScroll.currentPage.pageX + 1) > 0;
         }
-        else if (innerWidth < 783) {
+        else if (size == "medium") {
           check = moreScrollItems.length - (moreScroll.currentPage.pageX + 1) * 2 > 0;
         } 
         else {
@@ -293,18 +318,22 @@ $(function() {
   function resizeMoreScroller(moreScroll) {
     var moreScrollItems = $("#more-scroll .scroller ul li");
     var width;
-    if (innerWidth < 440) {
+    if (size == "small") {
       width = moreScrollItems.width($("#more-scroll").width() - 9).width();
     }
-    else if (innerWidth < 783) {
+    else if (size == "medium") {
       width = moreScrollItems.width($("#more-scroll").width() / 2 - 9).width();
     } else {
       width = moreScrollItems.width($("#more-scroll").width() / 3 - 9).width();
     }
-    $("#more-scroll .scroller").width(width * moreScrollItems.length + 10);
+    $("#more-scroll .scroller").width((width + 10) * moreScrollItems.length);
     moreScroll.refresh();
   }
 });
+// disable :hover on touch devices
+if ('ontouchstart' in document) {
+  $('.no-touch').removeClass('no-touch');
+}
 // Google Analytics
 $(function() {
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
