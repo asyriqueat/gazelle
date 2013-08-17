@@ -16,6 +16,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/css/style.css" />
+<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 <link href='//fonts.googleapis.com/css?family=Lora|Roboto+Condensed' rel='stylesheet' type='text/css'>
 <meta name="description" content="The Gazelle is a weekly student publication, serving the NYU Abu Dhabi community and the greater Global Network University at NYU.">
 <meta name="keywords" content="NYUAD, NYU, New York University, Abu Dhabi, Newspaper, Student, Publication, News, Features, Opinion, Middle East">

@@ -315,7 +315,13 @@ $(function() {
     setTimeout( function() {
       $(".fb-comments span").width("100%");
       $(".fb-comments span iframe").width("100%");
+      console.log("times up!");
     }, 2000);
+    setTimeout( function() {
+      $(".fb-comments span").width("100%");
+      $(".fb-comments span iframe").width("100%");
+      console.log("times up!");
+    }, 20000);
   }
   function resizeMoreScroller(moreScroll) {
     var moreScrollItems = $("#more-scroll .scroller ul li");
