@@ -314,8 +314,10 @@ $(function() {
       }
     });
     // resizing facebook
-    $(".fb-comments span").width("100%");
-    $(".fb-comments span iframe").width("100%");
+    setTimeout( function() {
+      $(".fb-comments span").width("100%");
+      $(".fb-comments span iframe").width("100%");
+    }, 500);
   }
   function resizeMoreScroller(moreScroll) {
     var moreScrollItems = $("#more-scroll .scroller ul li");

@@ -138,3 +138,5 @@ function archive_list() {
 }
 
 add_shortcode('archives', 'archive_list');
+
+add_image_size("mt_profile_img", 400, 400, false);
