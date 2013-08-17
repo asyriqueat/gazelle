@@ -8,18 +8,23 @@
         $editor_query = new WP_Query(active_issue(array_merge(get_option("gridlock_query"), array("post_status" => "publish", "tag" => "pick", "posts_per_page" => 4 ))));
         while ( $editor_query->have_posts() ) : $editor_query->the_post();
           global $authordata;
-          $image_url = catch_image();
-          $category = get_cat();
-          ob_start();
-          $pick = array("title" => '<h6>' . '<a href="' . get_permalink() . '">' . get_the_title() . '</a>'. '</h6>' ,
-                      "link" => get_permalink(),
-                      "excerpt" => get_the_excerpt(),
-                      "author" => "<small class='text-muted'>" . coauthors_posts_links(", ", " and ") . "</small>",
-                      "image" => $image_url,
-                      "category" => $category );
-          $editors[] = $pick;
-          ob_end_clean();
-
+          $image_url = false;
+            if (has_post_thumbnail()) {
+              $image_url =  wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), "medium", false, ''); 
+              $image_url = $image_url[0];
+            } else {
+              $image_url = catch_image();
+            }
+            $category = get_cat();
+            ob_start();
+            $pick = array("title" => '<h6>' . '<a href="' . get_permalink() . '">' . get_the_title() . '</a>'. '</h6>' ,
+                        "link" => get_permalink(),
+                        "excerpt" => get_the_excerpt(),
+                        "author" => "<small class='text-muted'>" . coauthors_posts_links(", ", " and ") . "</small>",
+                        "image" => $image_url,
+                        "category" => $category );
+            $editors[] = $pick;
+            ob_end_clean();
         endwhile; ?>
       <div class="row">
         <div id="top-scroll" class="col-12 col-sm-8">

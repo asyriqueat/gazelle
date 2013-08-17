@@ -16,13 +16,18 @@
       $image_url = false;
       if ($span == 1 || $span == 2) {
         if (has_post_thumbnail()) {
-          $image_url =  wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), array(300, 300), false, ''); 
+          $image_url =  wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), "thumbnail", false, ''); 
           $image_url = $image_url[0];
         } else {
           $image_url = catch_image();
         }
       } else {
-        $image_url = catch_image();
+        if (has_post_thumbnail()) {
+          $image_url =  wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), "medium", false, ''); 
+          $image_url = $image_url[0];
+        } else {
+          $image_url = catch_image();
+        }
       }
       ?>
     <?php if ($image_url) { ?>
@@ -47,13 +52,9 @@
         </a>
         <div class="article-description col-6">
       <?php } else if ($span == 3) { ?>
-        <?php $large = catch_image(); ?>
-        <?php if (empty($large)) { 
-          $large = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), array(300, 300), false, ''); 
-          } ?>
         <a href="<?php the_permalink(); ?>" title=<?php the_title(); ?>>
           <div class="article-image col-6 col-sm-8">
-            <div class="image" style="background-image: url(<?php echo $large; ?>)"></div>
+            <div class="image" style="background-image: url(<?php echo $image_url; ?>)"></div>
           </div>
         </a>
         <div class="article-description col-6 col-sm-4">

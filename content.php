@@ -10,10 +10,12 @@
 <div id="id-<?php the_ID(); ?>" <?php post_class(); ?> >
   <div class="row row-article row-<?php echo strtolower(get_cat()) ?>">
     <?php 
-      $image_url = catch_image();
-      if (empty($image_url)) {
-        $image_url =  wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), array(300, 300), false, ''); 
+      $image_url = false;
+      if (has_post_thumbnail()) {
+        $image_url =  wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), "medium", false, ''); 
         $image_url = $image_url[0];
+      } else {
+        $image_url = catch_image();
       }
       ?>
     <?php if ($image_url) { ?>
