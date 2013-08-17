@@ -47,19 +47,19 @@
         $i = new CoAuthorsIterator();
         $count = 0;
         global $authordata;
+        $pattern = '/.+src="(.+?)".+/';
         while ($i->iterate()) {
-          if (userphoto_exists(get_the_author_meta( 'ID' ))) {
-            $count++;
-            $upload_dir = wp_upload_dir();
-            $bdir = trailingslashit($upload_dir['baseurl']) . 'userphoto/';
-            $filename = get_user_meta($authordata->ID, "userphoto_thumb_file", true);
-            $thumbpath = $bdir . basename($filename); ?>
+            $img = mt_profile_img( get_the_author_meta( 'ID' ), array("echo" => false)); 
+            if (strlen($img) > 0) {
+            $parsed = preg_replace($pattern, "$1", $img);
+            $count++; ?>
+  
             <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="Posts by <?php echo the_author_meta( 'display_name' ); ?>">
-              <div class="image" style="background-image: url(<?php echo $thumbpath; ?>)"></div>
+              <div class="image" style="background-image: url(<?php echo $parsed ?>)"></div>
             </a>
       <?php 
-          }
         }
+      }
 
       ?>
       </div>
