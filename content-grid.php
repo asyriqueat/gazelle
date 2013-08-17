@@ -59,7 +59,7 @@
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
           <h5 class"article-title"> <?php echo get_the_title(); ?> </h5>
         </a>
-        <?php echo the_author_posts_link(); ?>
+        <?php coauthors_posts_links(", ", " and "); ?>
         <?php the_excerpt(); ?>
       </div>
 

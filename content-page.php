@@ -19,7 +19,7 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row list">
     <?php the_content(); ?>
   </div>
 </div>

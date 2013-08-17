@@ -42,14 +42,28 @@
   </div>
   <div class="row row-author">
     <div class="author-container">
-      <a href="<?php echo get_author_posts_url($authordata->ID); ?>" title="View more posts by <?php echo get_the_author_meta('display_name'); ?>">
-        <?php echo get_avatar( get_the_author_meta( 'user_email' ), 80); ?>
-      </a>
-      <h5>
-        <a href="<?php echo get_author_posts_url($authordata->ID); ?>" title="View more posts by <?php echo get_the_author_meta('display_name'); ?>">
-          <?php echo get_the_author_meta('display_name'); ?>
-        </a>
-      </h5>
+      <div class="image-container">
+      <?php
+        $i = new CoAuthorsIterator();
+        $count = 0;
+        global $authordata;
+        while ($i->iterate()) {
+          if (userphoto_exists(get_the_author_meta( 'ID' ))) {
+            $count++;
+            $upload_dir = wp_upload_dir();
+            $bdir = trailingslashit($upload_dir['baseurl']) . 'userphoto/';
+            $filename = get_user_meta($authordata->ID, "userphoto_thumb_file", true);
+            $thumbpath = $bdir . basename($filename); ?>
+            <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="Posts by <?php echo the_author_meta( 'display_name' ); ?>">
+              <div class="image" style="background-image: url(<?php echo $thumbpath; ?>)"></div>
+            </a>
+      <?php 
+          }
+        }
+
+      ?>
+      </div>
+      <h5 style="padding-left: <?php echo (90 * $count + 10) . 'px' ?>"><?php coauthors_posts_links(", ", " and "); ?></h5>
     </div>
   </div>
   <div class="row row-more">

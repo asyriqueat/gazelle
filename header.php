@@ -11,7 +11,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
 <title><?php echo bloginfo('name') . (is_home() ? "" : ' - ' . wp_title('', false)); ?></title>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootstrap.min.css" />
@@ -34,10 +34,10 @@
     ?>
     <div id="masthead">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr ( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-        <img id="title" src="<?php echo get_stylesheet_directory_uri(); ?>/images/header.jpg">
+        <h1>THE GAZELLE</h1>
       </a>
       <div id="issue">
-        <a href="<?php if ( is_single() ) { echo get_site_url() . '/issue/' . $issue-> slug; } else { echo esc_url(get_site_url()) . '/the-archives/'; } ?>">
+        <a href="<?php echo esc_url(get_site_url()) . '/the-archives/' ?>" title="View the archives">
           <div class="issuenumber">ISSUE&nbsp;<?php echo $issue->slug; ?></div>
         </a>
         <div class="date text-muted"> <?php echo $issue->description; ?></div>

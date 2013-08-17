@@ -10,13 +10,16 @@
           global $authordata;
           $image_url = catch_image();
           $category = get_cat();
+          ob_start();
           $pick = array("title" => '<a href="' . get_permalink() . '">' . '<h6>' . get_the_title() . '</h6>' . '</a>',
                       "link" => get_permalink(),
                       "excerpt" => get_the_excerpt(),
-                      "author" => '<a href="' . get_author_posts_url($authordata->ID) . '" ><small class="text-muted">' . get_the_author_meta('display_name') . '</small></a>',
+                      "author" => "<small class='text-muted'>" . coauthors_posts_links(", ", " and ") . "</small>",
                       "image" => $image_url,
                       "category" => $category );
           $editors[] = $pick;
+          ob_end_clean();
+
         endwhile; ?>
       <div class="row">
         <div id="top-scroll" class="col-12 col-sm-8">
@@ -188,7 +191,9 @@
                     </a>
                     <div>
                       <?php echo(colorbox(get_cat())) ?>
-                      <?php echo the_author_posts_link(); ?>
+                      <small class="text-muted">
+                        <?php coauthors_posts_links(", ", " and "); ?>
+                      </small>
                     </div>
                     <?php the_excerpt(); ?>
                   </div>

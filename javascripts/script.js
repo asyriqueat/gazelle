@@ -87,11 +87,10 @@ $(function() {
       resizeScroller(otherScroll);
     }, 100);
 
-    $(document).on("click", ".pick-label:not('.active') a", function (e) {
-      console.log("hit!");
+    $(document).on("click touchstart", ".pick-label:not('.active') a", function (e) {
       e.preventDefault();
     });
-    $(document).on("click", ".pick-label", function(e) {
+    $(document).on("click touchstart", ".pick-label", function(e) {
       $("#editor-labels .active").removeClass("active");
       var pick = $(e.target);
       if (!pick.hasClass("pick-label")) {
@@ -104,7 +103,7 @@ $(function() {
         pick.addClass("active");
         var newPos = pick.attr("id").split("-")[1];
         topScroll.goToPage(0, newPos);
-      }, 100);
+      }, 200);
     });
 
 
@@ -314,6 +313,9 @@ $(function() {
         oldWidth = $(window).width();
       }
     });
+    // resizing facebook
+    $(".fb-comments span").width("100%");
+    $(".fb-comments span iframe").width("100%");
   }
   function resizeMoreScroller(moreScroll) {
     var moreScrollItems = $("#more-scroll .scroller ul li");
