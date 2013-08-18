@@ -19,17 +19,26 @@ $(window).on("resize orientationchange", function() {
 });
 // header functions
 $(function() {
+  //searchbar logic
   var searching = false;
+  var focused = false;
+  $(document).on("focus", ".navbar-form input", function(e) {
+    startSearch();
+    focused = true;
+  });				
+  $(document).on("mouseenter", ".navbar-form input", function(e) {
+    startSearch();
+  });
   $(document).on("blur", ".navbar-form input", function(e) {
-    var searchbar = $(".navbar-form input");
-    if (searching) {
-      searchbar.removeClass("active");
-      searchbar.attr("style", "");
-      searching = false;
+    endSearch();
+    focused = false;
+  });
+  $(document).on("mouseleave", ".navbar-form input", function(e) {
+    if (focused === false) {
+      endSearch();
     }
   });
-
-  $(document).on("focus", ".navbar-form input", function(e) {
+  function startSearch() {
     var searchbar = $(".navbar-form input");
     if (!searching) {
       searchbar.addClass("active");
@@ -40,8 +49,15 @@ $(function() {
         searchbar.width($("#nav").width() * 0.85 - 50);
       }
     }
-  });				
-
+  }
+  function endSearch() {
+    var searchbar = $(".navbar-form input");
+    if (searching) {
+      searchbar.removeClass("active");
+      searchbar.attr("style", "");
+      searching = false;
+    }
+  }
 });
 
 // functions home-scrollers
@@ -79,9 +95,6 @@ $(function() {
           $("#other-posts .icon-next").removeClass("active");
         }
       });
-      if (otherScrollItems.length > 3) {
-        $("#other-posts .icon-next").addClass("active");
-      }
       resizeScroller(otherScroll);
     }, 100);
 
@@ -157,6 +170,24 @@ $(function() {
       width = otherScrollItems.width($("#other-scroll").width() / 3).width();
     }
     $("#other-scroll .scroller").width(width * otherScrollItems.length + 10);
+    if (otherScroll.currentPage.pageX === 0) {
+      var itemsScrollable;
+      switch (size)
+      {
+        case "small":
+          itemsScrollable = 1;
+          break;
+        case "medium":
+          itemsScrollable = 2;
+          break;
+        case "large":
+          itemsScrollable = 3;
+          break;
+      }
+      if (otherScrollItems.length > itemsScrollable) {
+        $("#other-posts .icon-next").addClass("active");
+      }
+    }
     otherScroll.refresh();
   }
 
