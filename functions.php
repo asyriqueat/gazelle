@@ -139,4 +139,19 @@ function archive_list() {
 
 add_shortcode('archives', 'archive_list');
 
+add_filter('manage_posts_columns', 'my_columns');
+function my_columns($columns) {
+    $columns['views'] = 'Views';
+    return $columns;
+}
+add_action('manage_posts_custom_column',  'my_show_columns');
+function my_show_columns($name) {
+    global $post;
+    switch ($name) {
+        case 'views':
+            $views = get_post_meta($post->ID, 'gazelle_views_count', true);
+            echo $views;
+    }
+}
+
 add_image_size("mt_profile_img", 500, 500, false);
