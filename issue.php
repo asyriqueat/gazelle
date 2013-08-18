@@ -93,10 +93,12 @@
             'number'        => 5, 
             'exclude'       => get_option("exclude_issues") 
           );
-          $terms = get_terms("issue", $args); ?>
+          $terms = get_terms("issue", $args); 
+          ?>
           <ul class="issues-list list-unstyled">
+          <?php usort($terms, "issues_sort"); ?>
           <?php foreach ($terms as $term) { ?>
-            <?php if ($count == 4) { break;} ?>
+            <?php if ($count == 4) { break; } ?>
             <?php if ($currentIssue->slug != $term->slug) { ?>
               <li class="issue-item"><a href='<?php echo site_url() . '/issue/' . $term->slug ?>'
                 title='View all posts in <?php echo $term->name ?>'><h6><?php echo $term->name ?></h6></a>
@@ -123,7 +125,7 @@
         $max_row = 999;
       }
       $row_count = 0;
-      $meta_query = new WP_Query(active_issue(array_merge(get_option("gridlock_query"), array('orderby' => 'meta_value', 'meta_key' => '_gridlock', 'order' => 'ASC', "post_status" => "publish", 
+      $meta_query = new WP_Query(active_issue(array_merge(get_option("gridlock_query"), array('orderby' => 'meta_value_num', 'meta_key' => '_gridlock', 'order' => 'ASC', "post_status" => "publish", 
                         "tag__not_in" => $pick_id)
                                         
       )));

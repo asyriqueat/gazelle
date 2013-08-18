@@ -106,6 +106,7 @@ function top_articles() {
   echo "</ul>";
 }
 
+
 function archive_list() {
   $args = array(
     'orderby'       => "slug", 
@@ -116,6 +117,7 @@ function archive_list() {
   $count = 0;
   ?>
   <div id="archives" class="container">
+  <?php usort($terms, "issues_sort"); ?>
   <?php foreach ($terms as $term) {  ?>
     <?php if($count % 3 == 0) { ?>
       <div class="row">
@@ -152,6 +154,11 @@ function my_show_columns($name) {
             $views = get_post_meta($post->ID, 'gazelle_views_count', true);
             echo $views;
     }
+}
+
+function issues_sort($a, $b) {
+  "sorting";
+  return ((int) $a->slug < (int) $b->slug);
 }
 
 add_image_size("mt_profile_img", 500, 500, false);
