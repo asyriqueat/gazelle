@@ -13,7 +13,7 @@
   <div id="category-row" class="row">
     <div id="category-head">
       <div class="category-row header-uncategorized"></div>
-        <div class="category-headline">
+      <div class="category-headline <?php if (strtolower(get_the_title()) == 'the archives') { echo 'large';} ?>">
           <h1><?php the_title(); ?></h1> 
         </div>
       </div>

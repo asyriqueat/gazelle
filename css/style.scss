@@ -21,7 +21,6 @@ body, html {
       border: solid;
       border-color: $light-grey;
       border-width: 0px;
-      border-bottom-width: 1px;
     }
   }
   h1, h2, h3, h4, h5, h6 {
@@ -385,6 +384,13 @@ body, html {
       margin-bottom: 10px; 
       font-size: 0.9em;
       font-weight: 300;
+      a {
+        font-weight: 600;
+        color: darken($blue, 20);
+        &:hover {
+          color: $blue;
+        }
+      }
     }
   }
   .row-share {
@@ -962,6 +968,12 @@ body, html {
     h5 {
       margin-top: 10px;
     }
+    #home {
+      .gridlock-row {
+        padding: 15px 0px;
+        border-bottom-width: 1px;
+      }
+    }
   }
   .river {
     padding: 0px;
@@ -972,6 +984,11 @@ body, html {
     }
     .col-12 {
       padding: 0 15px;   
+    }
+    .row-content {
+      p {
+        font-size: 1.1em;
+      }
     }
     .row-author {
       padding: 0px 15px;
@@ -1065,25 +1082,36 @@ body, html {
       }
       &.active {
         background: rgba(0, 0, 0, 0.8);
-        color: white !important;
+        color: white;
         cursor: pointer;
         h4, a, small {
           color: white;
         }
       }
+      small {
+        a:hover {
+          color: white !important;
+        }
+      }
       &.row-features {
-        h6:hover {
-          color: $yellow;
+        h6, a {
+          &:hover {
+            color: $yellow;
+          }
         }
       }
       &.row-opinion {
-        h6:hover {
-          color: $peach;
+        h6, a {
+          &:hover {
+            color: $peach;
+          }
         }
       }
       &.row-news{
-        h6:hover {
-          color: $green;
+        h6, a {
+          &:hover {
+            color: $green;
+          }
         }
       }
 
@@ -1167,9 +1195,6 @@ body, html {
       border-color: $light-grey;
       border-bottom-color: white;
     }
-  }
-  .gridlock-row {
-    padding: 15px 0px;
   }
   .article-medium {
     .article-image {

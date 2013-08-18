@@ -12,8 +12,7 @@ body, html {
     body #home .gridlock-row, html #home .gridlock-row {
       border: solid;
       border-color: #bbbbbb;
-      border-width: 0px;
-      border-bottom-width: 1px; }
+      border-width: 0px; }
   body h1, body h2, body h3, body h4, body h5, body h6, html h1, html h2, html h3, html h4, html h5, html h6 {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 600;
@@ -291,6 +290,11 @@ body, html {
   margin-bottom: 10px;
   font-size: 0.9em;
   font-weight: 300; }
+  #article .row-content p a {
+    font-weight: 600;
+    color: #3f888a; }
+    #article .row-content p a:hover {
+      color: #71bcbe; }
 #article .row-share {
   margin: 15px 0px; }
 #article .row-author {
@@ -752,6 +756,9 @@ body, html {
       padding: 0; }
     #body h5 {
       margin-top: 10px; }
+    #body #home .gridlock-row {
+      padding: 15px 0px;
+      border-bottom-width: 1px; }
 
   .river {
     padding: 0px; }
@@ -760,6 +767,8 @@ body, html {
     padding-left: 2px; }
   #article .col-12 {
     padding: 0 15px; }
+  #article .row-content p {
+    font-size: 1.1em; }
   #article .row-author {
     padding: 0px 15px; }
   #article .row-more {
@@ -811,15 +820,17 @@ body, html {
           color: white; }
       .editors-row .pick-label.active {
         background: rgba(0, 0, 0, 0.8);
-        color: white !important;
+        color: white;
         cursor: pointer; }
         .editors-row .pick-label.active h4, .editors-row .pick-label.active a, .editors-row .pick-label.active small {
           color: white; }
-      .editors-row .pick-label.row-features h6:hover {
+      .editors-row .pick-label small a:hover {
+        color: white !important; }
+      .editors-row .pick-label.row-features h6:hover, .editors-row .pick-label.row-features a:hover {
         color: #d8ba2e; }
-      .editors-row .pick-label.row-opinion h6:hover {
+      .editors-row .pick-label.row-opinion h6:hover, .editors-row .pick-label.row-opinion a:hover {
         color: #cc9656; }
-      .editors-row .pick-label.row-news h6:hover {
+      .editors-row .pick-label.row-news h6:hover, .editors-row .pick-label.row-news a:hover {
         color: #86a201; }
     .editors-row .pick-label:last-child {
       border-bottom: 0px; }
@@ -854,9 +865,6 @@ body, html {
       color: #000;
       border-color: #bbbbbb;
       border-bottom-color: white; }
-
-  .gridlock-row {
-    padding: 15px 0px; }
 
   .article-medium .article-image {
     padding-right: 15px;

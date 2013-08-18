@@ -82,16 +82,12 @@
               while ( $more_query->have_posts() ) : $more_query->the_post(); ?>
                 <?php if (get_the_ID() != $current_id) { 
                   $image_url = false;
-                  if ($span == 1 || $span == 2) {
                     if (has_post_thumbnail()) {
                       $image_url =  wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), array(300, 300), false, ''); 
                       $image_url = $image_url[0];
                     } else {
                       $image_url = catch_image();
                     }
-                  } else {
-                    $image_url = catch_image();
-                  }
                 ?>
                 <li>
                   <div class="more-content">

@@ -10,7 +10,7 @@
           global $authordata;
           $image_url = false;
             if (has_post_thumbnail()) {
-              $image_url =  wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), "medium", false, ''); 
+              $image_url =  wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), "large", false, ''); 
               $image_url = $image_url[0];
             } else {
               $image_url = catch_image();
@@ -86,25 +86,28 @@
           } else {
             $currentIssue = get_term_by("slug", $currentIssue, "issue");
           }
+          $count = 0;
           $args = array(
             'orderby'       => "slug", 
             'order'         => "DESC",
-            'number'        => 4, 
+            'number'        => 5, 
             'exclude'       => get_option("exclude_issues") 
           );
           $terms = get_terms("issue", $args); ?>
           <ul class="issues-list list-unstyled">
           <?php foreach ($terms as $term) { ?>
+            <?php if ($count == 4) { break;} ?>
             <?php if ($currentIssue->slug != $term->slug) { ?>
-            <li class="issue-item"><a href='<?php echo site_url() . '/issue/' . $term->slug ?>'
-              title='View all posts in <?php echo $term->name ?>'><h6><?php echo $term->name ?></h6></a>
-              <small class="text-muted"><?php echo $term->description; ?></small>
-            </li>
+              <li class="issue-item"><a href='<?php echo site_url() . '/issue/' . $term->slug ?>'
+                title='View all posts in <?php echo $term->name ?>'><h6><?php echo $term->name ?></h6></a>
+                <small class="text-muted"><?php echo $term->description; ?></small>
+              </li>
+              <?php $count++ ?>
             <?php } ?>
           <?php } ?>
             <br/>
             <li class="issue-item"><a href='<?php echo site_url() . '/the-archives/' ?>'
-              title='View Archives'><small class="text-muted">View Archives</small></a>
+              title='View Archives'><small class="text-muted">View More</small></a>
             </li>
           </ul>
         </div>
