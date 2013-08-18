@@ -17,11 +17,6 @@ body, html {
   font-family: 'Lora', serif;
   #home{
   	margin-top:20px;
-    .gridlock-row {
-      border: solid;
-      border-color: $light-grey;
-      border-width: 0px;
-    }
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto Condensed', sans-serif;
@@ -382,7 +377,7 @@ body, html {
   .row-content {
     p {
       margin-bottom: 10px; 
-      font-size: 0.9em;
+      font-size: 1.0em;
       font-weight: 300;
       a {
         font-weight: 600;
@@ -963,9 +958,15 @@ body, html {
     h5 {
       margin-top: 10px;
     }
+    .gridlock-row {
+      padding-bottom: 15px; 
+    }
     #home {
       .gridlock-row {
-        padding: 15px 0px;
+        padding-top: 15px;
+        border: solid;
+        border-color: $light-grey;
+        border-width: 0px;
         border-bottom-width: 1px;
       }
     }
@@ -1410,4 +1411,10 @@ p.wp-caption-text
 {
   width: !important;
   font-style:italic;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  @media screen and (min-width:768px) {
+    font-size: 1.0em;
+  }
 }
