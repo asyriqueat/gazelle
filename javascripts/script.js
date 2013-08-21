@@ -349,8 +349,7 @@ $(function() {
     setTimeout( function() {
       $(".fb-comments span").width("100%");
       $(".fb-comments span iframe").width("100%");
-      console.log("times up!");
-    }, 1000);
+    }, 1500);
   }
   function resizeMoreScroller(moreScroll) {
     var moreScrollItems = $("#more-scroll .scroller ul li");
