@@ -44,9 +44,15 @@
         </a>
         <div class="date text-muted"> <?php echo $issue->description; ?></div>
         <div id="social">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/twitter.png">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/facebook.png">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/tumblr.png">
+          <a title="Connect with us on Twitter" href="http://bit.ly/1auyZwD">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/twitter.png">
+          </a>
+          <a title="Connect with us on Facebook" href="http://on.fb.me/13wvSyX">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/facebook.png">
+          </a>
+          <a title="Connect with us on Tumblr" href="http://bit.ly/15OqmV8">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/tumblr.png">
+          </a>
         </div>
       </div>	
     </div>
