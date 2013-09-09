@@ -109,7 +109,7 @@
           <?php } ?>
             <br/>
             <li class="issue-item"><a href='<?php echo site_url() . '/the-archives/' ?>'
-              title='View Archives'><small class="text-muted">View More</small></a>
+              title='View Archives'><small class="text-muted">View Archives</small></a>
             </li>
           </ul>
         </div>

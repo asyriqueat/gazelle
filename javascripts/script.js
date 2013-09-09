@@ -105,7 +105,6 @@ $(function() {
       e.preventDefault();
     });
     $(document).on("click touchstart", ".pick-label", function(e) {
-      $("#editor-labels .active").removeClass("active");
       var pick = $(e.target);
       if (!pick.hasClass("pick-label")) {
         pick = pick.parent();
@@ -114,6 +113,7 @@ $(function() {
         }
       }
       setTimeout(function() {
+        $("#editor-labels .active").removeClass("active");
         pick.addClass("active");
         var newPos = pick.attr("id").split("-")[1];
         topScroll.goToPage(0, newPos);

@@ -43,6 +43,11 @@
           <div class="issuenumber">ISSUE&nbsp;<?php echo $issue->slug; ?></div>
         </a>
         <div class="date text-muted"> <?php echo $issue->description; ?></div>
+        <div id="social">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/twitter.png">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/facebook.png">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/tumblr.png">
+        </div>
       </div>	
     </div>
     <div id="nav">

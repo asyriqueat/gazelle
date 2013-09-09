@@ -22,10 +22,7 @@
   <div class="row row-byline">
     <div class="col-12">
       <?php echo colorbox(get_cat()); ?>
-      <?php global $authordata; ?>
-      <a href="<?php echo get_author_posts_url($authordata->ID); ?>" title="View more posts by <?php echo get_the_author_meta('display_name'); ?>">
-        <h4 class="text-muted"><?php echo get_the_author_meta('display_name'); ?></h4>
-      </a>
+      <h4 class="text-muted"><?php coauthors_posts_links(", ", " and "); ?></h4>
     </div>
   </div>
   <div class="row row-content">
