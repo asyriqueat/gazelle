@@ -295,6 +295,8 @@ body, html {
       color: #71bcbe; }
 #article .row-share {
   margin: 15px 0px; }
+  #article .row-share iframe {
+    z-index: 2; }
 #article .row-author {
   margin-bottom: 5px; }
   #article .row-author .image-container {

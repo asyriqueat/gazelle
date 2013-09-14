@@ -393,6 +393,9 @@ body, html {
   }
   .row-share {
     margin: 15px 0px;
+    iframe {
+      z-index: 2;
+    }
   }
   .row-author {
     margin-bottom: 5px;
