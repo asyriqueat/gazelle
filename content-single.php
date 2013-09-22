@@ -117,7 +117,7 @@
     </div>
   </div>
   <div class="row row-comments">
-    <?php do_shortcode('[fbcomments url="' . home_url( $wp->request ) . '"]'); ?>
+    <?php echo do_shortcode('[fbcomments url="' . home_url( $wp->request ) . '"]'); ?>
   </div>
 </div>
 
