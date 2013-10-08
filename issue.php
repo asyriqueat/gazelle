@@ -72,7 +72,7 @@
     <div id="top-side" class="hidden-sm col-sm-4">
       <ul class="nav nav-tabs">
         <li class="active"><a href="#top-articles" data-toggle="tab">Trending</a></li>
-        <li><a href="#past-issue" data-toggle="tab">Other Issues</a></li>
+        <li><a href="#past-issue" data-toggle="tab">The Archives</a></li>
       </ul>
       <div class="tab-content">
         <div id="top-articles" class="tab-pane active fade in">
@@ -88,7 +88,8 @@
           }
           $count = 0;
           $args = array(
-            'orderby'       => "slug", 
+            'orderby'       => "meta_value_num", 
+            'meta_key'      => "slug",
             'order'         => "DESC",
             'number'        => 5, 
             'exclude'       => get_option("exclude_issues") 
