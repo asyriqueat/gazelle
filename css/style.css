@@ -374,8 +374,8 @@ body, html {
             #article .row-more #scroll-wrap #more-scroll ul li .image .image-overlay .image-overlay-text {
               display: block;
               width: 100%;
-              padding-left: 10px;
-              padding-right: 10px; }
+              padding-right: 10px;
+              padding-left: 10px; }
               #article .row-more #scroll-wrap #more-scroll ul li .image .image-overlay .image-overlay-text h5 {
                 color: white; }
       #article .row-more #scroll-wrap #more-scroll .carousel-control {
@@ -937,7 +937,8 @@ body, html {
       .article-container .article-image .image-overlay .image-overlay-text {
         display: block;
         width: 100%;
-        padding-left: 10px; }
+        padding-left: 10px;
+        padding-right: 10px; }
         .article-container .article-image .image-overlay .image-overlay-text h5 {
           color: white;
           font-weight: 300; }
@@ -970,11 +971,14 @@ body, html {
       right: 20px;
       top: 12px; }
       #header #masthead #issue #social {
-        text-align: justify;
         font-size: 0.1px; }
         #header #masthead #issue #social img {
           display: inline;
           width: 20px; }
+          #header #masthead #issue #social img:first-child {
+            padding-right: 5px; }
+          #header #masthead #issue #social img:last-child {
+            padding-left: 5px; }
         #header #masthead #issue #social:after {
           content: '';
           width: 100%;
