@@ -111,6 +111,7 @@
           $args = array(
             'orderby'       => "custom_sort", 
             'order'         => "DESC",
+            'number'        => 5, 
             'exclude'       => get_option("exclude_issues") 
           );
           $terms = get_terms("issue", $args); 
