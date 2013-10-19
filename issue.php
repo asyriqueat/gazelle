@@ -17,7 +17,7 @@
         <img class="hidden-sm" src="<?php echo $issue_meta['banner'] ?>" alt="<?php echo $currentIssue->name ?>">
         <img class="visible-sm" src="<?php echo $issue_meta['banner_mobile'] ?>" alt="<?php echo $currentIssue->name ?>">
       </div>
-    <?
+    <?php
     }
   ?>
   <div class="row editors-row <?php echo $issue_meta['editor_style'] == '' || $issue_meta['editor_style'] == 'default' ? '' : 'special-editors' ?>">
