@@ -250,7 +250,8 @@
                     <?php the_excerpt(); ?>
                   </div>
                 </li>
-              <?php endwhile;
+            <?php 
+              endwhile;
               remove_filter( 'posts_where', '_exclude_meta_key_in_posts_where' );
             ?>
           </ul>
