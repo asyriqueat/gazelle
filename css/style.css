@@ -452,7 +452,9 @@ body, html {
     .article-container .article-description small {
       font-size: 1.05em; }
     .article-container .article-description .colorbox {
-      margin-top: 5.5px; }
+      margin-top: 6px;
+      height: 9px;
+      width: 9px; }
 
 .row.row {
   margin: 0px 0px; }
@@ -939,7 +941,7 @@ body, html {
     .article-container.article-small .image-overlay .colorbox {
       height: 9px;
       width: 9px;
-      margin-top: 6px; }
+      margin-top: 5px; }
     .article-container.article-small:hover .colorbox {
       background-color: white; }
     .article-container.article-small:hover small, .article-container.article-small:hover a {

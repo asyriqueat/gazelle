@@ -615,7 +615,9 @@ body, html {
       font-size: 1.05em;
     }
     .colorbox {
-      margin-top: 5.5px;
+      margin-top: 6px;
+      height: 9px;
+      width: 9px;
     }
   }
 }
@@ -1310,7 +1312,7 @@ body, html {
         .colorbox {
           height: 9px;
           width: 9px;
-          margin-top: 6px;
+          margin-top: 5px;
         }
       }
       &:hover {
