@@ -1,5 +1,26 @@
+<?php
+  // lock the current issue so that we can check for custom issues
+  $currentIssue = get_query_var("issue"); ?>
+  <?php if (empty($currentIssue)) { 
+    $currentIssue = get_term(get_option('current_issue'), "issue"); 
+  } else {
+    $currentIssue = get_term_by("slug", $currentIssue, "issue");
+  }
+  $t_id = $currentIssue->term_id;
+  $issue_meta = get_option( "taxonomy_term_$t_id" );
+?>
 <div id="home">
-  <div class='row editors-row'>
+  <?php
+    // check for a banner
+    if ($issue_meta['banner']) { ?>
+      <div id="banner">
+        <img class="hidden-sm" src="<?php echo $issue_meta['banner'] ?>" alt="<?php echo $currentIssue->name ?>">
+        <img class="visible-sm" src="<?php echo $issue_meta['banner_mobile'] ?>" alt="<?php echo $currentIssue->name ?>">
+      </div>
+    <?
+    }
+  ?>
+  <div class="row editors-row <?php echo $issue_meta['editor_style'] == '' || $issue_meta['editor_style'] == 'default' ? '' : 'special-editors' ?>">
     <div id="editors" class="col-12 col-sm-8">
       <?php
         // editor's pick
@@ -26,7 +47,7 @@
             $editors[] = $pick;
             ob_end_clean();
         endwhile; ?>
-      <div class="row">
+        <div class="row">
         <div id="top-scroll" class="col-12 col-sm-8">
           <div class="scroller">
             <ul>
@@ -80,7 +101,7 @@
         </div>
         <div id="past-issue" class="tab-pane fade">
           <?php
-          $currentIssue = get_query_var("issue") ?>
+          $currentIssue = get_query_var("issue"); ?>
           <?php if (empty($currentIssue)) { 
             $currentIssue = get_term(get_option('current_issue'), "issue"); 
           } else {
@@ -118,6 +139,26 @@
     </div>
   </div>
   <div class="river">
+    <?php if ($issue_meta['editor_style'] == "six_boxes") { 
+        rewind_posts();
+        $special_count = 0;
+        ?>
+        <div class='row gridlock-row six-boxes hidden-sm'>
+        <?php
+        while ( $editor_query->have_posts() ) : $editor_query->the_post(); ?>
+          <div class="article-container col-12 col-sm-4 article-small hidden-sm">
+            <?php 
+              get_template_part( 'content', 'grid' ); 
+              $special_count++;
+            ?>
+          </div>
+          <?php if ($special_count == 3) { ?>
+            </div>
+            <div class='row gridlock-row six-boxes'>
+          <?php }
+         endwhile; ?> 
+        </div>
+    <?php } ?>
     <div class='row gridlock-row'>
     <?php 
       $finished = false;

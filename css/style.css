@@ -77,6 +77,13 @@ body, html {
       margin-top: 10px;
       color: #71bcbe; }
 
+#banner {
+  padding: 0px 10px;
+  margin-bottom: 10px;
+  margin-top: -10px; }
+  #banner img {
+    min-width: 100%; }
+
 #category-row {
   padding: 0px 15px; }
   #category-row #category-head {
@@ -782,12 +789,32 @@ body, html {
   #article .row-comments {
     padding: 0 15px; }
 
+  #banner {
+    padding: 0px 15px; }
+
+  .six-boxes.row.gridlock-row:first-child {
+    border: none !important;
+    padding: 5px 0px !important; }
+  .six-boxes .article-container.article-small {
+    border: none;
+    padding: 0 5px; }
+    .six-boxes .article-container.article-small:first-child {
+      padding-left: 15px; }
+    .six-boxes .article-container.article-small:last-child {
+      padding-right: 15px; }
+    .six-boxes .article-container.article-small .row.row-article {
+      border-bottom: 0px; }
+
   .editors-row {
     padding-left: 0px;
     padding-right: 0px;
     border: solid;
     border-color: #bbbbbb;
     border-width: 0px 0px 1px 0px; }
+    .editors-row.special-editors {
+      visibility: hidden;
+      position: absolute;
+      top: -1000px; }
     .editors-row #editors {
       padding: 0 15px; }
     .editors-row #top-scroll .scroller ul li {
@@ -905,13 +932,15 @@ body, html {
       width: 100%;
       min-height: 40px;
       background: rgba(0, 0, 0, 0.7);
-      position: absolute; }
+      position: absolute;
+      padding-bottom: 10px; }
       .article-container .article-image .image-overlay .image-overlay-text {
         display: block;
         width: 100%;
         padding-left: 10px; }
         .article-container .article-image .image-overlay .image-overlay-text h5 {
-          color: white; }
+          color: white;
+          font-weight: 300; }
     .article-container.article-small, .article-container.article-medium:first-child {
       border: solid;
       border-width: 0px;
@@ -954,7 +983,9 @@ body, html {
         background-color: #71bcbe;
         padding: 2px 10px;
         color: #fff;
-        font-size: 1.1em; }
+        font-size: 1.1em;
+        background-position: center;
+        background-repeat: no-repeat; }
       #header #masthead #issue .date {
         font-size: 0.9em; }
     #header #nav img {

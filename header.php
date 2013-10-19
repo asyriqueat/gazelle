@@ -7,6 +7,15 @@
  * @package WordPress_Themes
  * @subpackage Gridlock
  */
+  // lock the current issue so that we can check for custom issues
+  $currentIssue = get_query_var("issue"); ?>
+  <?php if (empty($currentIssue)) { 
+    $currentIssue = get_term(get_option('current_issue'), "issue"); 
+  } else {
+    $currentIssue = get_term_by("slug", $currentIssue, "issue");
+  }
+  $t_id = $currentIssue->term_id;
+  $issue_meta = get_option( "taxonomy_term_$t_id" );
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -40,7 +49,7 @@
       </a>
       <div id="issue">
         <a href="<?php echo esc_url(get_site_url()) . '/the-archives/' ?>" title="View the archives">
-          <div class="issuenumber">ISSUE&nbsp;<?php echo $issue->slug; ?></div>
+          <div class="issuenumber" <?php echo $issue_meta['background'] ? "style='background-image:url(" . $issue_meta['background'] . ")'" : "" ?>><?php echo $issue->name; ?></div>
         </a>
         <div class="date text-muted"> <?php echo $issue->description; ?></div>
         <div id="social">
@@ -58,7 +67,7 @@
     </div>
     <div id="nav">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr ( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/gazelle_logo.png">
+        <img src="<?php echo $issue_meta['logo'] ? $issue_meta['logo'] : get_stylesheet_directory_uri() . '/images/gazelle_logo.png'; ?>">
       </a>
       <div id="navbar"></div>
         <div class="nav-list">

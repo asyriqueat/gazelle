@@ -31,7 +31,7 @@
       }
       ?>
     <?php if ($image_url) { ?>
-      <?php if ($span == 1) { ?>
+      <?php if ($span == 1 || !$span) { ?>
         <a href="<?php the_permalink(); ?>" title=<?php the_title(); ?>>
           <div class="article-image col-6 col-sm-12" >
             <div class="image" style="background-image: url(<?php echo $image_url ?>)">
