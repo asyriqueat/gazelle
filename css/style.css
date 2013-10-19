@@ -291,6 +291,8 @@ body, html {
     margin-top: 0px; }
     #article .row-byline h4 a {
       color: #999; }
+#article .row-content img {
+  min-width: 100%; }
 #article .row-content p {
   margin-bottom: 10px;
   font-size: 1.0em;
@@ -437,7 +439,9 @@ body, html {
         .article-container .article-description p {
           font-size: 0.67em; } }
     .article-container .article-description small {
-      font-size: 1.1em; }
+      font-size: 1.05em; }
+    .article-container .article-description .colorbox {
+      margin-top: 5.5px; }
 
 .row.row {
   margin: 0px 0px; }
@@ -917,12 +921,24 @@ body, html {
     border-width: 0px 0px 0px 0px;
     padding: 0px 15px;
     margin: 0px; }
-    .article-container.article-small .row-features a:hover h5 {
-      color: #d8ba2e; }
-    .article-container.article-small .row-opinion a:hover h5 {
-      color: #cc9656; }
-    .article-container.article-small .row-news a:hover h5 {
-      color: #86a201; }
+    .article-container .row-article {
+      border: none; }
+    .article-container.article-small .row-features a:hover h5, .article-container.article-small .row-opinion a:hover h5, .article-container.article-small .row-news a:hover h5, .article-container.article-small .row-uncategorized a:hover h5 {
+      color: white; }
+    .article-container.article-small .image-overlay .colorbox {
+      height: 9px;
+      width: 9px;
+      margin-top: 6px; }
+    .article-container.article-small:hover .colorbox {
+      background-color: white; }
+    .article-container.article-small:hover small, .article-container.article-small:hover a {
+      color: white; }
+    .article-container.article-small:hover .row-features .image-overlay {
+      background-color: rgba(216, 186, 46, 0.8); }
+    .article-container.article-small:hover .row-opinion .image-overlay {
+      background-color: rgba(204, 150, 86, 0.8); }
+    .article-container.article-small:hover .row-news .image-overlay {
+      background-color: rgba(134, 162, 1, 0.8); }
     .article-container .article-description.hidden-large {
       display: none; }
     .article-container .article-description p {
@@ -972,13 +988,13 @@ body, html {
       top: 12px; }
       #header #masthead #issue #social {
         font-size: 0.1px; }
-        #header #masthead #issue #social img {
+        #header #masthead #issue #social a:first-child {
+          padding-right: 5px; }
+        #header #masthead #issue #social a:last-child {
+          padding-left: 5px; }
+        #header #masthead #issue #social a img {
           display: inline;
           width: 20px; }
-          #header #masthead #issue #social img:first-child {
-            padding-right: 5px; }
-          #header #masthead #issue #social img:last-child {
-            padding-left: 5px; }
         #header #masthead #issue #social:after {
           content: '';
           width: 100%;
@@ -1076,7 +1092,7 @@ body, html {
         #header #masthead #issue {
           top: 17px; } }
         @media screen and (min-width: 768px) and (min-width: 992px) {
-          #header #masthead #issue #social img {
+          #header #masthead #issue #social a img {
             width: 25px; } }
       @media screen and (min-width: 768px) and (min-width: 992px) {
         #header #masthead #issue .issuenumber {

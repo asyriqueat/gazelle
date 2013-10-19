@@ -109,7 +109,7 @@ function top_articles() {
 
 function archive_list() {
   $args = array(
-    'orderby'       => "slug", 
+    'orderby'       => "custom_sort", 
     'order'         => "DESC",
     'exclude'       => get_option("exclude_issues")
   );
@@ -117,7 +117,6 @@ function archive_list() {
   $count = 0;
   ?>
   <div id="archives" class="container">
-  <?php usort($terms, "issues_sort"); ?>
   <?php foreach ($terms as $term) {  ?>
     <?php if($count % 3 == 0) { ?>
       <div class="row">

@@ -26,7 +26,7 @@
         // editor's pick
         $editors = array();
         $pick_id = get_term_by("name", "pick", "post_tag")->term_id;
-        $editor_query = new WP_Query(active_issue(array_merge(get_option("gridlock_query"), array("post_status" => "publish", "tag" => "pick", "posts_per_page" => 4 ))));
+        $editor_query = new WP_Query(active_issue(array_merge(get_option("gridlock_query"), array("post_status" => "publish", "tag" => "pick"))));
         while ( $editor_query->have_posts() ) : $editor_query->the_post();
           global $authordata;
           $image_url = false;
@@ -109,8 +109,7 @@
           }
           $count = 0;
           $args = array(
-            'orderby'       => "meta_value_num", 
-            'meta_key'      => "slug",
+            'orderby'       => "custom_sort", 
             'order'         => "DESC",
             'number'        => 5, 
             'exclude'       => get_option("exclude_issues") 
@@ -118,7 +117,6 @@
           $terms = get_terms("issue", $args); 
           ?>
           <ul class="issues-list list-unstyled">
-          <?php usort($terms, "issues_sort"); ?>
           <?php foreach ($terms as $term) { ?>
             <?php if ($count == 4) { break; } ?>
             <?php if ($currentIssue->slug != $term->slug) { ?>

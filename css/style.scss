@@ -11,6 +11,10 @@ $blue: #71BCBE;
 $yellow: #D8BA2E;
 $peach: #CC9656;
 $green: #86A201;
+$blue-rgba: rgba(113,188,190,0.8);
+$yellow-rgba: rgba(216,186,46,0.8);
+$peach-rgba: rgba(204,150,86,0.8);
+$green-rgba: rgba(134,162,1,0.8);
 
 body, html {
   height: 100%;
@@ -387,6 +391,9 @@ body, html {
     margin-bottom: 20px;
   }
   .row-content {
+    img {
+      min-width: 100%;
+    }
     p {
       margin-bottom: 10px; 
       font-size: 1.0em;
@@ -587,7 +594,10 @@ body, html {
       margin-top: 10px;
     }
     small {
-      font-size: 1.1em;
+      font-size: 1.05em;
+    }
+    .colorbox {
+      margin-top: 5.5px;
     }
   }
 }
@@ -1269,20 +1279,37 @@ body, html {
     border-width: 0px 0px 0px 0px;
     padding: 0px 15px;
     margin: 0px;
+    .row-article {
+      border: none;
+    }
     &.article-small {
-      .row-features {
+      .row-features, .row-opinion, .row-news, .row-uncategorized {
         a:hover h5 {
-          color: $yellow;
+          color: white;
         }
       }
-      .row-opinion {
-        a:hover h5 {
-          color: $peach;
+      .image-overlay {
+        .colorbox {
+          height: 9px;
+          width: 9px;
+          margin-top: 6px;
         }
       }
-      .row-news{
-        a:hover h5 {
-          color: $green;
+      &:hover {
+        .colorbox {
+          background-color: white;
+        }
+        small, a {
+          color: white;
+        }
+        .row-features .image-overlay {
+          background-color: $yellow-rgba;
+        }
+        .row-opinion .image-overlay {
+          background-color: $peach-rgba;
+        }
+        .row-news .image-overlay {
+          background-color: $green-rgba;
         }
       }
     }
@@ -1369,17 +1396,19 @@ body, html {
         }
         #social {
           font-size: 0.1px;
-          img {
+          a {
 						&:first-child {
 							padding-right: 5px;
 						}
 						&:last-child {
 							padding-left: 5px;
 						}
-            display: inline;
-            width: 20px;
-            @media screen and (min-width: 992px) {
-              width: 25px;
+            img {
+              display: inline;
+              width: 20px;
+              @media screen and (min-width: 992px) {
+                width: 25px;
+              }
             }
           }
           &:after {

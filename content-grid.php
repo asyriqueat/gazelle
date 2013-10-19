@@ -38,6 +38,10 @@
               <div class="image-overlay">
                 <div class="image-overlay-text">
                   <h5 class="article-title"> <?php echo strtoupper(get_the_title()); ?> </h5>
+                  <?php echo(colorbox(get_cat())) ?>
+                  <small class="text-muted">
+                    <?php coauthors(", ", " and "); ?>
+                  </small>
                 </div>
               </div>
             </div>
@@ -64,6 +68,7 @@
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
           <h5 class"article-title"> <?php echo get_the_title(); ?> </h5>
         </a>
+        <?php echo(colorbox(get_cat())) ?>
         <small class="text-muted"><?php coauthors_posts_links(", ", " and "); ?></small>
         <?php the_excerpt(); ?>
       </div>
