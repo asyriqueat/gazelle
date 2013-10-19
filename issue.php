@@ -109,14 +109,14 @@
           }
           $count = 0;
           $args = array(
-            'orderby'       => "custom_sort", 
+            'orderby'       => "slug", 
             'order'         => "DESC",
-            'number'        => 5, 
             'exclude'       => get_option("exclude_issues") 
           );
           $terms = get_terms("issue", $args); 
           ?>
           <ul class="issues-list list-unstyled">
+          <?php usort($terms, "issues_sort"); ?>
           <?php foreach ($terms as $term) { ?>
             <?php if ($count == 4) { break; } ?>
             <?php if ($currentIssue->slug != $term->slug) { ?>
