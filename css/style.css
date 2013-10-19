@@ -376,10 +376,21 @@ body, html {
             #article .row-more #scroll-wrap #more-scroll ul li .image .image-overlay .image-overlay-text {
               display: block;
               width: 100%;
-              padding-right: 10px;
-              padding-left: 10px; }
+              padding: 10px 10px; }
               #article .row-more #scroll-wrap #more-scroll ul li .image .image-overlay .image-overlay-text h5 {
-                color: white; }
+                color: white;
+                margin-bottom: 0px;
+                font-weight: 300; }
+        #article .row-more #scroll-wrap #more-scroll ul li:hover .overlay-features {
+          background-color: rgba(216, 186, 46, 0.8); }
+        #article .row-more #scroll-wrap #more-scroll ul li:hover .overlay-opinion {
+          background-color: rgba(204, 150, 86, 0.8); }
+        #article .row-more #scroll-wrap #more-scroll ul li:hover .overlay-news {
+          background-color: rgba(134, 162, 1, 0.8); }
+        #article .row-more #scroll-wrap #more-scroll ul li:hover .overlay-uncategorized {
+          background-color: rgba(113, 188, 190, 0.8); }
+        #article .row-more #scroll-wrap #more-scroll ul li:hover small {
+          color: white; }
       #article .row-more #scroll-wrap #more-scroll .carousel-control {
         background: none;
         width: 10px; }

@@ -497,12 +497,30 @@ body, html {
                 .image-overlay-text {
                   display: block;
                   width: 100%;
-                  padding-right: 10px;
-                  padding-left: 10px;
+                  padding: 10px 10px;
                   h5 {
                     color: white;
+                    margin-bottom: 0px;
+                    font-weight: 300;
                   }
                 }
+              }
+            }
+            &:hover {
+              .overlay-features {
+                background-color: $yellow-rgba;
+              }
+              .overlay-opinion {
+                background-color: $peach-rgba;
+              }
+              .overlay-news {
+                background-color: $green-rgba;
+              }
+              .overlay-uncategorized {
+                background-color: $blue-rgba;
+              }
+              small {
+                color: white;
               }
             }
           }

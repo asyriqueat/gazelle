@@ -91,9 +91,12 @@
                     <a href="<?php the_permalink(); ?>" title=<?php the_title(); ?> class="row-article">
                       <div class="article-image" >
                         <div class="image" style="background-image: url(<?php echo $image_url ?>)">
-                          <div class="image-overlay">
+                          <div class="image-overlay overlay-<?php echo strtolower(get_cat()); ?>">
                             <div class="image-overlay-text">
                               <h5 class="article-title"> <?php echo strtoupper(get_the_title()); ?> </h5>
+                              <small class="text-muted">
+                                <?php coauthors(", ", " and "); ?>
+                              </small>
                             </div>
                           </div>
                         </div>
