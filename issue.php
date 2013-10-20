@@ -17,6 +17,7 @@
         <?php if (!wp_is_mobile() && $issue_meta['video']) { ?>
           <video class="hidden-sm" autoplay="autoplay" loop="true">
             <source src="<?php echo $issue_meta['video'] ?>" type="video/mp4" />
+            <source src="<?php echo $issue_meta['video_ogg'] ?>" type="video/ogg" />
           </video>
         <?php } else { ?>
           <img class="hidden-sm" src="<?php echo $issue_meta['banner'] ?>" alt="<?php echo $currentIssue->name ?>">
