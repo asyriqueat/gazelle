@@ -14,7 +14,10 @@
     // check for a banner
     if ($issue_meta['banner']) { ?>
       <div id="banner">
-        <img class="hidden-sm" src="<?php echo $issue_meta['banner'] ?>" alt="<?php echo $currentIssue->name ?>">
+        <!-- <img class="hidden-sm" src="<?php echo $issue_meta['banner'] ?>" alt="<?php echo $currentIssue->name ?>"> -->
+        <video class="hidden-sm" autoplay="autoplay" loop="true">
+          <source src="<?php echo $issue_meta['banner'] ?>" type="video/mp4" />
+        </video>
         <img class="visible-sm" src="<?php echo $issue_meta['banner_mobile'] ?>" alt="<?php echo $currentIssue->name ?>">
       </div>
     <?php
