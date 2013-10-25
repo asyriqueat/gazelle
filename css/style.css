@@ -105,7 +105,7 @@ body, html {
     margin-right: 10px; }
     #archives .col-12 .issue-container h3 {
       margin-top: 10px;
-      color: #cc9656; }
+      color: #2d3030; }
 
 #banner {
   padding: 0px 10px;
@@ -137,7 +137,7 @@ body, html {
     /* Firefox */ }
     #category-row #category-head .category-row {
       position: absolute;
-      background-color: #cc9656;
+      background-color: #2d3030;
       height: 20px;
       top: 55px;
       width: 100%;
@@ -151,7 +151,7 @@ body, html {
       #category-row #category-head .category-row.header-opinion {
         background-color: #00aa87; }
       #category-row #category-head .category-row.header-media {
-        background-color: #944bbf; }
+        background-color: #cc9656; }
     #category-row #category-head .category-headline {
       background: white;
       width: 180px;
@@ -170,7 +170,7 @@ body, html {
         #category-row #category-head .category-headline h1.headline-solo {
           margin-top: 40px; }
       #category-row #category-head .category-headline h3 {
-        color: #cc9656;
+        color: #2d3030;
         font-weight: 400;
         margin-top: 10px; }
 
@@ -216,7 +216,7 @@ body, html {
       position: relative; }
       #other-row #other-posts #other-mast #other-bar {
         height: 5px;
-        background-color: #cc9656;
+        background-color: #2d3030;
         margin-top: 20px;
         width: 100%; }
       #other-row #other-posts #other-mast #other-headline {
@@ -268,9 +268,9 @@ body, html {
   margin-bottom: 50px; }
 
 .text-uncategorized a {
-  color: #cc9656; }
+  color: #2d3030; }
   .text-uncategorized a:hover {
-    color: #cc9656;
+    color: #2d3030;
     text-decoration: underline; }
 
 .text-news a {
@@ -292,9 +292,9 @@ body, html {
     text-decoration: underline; }
 
 .text-media a {
-  color: #944bbf; }
+  color: #cc9656; }
   .text-media a:hover {
-    color: #944bbf;
+    color: #cc9656;
     text-decoration: underline; }
 
 .river {
@@ -306,7 +306,7 @@ body, html {
   float: left;
   margin-top: 4px;
   margin-right: 5px;
-  background-color: #cc9656; }
+  background-color: #2d3030; }
   .colorbox.colorbox-features {
     background-color: #0095b8; }
   .colorbox.colorbox-opinion {
@@ -314,7 +314,7 @@ body, html {
   .colorbox.colorbox-news {
     background-color: #dc4a34; }
   .colorbox.colorbox-media {
-    background-color: #944bbf; }
+    background-color: #cc9656; }
 
 .image {
   width: 100%;
@@ -353,9 +353,9 @@ body, html {
   font-weight: 300; }
   #article .row-content p a {
     font-weight: 600;
-    color: #90622c; }
+    color: black; }
     #article .row-content p a:hover {
-      color: #cc9656; }
+      color: #2d3030; }
 #article .row-share {
   margin: 15px 0px; }
   #article .row-share iframe {
@@ -384,7 +384,7 @@ body, html {
       padding-top: 10px;
       padding-bottom: 10px;
       width: 100%;
-      background-color: #cc9656;
+      background-color: #2d3030;
       display: block;
       bottom: 0;
       margin: 0;
@@ -397,7 +397,7 @@ body, html {
 #article .row-more {
   margin-top: 20px; }
   #article .row-more .bar {
-    background-color: #cc9656;
+    background-color: #2d3030;
     color: white;
     margin-bottom: 10px;
     text-align: center;
@@ -444,9 +444,9 @@ body, html {
         #article .row-more #scroll-wrap #more-scroll ul li:hover .overlay-news {
           background-color: rgba(220, 74, 52, 0.8); }
         #article .row-more #scroll-wrap #more-scroll ul li:hover .overlay-media {
-          background-color: rgba(148, 75, 191, 0.8); }
-        #article .row-more #scroll-wrap #more-scroll ul li:hover .overlay-uncategorized {
           background-color: rgba(204, 150, 86, 0.8); }
+        #article .row-more #scroll-wrap #more-scroll ul li:hover .overlay-uncategorized {
+          background-color: rgba(45, 48, 48, 0.8); }
         #article .row-more #scroll-wrap #more-scroll ul li:hover small {
           color: white; }
       #article .row-more #scroll-wrap #more-scroll .carousel-control {
@@ -519,9 +519,9 @@ body, html {
 .row.row-article {
   border: solid;
   border-width: 0px 0px 8px 0px;
-  border-color: #cc9656; }
+  border-color: #2d3030; }
 .row .row {
-  border-color: #cc9656; }
+  border-color: #2d3030; }
   .row .row a:hover, .row .row h5:hover {
     text-decoration: none; }
 .row .row-features {
@@ -540,9 +540,9 @@ body, html {
     color: #dc4a34;
     text-decoration: none; }
 .row .row-media {
-  border-color: #944bbf; }
+  border-color: #cc9656; }
   .row .row-media a:hover, .row .row-media h5:hover {
-    color: #944bbf;
+    color: #cc9656;
     text-decoration: none; }
 .row small.text-muted a:hover {
   text-decoration: underline;
@@ -733,9 +733,9 @@ body, html {
             #header #nav .nav-list .nav-element div#opinion:hover {
               color: #00aa87; }
           #header #nav .nav-list .nav-element div#media {
-            border-color: #944bbf; }
+            border-color: #cc9656; }
             #header #nav .nav-list .nav-element div#media:hover {
-              color: #944bbf; }
+              color: #cc9656; }
     #header #nav form {
       position: absolute;
       margin: 0px;
@@ -950,7 +950,7 @@ body, html {
       .editors-row .pick-label.row-news h6:hover, .editors-row .pick-label.row-news a:hover {
         color: #dc4a34; }
       .editors-row .pick-label.row-media h6:hover, .editors-row .pick-label.row-media a:hover {
-        color: #944bbf; }
+        color: #cc9656; }
     .editors-row .pick-label:last-child {
       border-bottom: 0px; }
 
@@ -1026,9 +1026,9 @@ body, html {
     .article-container.article-small:hover .row-news .image-overlay {
       background-color: rgba(220, 74, 52, 0.8); }
     .article-container.article-small:hover .row-media .image-overlay {
-      background-color: rgba(148, 75, 191, 0.8); }
-    .article-container.article-small:hover .row-uncategorized .image-overlay {
       background-color: rgba(204, 150, 86, 0.8); }
+    .article-container.article-small:hover .row-uncategorized .image-overlay {
+      background-color: rgba(45, 48, 48, 0.8); }
     .article-container .article-description.hidden-large {
       display: none; }
     .article-container .article-description p {
@@ -1090,7 +1090,7 @@ body, html {
           width: 100%;
           display: inline-block; }
       #header #masthead #issue .issuenumber {
-        background-color: #cc9656;
+        background-color: #2d3030;
         padding: 2px 10px;
         color: #fff;
         font-size: 1.1em;
