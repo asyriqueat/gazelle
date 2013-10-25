@@ -1,4 +1,8 @@
 <?php
+  global $pick_id;
+  $pick_id = get_term_by("name", "pick", "post_tag")->term_id;
+  global $exclude_id;
+  $exclude_id = get_term_by("name", "exclude", "post_tag")->term_id;
   // lock the current issue so that we can check for custom issues
   $currentIssue = get_query_var("issue"); ?>
   <?php if (empty($currentIssue)) { 
@@ -24,7 +28,7 @@
       }
       $row_count = 0;
       $meta_query = new WP_Query(active_issue(array_merge(get_option("gridlock_query"), array('orderby' => 'meta_value_num', 'meta_key' => '_gridlock', 'order' => 'ASC', "post_status" => "publish", 
-                        "tag__not_in" => $pick_id)
+                        "tag__not_in" => array($exclude_id, $pick_id))
                                         
       )));
       while ( $meta_query->have_posts() ) : $meta_query->the_post(); 
@@ -89,7 +93,7 @@
             <?php
               // other posts
               add_filter( 'posts_where', '_exclude_meta_key_in_posts_where' );    
-              $params = active_issue(array_merge(get_option("gridlock_grid_query"), array('orderby' => 'date', 'order' => 'DESC', "post_status" => "publish", "tag__not_in" => $pick_id)));
+              $params = active_issue(array_merge(get_option("gridlock_grid_query"), array('orderby' => 'date', 'order' => 'DESC', "post_status" => "publish", "tag__not_in" => array($pick_id, $exclude_id) )));
               $other_query = new WP_Query($params);
               while ( $other_query->have_posts() ) : $other_query->the_post(); ?>
                 <li>

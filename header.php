@@ -86,6 +86,10 @@
             <div id="opinion">Opinion</div>
           </div>
           </a>
+          <a href="<?php echo $issue_url . '/media/' ?>" title="Media" rel="category">
+          <div class="nav-element">
+            <div id="media">Media</div>
+          </div>
         </div>
       <?php get_search_form(); ?>
     </div>

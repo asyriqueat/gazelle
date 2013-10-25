@@ -8,7 +8,7 @@
 ?>
 
 <div id="id-<?php the_ID(); ?>" <?php post_class(); ?> >
-  <div class="row row-article row-<?php echo strtolower(get_cat()) ?>">
+  <div class="row row-article row-<?php echo get_cat() ? strtolower(get_cat()) : "misc"; ?>">
     <?php 
       $span = explode(".", get_post_meta( get_the_ID(), "_gridlock", true)); 
       $span = $span[1][1]; 

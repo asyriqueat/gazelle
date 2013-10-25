@@ -3,6 +3,9 @@
         //checking for banner in priority order
         if ($issue_meta['youtube'] || $issue_meta['video'] || $issue_meta['video_ogg'] || $issue_meta['banner'] || $issue_meta['banner_mobile']) { ?>
           <div id="banner" <?php echo $issue_meta['editor_style'] == "small_banner" ? 'class="no-bottom-padding no-bottom-margin"' : "" ?>>
+            <?php if ($issue_meta['banner_link']) { ?>
+              <a href="<?php echo $issue_meta['banner_link']?>" >
+            <?php } ?>
             <?php 
             //check in priority order
             // youtube case
@@ -38,6 +41,9 @@
                 <?php if ($issue_meta['banner_mobile']) { ?>
             <img class="visible-sm" src="<?php echo $issue_meta['banner_mobile'] ?>" alt="<?php echo $currentIssue->name ?>">
           <?php }} ?>
+            <?php if ($issue_meta['banner_link']) { ?>
+              </a>
+            <?php } ?>
           </div>
         <?php
         }

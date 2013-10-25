@@ -8,14 +8,24 @@ $grey: #2A2B2C;
 $light-grey: #BBBBBB;
 $dark-grey: #2D3030;
 $black: #000000;
-$blue: #71BCBE;
-$yellow: #D8BA2E;
-$peach: #CC9656;
-$green: #86A201;
-$blue-rgba: rgba(113,188,190,0.8);
-$yellow-rgba: rgba(216,186,46,0.8);
-$peach-rgba: rgba(204,150,86,0.8);
-$green-rgba: rgba(134,162,1,0.8);
+/*$misc: #71BCBE;*/
+/*$features: #D8BA2E;*/
+/*$opinions: #CC9656;*/
+/*$news: #86A201;*/
+/*$misc-rgba: rgba(113,188,190,0.8);*/
+/*$features-rgba: rgba(216,186,46,0.8);*/
+/*$opinions-rgba: rgba(204,150,86,0.8);*/
+/*$news-rgba: rgba(134,162,1,0.8);*/
+$misc: #2D3030;
+$features: #0095b8;
+$opinions: #00aa87;
+$news: #dc4a34;
+$media: #944bbf;
+$misc-rgba: rgba(45,48,48,0.8);
+$features-rgba: rgba(0,149,184,0.8);
+$opinions-rgba: rgba(0,170,135,0.8);
+$news-rgba: rgba(220,74,52,0.8);
+$media-rgba: rgba(148,75,191,0.8);
 
 body, html {
   height: 100%;
@@ -129,7 +139,7 @@ body, html {
         margin-right: 10px;
         h3 {
           margin-top: 10px;
-          color: $blue;
+          color: $misc;
         }
         &:last-child {
         }
@@ -168,20 +178,23 @@ body, html {
     -moz-box-sizing:border-box; /* Firefox */
     .category-row {
       position: absolute;
-      background-color: $blue;
+      background-color: $misc;
       height: 20px;
       top: 55px;
       width: 100%;
       box-sizing:border-box;
       -moz-box-sizing:border-box; /* Firefox */
       &.header-news {
-        background-color: $green;
+        background-color: $news;
       }
       &.header-features {
-        background-color: $yellow;
+        background-color: $features;
       }
       &.header-opinion {
-        background-color: $peach;
+        background-color: $opinions;
+      }
+      &.header-media {
+        background-color: $media;
       }
     }
     .category-headline {
@@ -202,7 +215,7 @@ body, html {
         font-size: 3.2em;
       }
       h3 {
-        color: $blue;
+        color: $misc;
         font-weight: 400;
         margin-top: 10px;
       }
@@ -256,7 +269,7 @@ body, html {
       position: relative;
       #other-bar {
         height: 5px;
-        background-color: $blue;
+        background-color: $misc;
         margin-top: 20px;
         width: 100%;
       }
@@ -330,36 +343,45 @@ body, html {
 
 .text-uncategorized {
   a {
-    color: $blue;
+    color: $misc;
     &:hover {
-      color: $blue;
+      color: $misc;
       text-decoration: underline;
     }
   }
 }
 .text-news {
   a {
-    color: $peach;
+    color: $news;
     &:hover {
-      color: $peach;
+      color: $news;
       text-decoration: underline;
     }
   }
 }
 .text-features {
     a {
-    color: $yellow;
+    color: $features;
     &:hover {
-      color: $yellow;
+      color: $features;
       text-decoration: underline;
     }
   }
 }
 .text-opinion {
   a {
-    color: $green;
+    color: $opinions;
     &:hover {
-      color: $green;
+      color: $opinions;
+      text-decoration: underline;
+    }
+  }
+}
+.text-media {
+  a {
+    color: $media;
+    &:hover {
+      color: $media;
       text-decoration: underline;
     }
   }
@@ -374,15 +396,18 @@ body, html {
   float: left;
   margin-top: 4px;
   margin-right: 5px;
-  background-color: $blue;
+  background-color: $misc;
   &.colorbox-features {
-    background-color: $yellow;
+    background-color: $features;
   }
   &.colorbox-opinion {
-    background-color: $peach;
+    background-color: $opinions;
   }
   &.colorbox-news {
-    background-color: $green;
+    background-color: $news;
+  }
+  &.colorbox-media {
+    background-color: $media;
   }
 }
 .image {
@@ -436,9 +461,9 @@ body, html {
       font-weight: 300;
       a {
         font-weight: 600;
-        color: darken($blue, 20);
+        color: darken($misc, 20);
         &:hover {
-          color: $blue;
+          color: $misc;
         }
       }
     }
@@ -476,7 +501,7 @@ body, html {
         padding-top: 10px;
         padding-bottom: 10px;
         width: 100%;
-        background-color: $blue;
+        background-color: $misc;
         display: block;
         bottom: 0;
         margin: 0;
@@ -493,7 +518,7 @@ body, html {
   .row-more {
     margin-top: 20px;
     .bar {
-      background-color: $blue;
+      background-color: $misc;
       color: white;
       margin-bottom: 10px;
       text-align: center;
@@ -505,13 +530,16 @@ body, html {
         color: white;
       }
       &.bar-news {
-        background-color: $green;
+        background-color: $news;
       }
       &.bar-features {
-        background-color: $yellow;
+        background-color: $features;
       }
       &.bar-opinion {
-        background-color: $peach;
+        background-color: $opinions;
+      }
+      &.bar-media {
+        background-color: $opinions;
       }
     }
     #scroll-wrap {
@@ -544,16 +572,19 @@ body, html {
             }
             &:hover {
               .overlay-features {
-                background-color: $yellow-rgba;
+                background-color: $features-rgba;
               }
               .overlay-opinion {
-                background-color: $peach-rgba;
+                background-color: $opinions-rgba;
               }
               .overlay-news {
-                background-color: $green-rgba;
+                background-color: $news-rgba;
+              }
+              .overlay-media {
+                background-color: $media-rgba;
               }
               .overlay-uncategorized {
-                background-color: $blue-rgba;
+                background-color: $misc-rgba;
               }
               small {
                 color: white;
@@ -665,26 +696,39 @@ body, html {
   &.row-article {
       border: solid;
       border-width: 0px 0px 8px 0px;
-      border-color: $blue;
+      border-color: $misc;
+  }
+  .row {
+    border-color: $misc;
+    a:hover, h5:hover {
+      text-decoration: none;
+    }
   }
   .row-features {
-    border-color: $yellow;
+    border-color: $features;
     a:hover, h6:hover {
-      color: $yellow;
+      color: $features;
       text-decoration: none;
     }
   }
   .row-opinion {
-    border-color: $peach;
+    border-color: $opinions;
     a:hover, h5:hover {
-      color: $peach;
+      color: $opinions;
       text-decoration: none;
     }
   }
   .row-news {
-    border-color: $green;
+    border-color: $news;
     a:hover, h5:hover {
-      color: $green;
+      color: $news;
+      text-decoration: none;
+    }
+  }
+  .row-media {
+    border-color: $media;
+    a:hover, h5:hover {
+      color: $media;
       text-decoration: none;
     }
   }
@@ -852,7 +896,7 @@ body, html {
       width: 100%;
       height: 35px;
       position: relative;
-      background-color: #000;
+      background-color: $dark-grey;
       box-sizing:border-box;
       -moz-box-sizing:border-box; /* Firefox */
     }
@@ -896,21 +940,27 @@ body, html {
             cursor: pointer;
           }
           &#news {
-            border-color: $green;
+            border-color: $news;
             &:hover {
-              color: $green;
+              color: $news;
             }
           }
           &#features {
-            border-color: $yellow;
+            border-color: $features;
             &:hover {
-              color: $yellow;
+              color: $features;
             }
           }
           &#opinion {
-            border-color: $peach;
+            border-color: $opinions;
             &:hover {
-              color: $peach;
+              color: $opinions;
+            }
+          }
+          &#media {
+            border-color: $media;
+            &:hover {
+              color: $media;
             }
           }
         }
@@ -1205,21 +1255,28 @@ body, html {
       &.row-features {
         h6, a {
           &:hover {
-            color: $yellow;
+            color: $features;
           }
         }
       }
       &.row-opinion {
         h6, a {
           &:hover {
-            color: $peach;
+            color: $opinions;
           }
         }
       }
       &.row-news{
         h6, a {
           &:hover {
-            color: $green;
+            color: $news;
+          }
+        }
+      }
+      &.row-media{
+        h6, a {
+          &:hover {
+            color: $media;
           }
         }
       }
@@ -1347,7 +1404,7 @@ body, html {
       border: none;
     }
     &.article-small {
-      .row-features, .row-opinion, .row-news, .row-uncategorized {
+      .row-features, .row-opinion, .row-news, .row-uncategorized, .row-media {
         a:hover h5 {
           color: white;
         }
@@ -1367,13 +1424,19 @@ body, html {
           color: white;
         }
         .row-features .image-overlay {
-          background-color: $yellow-rgba;
+          background-color: $features-rgba;
         }
         .row-opinion .image-overlay {
-          background-color: $peach-rgba;
+          background-color: $opinions-rgba;
         }
         .row-news .image-overlay {
-          background-color: $green-rgba;
+          background-color: $news-rgba;
+        }
+        .row-media .image-overlay {
+          background-color: $media-rgba;
+        }
+        .row-uncategorized .image-overlay {
+          background-color: $misc-rgba;
         }
       }
     }
@@ -1482,7 +1545,7 @@ body, html {
           }
         }
         .issuenumber{
-          background-color: $blue;
+          background-color: $misc;
           padding: 2px 10px;
           color:#fff;
           font-size: 1.1em;
@@ -1516,7 +1579,7 @@ body, html {
           position: absolute;
           left: -12px;
           border-top: 35px solid transparent;
-          border-right: 13px solid black;
+          border-right: 13px solid $dark-grey;
         }
       }
       .nav-list {

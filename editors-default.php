@@ -1,5 +1,7 @@
   <?php
     global $issue_meta;
+    global $pick_id;
+    global $exclude_id;
     // check for a banner
     get_template_part('banner');
   ?>
@@ -8,7 +10,6 @@
       <?php
         // editor's pick
         $editors = array();
-        $pick_id = get_term_by("name", "pick", "post_tag")->term_id;
         $editor_query = new WP_Query(active_issue(array_merge(get_option("gridlock_query"), array("post_status" => "publish", "tag" => "pick"))));
         while ( $editor_query->have_posts() ) : $editor_query->the_post();
           global $authordata;
