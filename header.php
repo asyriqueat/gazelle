@@ -90,6 +90,7 @@
           <div class="nav-element">
             <div id="media">Media</div>
           </div>
+          </a>
         </div>
       <?php get_search_form(); ?>
     </div>
