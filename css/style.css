@@ -105,7 +105,7 @@ body, html {
     margin-right: 10px; }
     #archives .col-12 .issue-container h3 {
       margin-top: 10px;
-      color: #2d3030; }
+      color: #cc9656; }
 
 #banner {
   padding: 0px 10px;
@@ -137,7 +137,7 @@ body, html {
     /* Firefox */ }
     #category-row #category-head .category-row {
       position: absolute;
-      background-color: #2d3030;
+      background-color: #cc9656;
       height: 20px;
       top: 55px;
       width: 100%;
@@ -170,7 +170,7 @@ body, html {
         #category-row #category-head .category-headline h1.headline-solo {
           margin-top: 40px; }
       #category-row #category-head .category-headline h3 {
-        color: #2d3030;
+        color: #cc9656;
         font-weight: 400;
         margin-top: 10px; }
 
@@ -216,7 +216,7 @@ body, html {
       position: relative; }
       #other-row #other-posts #other-mast #other-bar {
         height: 5px;
-        background-color: #2d3030;
+        background-color: #cc9656;
         margin-top: 20px;
         width: 100%; }
       #other-row #other-posts #other-mast #other-headline {
@@ -268,9 +268,9 @@ body, html {
   margin-bottom: 50px; }
 
 .text-uncategorized a {
-  color: #2d3030; }
+  color: #cc9656; }
   .text-uncategorized a:hover {
-    color: #2d3030;
+    color: #cc9656;
     text-decoration: underline; }
 
 .text-news a {
@@ -306,7 +306,7 @@ body, html {
   float: left;
   margin-top: 4px;
   margin-right: 5px;
-  background-color: #2d3030; }
+  background-color: #cc9656; }
   .colorbox.colorbox-features {
     background-color: #0095b8; }
   .colorbox.colorbox-opinion {
@@ -353,9 +353,9 @@ body, html {
   font-weight: 300; }
   #article .row-content p a {
     font-weight: 600;
-    color: black; }
+    color: #90622c; }
     #article .row-content p a:hover {
-      color: #2d3030; }
+      color: #cc9656; }
 #article .row-share {
   margin: 15px 0px; }
   #article .row-share iframe {
@@ -384,7 +384,7 @@ body, html {
       padding-top: 10px;
       padding-bottom: 10px;
       width: 100%;
-      background-color: #2d3030;
+      background-color: #cc9656;
       display: block;
       bottom: 0;
       margin: 0;
@@ -397,7 +397,7 @@ body, html {
 #article .row-more {
   margin-top: 20px; }
   #article .row-more .bar {
-    background-color: #2d3030;
+    background-color: #cc9656;
     color: white;
     margin-bottom: 10px;
     text-align: center;
@@ -446,7 +446,7 @@ body, html {
         #article .row-more #scroll-wrap #more-scroll ul li:hover .overlay-media {
           background-color: rgba(148, 75, 191, 0.8); }
         #article .row-more #scroll-wrap #more-scroll ul li:hover .overlay-uncategorized {
-          background-color: rgba(45, 48, 48, 0.8); }
+          background-color: rgba(204, 150, 86, 0.8); }
         #article .row-more #scroll-wrap #more-scroll ul li:hover small {
           color: white; }
       #article .row-more #scroll-wrap #more-scroll .carousel-control {
@@ -519,9 +519,9 @@ body, html {
 .row.row-article {
   border: solid;
   border-width: 0px 0px 8px 0px;
-  border-color: #2d3030; }
+  border-color: #cc9656; }
 .row .row {
-  border-color: #2d3030; }
+  border-color: #cc9656; }
   .row .row a:hover, .row .row h5:hover {
     text-decoration: none; }
 .row .row-features {
@@ -1028,7 +1028,7 @@ body, html {
     .article-container.article-small:hover .row-media .image-overlay {
       background-color: rgba(148, 75, 191, 0.8); }
     .article-container.article-small:hover .row-uncategorized .image-overlay {
-      background-color: rgba(45, 48, 48, 0.8); }
+      background-color: rgba(204, 150, 86, 0.8); }
     .article-container .article-description.hidden-large {
       display: none; }
     .article-container .article-description p {
@@ -1090,7 +1090,7 @@ body, html {
           width: 100%;
           display: inline-block; }
       #header #masthead #issue .issuenumber {
-        background-color: #2d3030;
+        background-color: #cc9656;
         padding: 2px 10px;
         color: #fff;
         font-size: 1.1em;
