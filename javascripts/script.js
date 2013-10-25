@@ -370,6 +370,24 @@ $(function() {
 if ('ontouchstart' in document) {
   $('.no-touch').removeClass('no-touch');
 }
+// fit videos correctly
+$(function() {
+  function resizeSidebar() {
+    if (size != 'small' && $(".video-container").length > 0) {
+			var newHeight = $("#banner").height() - 62;
+			var tab = $(".tab-content");
+			tab.attr("style", "");
+			if (tab.height() < newHeight) {
+				tab.height(newHeight);
+			}
+    }
+  }
+  resizeSidebar();
+  $(window).on("resize orientationchange", function() {
+		resizeSidebar();
+  });
+});
+
 // Google Analytics
 $(function() {
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

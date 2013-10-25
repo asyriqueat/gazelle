@@ -29,6 +29,28 @@ body, html {
   body a, html a {
     color: black; }
 
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden; }
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.no-bottom-padding {
+  padding-bottom: 0px !important; }
+
+.no-bottom-margin {
+  margin-bottom: 0px !important; }
+
 .scroller {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -82,8 +104,19 @@ body, html {
   margin-bottom: 10px;
   margin-top: -10px; }
   #banner img, #banner video {
+    max-width: 100%;
     min-width: 100%;
-    max-width: 100%; }
+    height: auto; }
+  @media screen and (max-width: 768px) {
+    #banner {
+      padding: 0px; } }
+
+#small-banner {
+  margin-top: 10px;
+  padding: 0px; }
+  @media screen and (max-width: 768px) {
+    #small-banner {
+      margin-bottom: 15px; } }
 
 #category-row {
   padding: 0px 15px; }
@@ -786,6 +819,10 @@ body, html {
       border-color: #bbbbbb;
       border-width: 0px;
       border-bottom-width: 1px; }
+    #body #home .hide-big-editors {
+      visibility: hidden;
+      position: absolute;
+      top: -1000px; }
 
   .river {
     padding: 0px; }
@@ -829,10 +866,6 @@ body, html {
     border: solid;
     border-color: #bbbbbb;
     border-width: 0px 0px 1px 0px; }
-    .editors-row.special-editors {
-      visibility: hidden;
-      position: absolute;
-      top: -1000px; }
     .editors-row #editors {
       padding: 0 15px; }
     .editors-row #top-scroll .scroller ul li {
@@ -1087,6 +1120,11 @@ body, html {
         .tab-content ul li:first-child h6 {
           margin-top: 5px; } }
 
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    .nav-tabs li {
+      font-size: 0.9em; }
+      .nav-tabs li a {
+        padding-top: 12px; } }
   @media screen and (min-width: 768px) and (min-width: 992px) {
     .article-container h5 {
       font-size: 1.1em; } }
