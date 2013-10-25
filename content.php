@@ -31,6 +31,7 @@
         <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gridlock' ),  the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"<?php the_title(); ?> >
           <h4 class"article-title"> <?php the_title(); ?> </h4>
         </a>
+        <?php echo colorbox(strtolower(get_cat())); ?>
         <small class="text-muted">
           <?php coauthors_posts_links(", ", " and "); ?>
         </small>

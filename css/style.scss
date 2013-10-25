@@ -213,6 +213,9 @@ body, html {
         font-weight: 600;
         margin-bottom: 0px;
         font-size: 3.2em;
+				&.headline-solo {
+					margin-top: 40px;
+				}
       }
       h3 {
         color: $misc;

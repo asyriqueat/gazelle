@@ -167,6 +167,8 @@ body, html {
         font-weight: 600;
         margin-bottom: 0px;
         font-size: 3.2em; }
+        #category-row #category-head .category-headline h1.headline-solo {
+          margin-top: 40px; }
       #category-row #category-head .category-headline h3 {
         color: #2d3030;
         font-weight: 400;
