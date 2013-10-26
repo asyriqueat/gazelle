@@ -1,5 +1,6 @@
   <?php
     global $issue_meta;
+    global $exclude_id;
   ?>
   <div class="row editors-row">
     <div id="small-banner" class="col-12 col-sm-8">
