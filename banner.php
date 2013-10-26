@@ -16,7 +16,7 @@
             <?php
             }
             // video case
-            elseif (!wp_is_mobile() && $issue_meta['video'] || $issue_meta['video_ogg']) { ?>
+            elseif (!wp_is_mobile() && ($issue_meta['video'] || $issue_meta['video_ogg'])) { ?>
               <video class="hidden-sm" autoplay="autoplay" loop="true">
                 <?php if ($issue_meta['video']) { ?>
                   <source src="<?php echo $issue_meta['video'] ?>" type="video/mp4" />
