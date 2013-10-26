@@ -10,7 +10,7 @@
       <?php
         // editor's pick
         $editors = array();
-        $editor_query = new WP_Query(active_issue(array_merge(get_option("gridlock_query"), array("post_status" => "publish", "tag" => "pick"))));
+        $editor_query = new WP_Query(active_issue(array_merge(get_option("gridlock_query"), array("post_status" => "publish", "tag" => "pick", "tag__not_in" => $exclude_id))));
         while ( $editor_query->have_posts() ) : $editor_query->the_post();
           global $authordata;
           $image_url = false;

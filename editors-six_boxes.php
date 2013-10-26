@@ -1,6 +1,7 @@
   <?php
     global $issue_meta;
     // check for a banner
+    global $exclude_id;
     get_template_part('banner');
   ?>
   <div class="row editors-row hide-big-editors">
@@ -9,7 +10,8 @@
         // editor's pick
         $editors = array();
         $pick_id = get_term_by("name", "pick", "post_tag")->term_id;
-        $editor_query = new WP_Query(active_issue(array_merge(get_option("gridlock_query"), array("post_status" => "publish", "tag" => "pick"))));
+        $editor_query = new WP_Query(active_issue(array_merge(get_option("gridlock_query"), array("post_status" => "publish", "tag" => "pick", "tag__not_in" => $exclude_id
+        ))));
         while ( $editor_query->have_posts() ) : $editor_query->the_post();
           global $authordata;
           $image_url = false;
