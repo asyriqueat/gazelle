@@ -146,6 +146,15 @@ function my_columns($columns) {
     $columns['views'] = 'Views';
     return $columns;
 }
+function add_video_embed_note($html, $url, $attr) {
+     if (strpos($html, "<embed src=" ) !== false) {
+          return '<div class="video-container">' . $html . '</div>';
+     } else {
+          return $html;
+     }
+}
+add_filter('embed_oembed_html', 'add_video_embed_note', 10, 3);
+
 add_action('manage_posts_custom_column',  'my_show_columns');
 function my_show_columns($name) {
     global $post;
