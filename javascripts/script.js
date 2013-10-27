@@ -373,7 +373,7 @@ if ('ontouchstart' in document) {
 // fit videos correctly
 $(function() {
   function resizeSidebar() {
-    if (size != 'small' && $(".video-container").length > 0) {
+    if (size != 'small' && $("#banner").length > 0) {
 			var newHeight = $("#banner").height() - 62;
 			var tab = $(".tab-content");
 			tab.attr("style", "");
