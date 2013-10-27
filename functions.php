@@ -147,11 +147,7 @@ function my_columns($columns) {
     return $columns;
 }
 function add_video_embed_note($html, $url, $attr) {
-     if (strpos($html, "<embed src=" ) !== false) {
-          return '<div class="video-container">' . $html . '</div>';
-     } else {
-          return $html;
-     }
+    return '<div class="video-container">' . $html . '</div>';
 }
 add_filter('embed_oembed_html', 'add_video_embed_note', 10, 3);
 
