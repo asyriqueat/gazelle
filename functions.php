@@ -141,6 +141,19 @@ function archive_list() {
 
 add_shortcode('archives', 'archive_list');
 
+function make_tooltip($atts, $content) {
+  extract( shortcode_atts( array(
+    "tooltip" => "",
+    "href" => "#"
+  ), $atts, "tooltip"));
+  return "<a class='tooltip-link' href='{$href}' data-toggle='tooltip' title='{$tooltip}'>{$content}</a>"
+    . "<script>$('.tooltip-link').tooltip();</script>";
+
+}
+
+add_shortcode('tooltip', 'make_tooltip');
+
+
 add_filter('manage_posts_columns', 'my_columns');
 function my_columns($columns) {
     $columns['views'] = 'Views';

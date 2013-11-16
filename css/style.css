@@ -4,11 +4,9 @@
  *
  * Authored by Lingliang Zhang
  */
-/*$misc: #71BCBE;*/
 /*$features: #D8BA2E;*/
 /*$opinions: #CC9656;*/
 /*$news: #86A201;*/
-/*$misc-rgba: rgba(113,188,190,0.8);*/
 /*$features-rgba: rgba(216,186,46,0.8);*/
 /*$opinions-rgba: rgba(204,150,86,0.8);*/
 /*$news-rgba: rgba(134,162,1,0.8);*/
@@ -105,7 +103,7 @@ body, html {
     margin-right: 10px; }
     #archives .col-12 .issue-container h3 {
       margin-top: 10px;
-      color: #2d3030; }
+      color: #71bcbe; }
 
 #banner {
   padding: 0px 10px;
@@ -353,9 +351,9 @@ body, html {
   font-weight: 300; }
   #article .row-content p a {
     font-weight: 600;
-    color: black; }
+    color: #3f888a; }
     #article .row-content p a:hover {
-      color: #2d3030; }
+      color: #71bcbe; }
 #article .row-share {
   margin: 15px 0px; }
   #article .row-share iframe {
@@ -523,7 +521,8 @@ body, html {
 .row .row {
   border-color: #2d3030; }
   .row .row a:hover, .row .row h5:hover {
-    text-decoration: none; }
+    text-decoration: none;
+    color: #71bcbe; }
 .row .row-features {
   border-color: #0095b8; }
   .row .row-features a:hover, .row .row-features h6:hover {

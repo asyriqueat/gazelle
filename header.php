@@ -28,6 +28,11 @@
 <link href='//fonts.googleapis.com/css?family=Lora|Roboto+Condensed' rel='stylesheet' type='text/css'>
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/javascripts/jquery-2.0.3.min.js" type="text/javascript"></script>
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/javascripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/javascripts/iscroll.js" type="text/javascript"></script>
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/javascripts/jquery.fitvids.js" type="text/javascript"></script>
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/javascripts/script.js" type="text/javascript"></script>
 <meta name="description" content="The Gazelle is a weekly student publication, serving the NYU Abu Dhabi community and the greater Global Network University at NYU.">
 <meta name="keywords" content="NYUAD, NYU, New York University, Abu Dhabi, Newspaper, Student, Publication, News, Features, Opinion, Middle East">
 <?php wp_head(); ?>

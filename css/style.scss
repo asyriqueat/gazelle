@@ -8,11 +8,11 @@ $grey: #2A2B2C;
 $light-grey: #BBBBBB;
 $dark-grey: #2D3030;
 $black: #000000;
-/*$misc: #71BCBE;*/
+$links: #71BCBE;
 /*$features: #D8BA2E;*/
 /*$opinions: #CC9656;*/
 /*$news: #86A201;*/
-/*$misc-rgba: rgba(113,188,190,0.8);*/
+$links-rgba: rgba(113,188,190,0.8);
 /*$features-rgba: rgba(216,186,46,0.8);*/
 /*$opinions-rgba: rgba(204,150,86,0.8);*/
 /*$news-rgba: rgba(134,162,1,0.8);*/
@@ -139,7 +139,7 @@ body, html {
         margin-right: 10px;
         h3 {
           margin-top: 10px;
-          color: $misc;
+          color: $links;
         }
         &:last-child {
         }
@@ -464,9 +464,9 @@ body, html {
       font-weight: 300;
       a {
         font-weight: 600;
-        color: darken($misc, 20);
+        color: darken($links, 20);
         &:hover {
-          color: $misc;
+          color: $links;
         }
       }
     }
@@ -705,6 +705,7 @@ body, html {
     border-color: $misc;
     a:hover, h5:hover {
       text-decoration: none;
+      color: $links;
     }
   }
   .row-features {
