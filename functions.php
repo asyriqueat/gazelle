@@ -153,6 +153,14 @@ function make_tooltip($atts, $content) {
 
 add_shortcode('tooltip', 'make_tooltip');
 
+function blockquote_image($atts, $content) {
+  extract( shortcode_atts( array(
+    "image" => "#"
+  ), $atts, "image"));
+  return "<div class='blockquote-image' style='background-image:url({$image})'>{$content}</div>";
+}
+
+add_shortcode('blockquote_image', 'blockquote_image');
 
 add_filter('manage_posts_columns', 'my_columns');
 function my_columns($columns) {

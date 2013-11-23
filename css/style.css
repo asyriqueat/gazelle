@@ -344,7 +344,14 @@ body, html {
     #article .row-byline h4 a {
       color: #999; }
 #article .row-content img {
-  min-width: 100%; }
+  min-width: 100%;
+  max-width: 100%; }
+#article .row-content .alignleft {
+  max-width: 50%;
+  float: left;
+  padding-right: 10px;
+  margin-top: 35px;
+  min-width: 50%; }
 #article .row-content p {
   margin-bottom: 10px;
   font-size: 1.0em;
@@ -1208,6 +1215,21 @@ body, html {
       #header #nav .nav-list .nav-element {
         padding-right: 30px;
         padding-left: 30px; } }
+/* Helpers */
+.blockquote-image {
+  text-align: center;
+  color: white;
+  font-size: 3em;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 200px 100px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100%;
+  min-width: 100%; }
+
 /*Wordpress specific stuff*/
 html body #article div.wp-caption {
   width: auto !important; }
