@@ -1220,6 +1220,7 @@ body, html {
   text-align: center;
   color: white;
   font-size: 3em;
+  font-style: italic;
   display: table-cell;
   vertical-align: middle;
   padding: 200px 100px;
