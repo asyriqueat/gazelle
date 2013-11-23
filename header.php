@@ -35,7 +35,6 @@
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/javascripts/script.js?v=3" type="text/javascript"></script>
 <meta name="description" content="The Gazelle is a weekly student publication, serving the NYU Abu Dhabi community and the greater Global Network University at NYU.">
 <meta name="keywords" content="NYUAD, NYU, New York University, Abu Dhabi, Newspaper, Student, Publication, News, Features, Opinion, Middle East">
-<?php header("X-XSS-Protection: 0"); ?>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
