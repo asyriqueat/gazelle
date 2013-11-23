@@ -1664,17 +1664,22 @@ body, html {
 .blockquote-image {
   text-align: center;
   color: white;
-  font-size: 3em;
+  font-size: 1.5em;
   font-style: italic;
   display: table-cell;
   vertical-align: middle;
-  padding: 200px 100px;
+  padding: 100px 50px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   max-width: 100%;
   min-width: 100%;
+  width: 100%;
+  @media screen and (min-width:768px) {
+    font-size: 2.5em;
+    padding: 150px 100px;
+  }
 }
 
 /*Wordpress specific stuff*/
