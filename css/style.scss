@@ -53,12 +53,11 @@ body, html {
       }
     }
   }
-  img {
-    max-width: 100%;
-    height: auto;
-  }
   a {
     color: black;
+  }
+  img {
+    height: auto;
   }
 }
 // styles to allow it to be responsive for youtube videos 
@@ -66,6 +65,7 @@ body, html {
   position: relative;
   padding-bottom: 56.25%;
   padding-top: 30px; height: 0; overflow: hidden;
+  margin: 10px 0px;
 }
    
 .video-container iframe,
@@ -425,25 +425,40 @@ body, html {
   .col-12 {
     padding: 0;
   }
-  .row-date {
-    margin-top: 10px;
-    h5 {
-      margin-bottom: 0px;
-      font-weight: 400;
-    }
-  }
   .row-title {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.8em;
     h1 {
       margin-top: 5px;
       margin-bottom: 5px;
+      font-size: 1.8em;
+    }
+  }
+  .row-date {
+    text-align: center;
+    margin: 0 0 10px 0px;
+    h5 {
+      margin: 0px;
+      font-weight: 400;
     }
   }
   .row-byline {
-    .colorbox {
-      height: 18px;
-      width: 18px;
-      margin-top: 1px;
-      margin-right: 10px;
+    border-bottom: 5px solid $misc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    &.features {
+      border-color: $features-rgba;
+    }
+    &.news {
+      border-color: $news-rgba;
+    }
+    &.opinion {
+      border-color: $opinions-rgba;
+    }
+    &.media {
+      border-color: $media-rgba;
     }
     h4 {
       text-transform: none;
@@ -452,12 +467,18 @@ body, html {
         color: #999;
       }
     }
-    margin-bottom: 20px;
   }
   .row-content {
+    a:hover {
+      text-decoration: none;
+      color: $links;
+    }
     img {
-      min-width: 100%;
-      max-width: 100%;
+      margin: 0 -15px;
+      width: 100%;
+      width: -moz-calc(100% + 30px);
+      width: -webkit-calc(100% + 30px);
+      width: calc(100% + 30px);
     }
     .alignleft {
       max-width: 50%;
@@ -505,23 +526,35 @@ body, html {
       }
     }
     .author-container {
-    position: relative;
-    height: 80px;
+      position: relative;
+      height: 80px;
       h5 {
         position: absolute;
         padding-top: 10px;
         padding-bottom: 10px;
         width: 100%;
-        background-color: $misc;
         display: block;
         bottom: 0;
         margin: 0;
         z-index: 1;
         margin: 0;
         text-transform: none;
-        color: white;
         a {
           color: white;
+        }
+      }
+    }
+  }
+  .row-trending {
+    margin-top: 20px;
+    h5 {
+      text-transform: none;
+    }
+    #sidebar {
+      .sidebox {
+        .tab-content {
+          border: none;
+          padding: 0;
         }
       }
     }
@@ -621,13 +654,12 @@ body, html {
     }
   }
   .row-comments {
-    margin-top: 25px;
     .fb-comments {
       width: 100%;
-      span {
-        width: 100%;
-        iframe {
-          width: 100%;
+      >span {
+        width: 100% !important;
+        >iframe {
+          width: 100% !important;
         }
       }
     }
@@ -711,7 +743,7 @@ body, html {
   }
   .row {
     border-color: $misc;
-    a:hover, h5:hover {
+    h5.article-title:hover {
       text-decoration: none;
       color: $links;
     }
@@ -759,7 +791,17 @@ body, html {
   }
 }
 #sidebar {
-  display: none; 
+  .sidebox {
+    .tab-content {
+      height: auto;
+    }
+  }
+}
+
+.bar-divider {
+  background-color: $misc;
+  padding: 10px;
+  color: white;
 }
 
 .divider {
@@ -1087,7 +1129,7 @@ body, html {
       h4 {
         font-size: 1.45em;
         @media screen and (max-width: 380px) {
-          font-size: 1.1em;
+          font-size: 1.2em;
         }
       }
       &:first-child {
@@ -1147,8 +1189,27 @@ body, html {
       padding: 0 15px;   
     }
     .row-content {
+      padding: 0 60px;
+      @media screen and (min-width: 1200px) {
+        padding: 0 140px;
+      }
       p {
         font-size: 1.1em;
+        @media screen and (min-width: 1200px) {
+          font-size: 1.3em;
+        }
+      }
+      img {
+        margin: 10px -75px;
+        width: -moz-calc(100% + 150px);
+        width: -webkit-calc(100% + 150px);
+        width: calc(100% + 150px);
+        @media screen and (min-width: 1200px) {
+          margin: 10px -155px;
+          width: -moz-calc(100% + 310px);
+          width: -webkit-calc(100% + 310px);
+          width: calc(100% + 310px);
+        }
       }
     }
     .row-author {
@@ -1366,15 +1427,6 @@ body, html {
       }
     }
   }
-  .sidebar {
-    position: absolute;
-    .sidebox {
-      margin-top: 30px;
-      .tab-content {
-        height: auto;
-      }
-    }
-  }
   .nav-tabs {
     border-color: $light-grey;
     li {
@@ -1516,9 +1568,6 @@ body, html {
   .navbar-form {
     width: 30%;
     float: right;
-  }
-  #sidebar {
-    display: block;
   }
   #header {
     margin-left: 0px;

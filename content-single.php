@@ -9,19 +9,18 @@
  ?>
 
 <div id="id-<?php the_ID(); ?>" class="article container">
-  <div class="row row-date">
-    <div class="col-12">
-      <h5 class="text-muted"><?php the_date(); ?></h5>
-    </div>
-  </div>
   <div class="row row-title">
     <div class="col-12">
       <h1><?php the_title(); ?></h1>
     </div>
   </div>
-  <div class="row row-byline">
+  <div class="row row-date">
     <div class="col-12">
-      <?php echo colorbox(get_cat()); ?>
+      <h5 class="text-muted"><?php the_date(); ?></h5>
+    </div>
+  </div>
+  <div class="row row-byline <?php echo strtolower(get_cat()); ?>">
+    <div class="col-12">
       <h4 class="text-muted"><?php coauthors_posts_links(", ", " and "); ?></h4>
     </div>
   </div>
@@ -60,7 +59,7 @@
 
       ?>
       </div>
-      <h5 style="padding-left: <?php echo (90 * $count + 10) . 'px' ?>"><?php coauthors_posts_links(", ", " and "); ?></h5>
+      <h5 class="bar-divider" style="padding-left: <?php echo (90 * $count + 10) . 'px' ?>"><?php coauthors_posts_links(", ", " and "); ?></h5>
     </div>
   </div>
   <div class="row row-more">
@@ -119,7 +118,16 @@
       </div>  
     </div>
   </div>
+  <div class="row row-trending">
+    <div class="col-12">
+      <h5 class="bar-divider">Trending</h5>
+      <div id="sidebar">
+        <?php get_sidebar(); ?>
+      </div>
+    </div>
+  </div>
   <div class="row row-comments">
+    <h5 class="bar-divider">Comments</h5>
     <?php echo do_shortcode('[fbcomments url="' . home_url( $wp->request ) . '/"]'); ?>
   </div>
 </div>

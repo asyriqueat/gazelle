@@ -10,16 +10,13 @@
 get_header(); ?>
 
   <div class="row">
-    <div id="article" class="col-12 col-sm-8">
+    <div id="article" class="col-12">
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'content', 'single' ); ?>
 
 
 			<?php endwhile; // end of the loop. ?>
-    </div>
-    <div id="sidebar" class="col-sm-4">
-      <?php get_sidebar(); ?>
     </div>
   </div>
 
