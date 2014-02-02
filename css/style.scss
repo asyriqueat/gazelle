@@ -502,6 +502,9 @@ body, html {
   }
   .row-share {
     margin: 15px 0px;
+    .fb-like {
+      z-index: 3;
+    }
     iframe {
       z-index: 2;
     }
@@ -1752,3 +1755,5 @@ html {
     }
   }
 }
+
+

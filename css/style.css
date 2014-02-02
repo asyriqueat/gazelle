@@ -381,6 +381,8 @@ body, html {
       color: #71bcbe; }
 #article .row-share {
   margin: 15px 0px; }
+  #article .row-share .fb-like {
+    z-index: 3; }
   #article .row-share iframe {
     z-index: 2; }
 #article .row-author {
