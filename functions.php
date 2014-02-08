@@ -166,6 +166,7 @@ add_shortcode('blockquote_image', 'blockquote_image');
 function make_slideshow($atts, $content) {
   $slides = explode(";", $content);
   $slideCount = count($slides);
+  $firstCaption = false;
   $pattern = "/^\[(.+)\]\((.+)\)/";
   $matches = array();
 
@@ -180,6 +181,7 @@ function make_slideshow($atts, $content) {
     if (!count($matches)) continue;
     $caption = $matches[1];
     $imgLink = $matches[2];
+    if (!$firstCaption) $firstCaption = $caption;
     echo '<li class="item">';
     ?>
       <div style="background-image: url(<?php echo $imgLink; ?>)" class="image"><?php echo $caption; ?></div>
@@ -197,7 +199,7 @@ function make_slideshow($atts, $content) {
         </div>
       </div>
       <p class="caption wp-caption-text">
-        Photo by Bailey Theado/The Gazelle
+        <?php echo $firstCaption; ?>
       </p>
     </div>
   </div>

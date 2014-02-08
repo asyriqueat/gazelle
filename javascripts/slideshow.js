@@ -6,6 +6,10 @@ $(function() {
     setTimeout(function() {
       slideshowScroll = new IScroll(".slideshow", {scrollY: false, scrollX: true, eventPassthrough: true, snap: true});
       var slideshowScrollItems = $(".slideshow .scroller ul li");
+      var captionSelector = $(".slideshow-container .caption");
+      slideshowScroll.on("scrollStart", function() {
+        captionSelector.animate({opacity: 0}, 200);
+      });
       slideshowScroll.on('scrollEnd', function() {
         check = slideshowScrollItems.length - (slideshowScroll.currentPage.pageX + 1) > 0;
         if (slideshowScroll.currentPage.pageX !== 0) {
@@ -18,6 +22,8 @@ $(function() {
         } else {
           $(".slideshow .icon-next").removeClass("active");
         }
+        var caption = slideshowScrollItems.eq(slideshowScroll.currentPage.pageX).children("div").html();
+        captionSelector.html(caption).animate({opacity: 1}, 200);
       });
       if (slideshowScrollItems.length > 1) {
         $(".slideshow .icon-next").addClass("active");
