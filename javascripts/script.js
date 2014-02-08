@@ -139,16 +139,16 @@ $(function() {
           otherScroll.goToPage(otherScroll.currentPage.pageX + 1, 0);
         }
       });
-      $(document).on("click", "#other-posts .icon-next", function(e) {
+      $(document).on("click", "#other-posts .right", function(e) {
         otherScroll.goToPage(otherScroll.currentPage.pageX + 1, 0);
       });
-      $(document).on("click", "#other-posts .icon-prev", function(e) {
+      $(document).on("click", "#other-posts .left", function(e) {
         otherScroll.goToPage(otherScroll.currentPage.pageX - 1, 0);
       });
-      $(document).on("click", "#top-scroll .icon-next", function(e) {
+      $(document).on("click", "#top-scroll .right", function(e) {
         topScroll.goToPage(topScroll.currentPage.pageX + 1, 0);
       });
-      $(document).on("click", "#top-scroll .icon-prev", function(e) {
+      $(document).on("click", "#top-scroll .left", function(e) {
         topScroll.goToPage(topScroll.currentPage.pageX - 1, 0);
       });
       $(document).on("click touchstart", "#editors", function(e) {
@@ -322,9 +322,6 @@ $(function() {
         resizeMoreScroller(moreScroll);
       }, 100);
 
-      $(document).on("click", "a", function (e) {
-        e.stopPropagation();
-      });
       $('#more-scroll .scroller').bind('mousewheel', function(e) {
         e.preventDefault();
         var delta = e.originalEvent.wheelDelta;
@@ -334,10 +331,10 @@ $(function() {
           moreScroll.goToPage(moreScroll.currentPage.pageX + 1, 0);
         }
       });
-      $(document).on("click", "#more-scroll .icon-next", function(e) {
+      $(document).on("click", "#more-scroll .right", function(e) {
         moreScroll.goToPage(moreScroll.currentPage.pageX + 1, 0);
       });
-      $(document).on("click", "#more-scroll .icon-prev", function(e) {
+      $(document).on("click", "#more-scroll .left", function(e) {
         moreScroll.goToPage(moreScroll.currentPage.pageX - 1, 0);
       });
       $(window).on('resize', function(e) {

@@ -162,6 +162,51 @@ function blockquote_image($atts, $content) {
 
 add_shortcode('blockquote_image', 'blockquote_image');
 
+
+function make_slideshow($atts, $content) {
+  $slides = explode(";", $content);
+  $slideCount = count($slides);
+  $pattern = "/^\[(.+)\]\((.+)\)/";
+  $matches = array();
+
+  ?>
+  <div class="wp-caption alignnone slideshow-container">
+    <div class="slideshow full-width">
+      <div class="scroller">
+        <ul>
+  <?php
+  foreach ($slides as $slide) {
+    preg_match($pattern, $slide, $matches);
+    if (!count($matches)) continue;
+    $caption = $matches[1];
+    $imgLink = $matches[2];
+    echo '<li class="item">';
+    ?>
+      <div style="background-image: url(<?php echo $imgLink; ?>)" class="image"><?php echo $caption; ?></div>
+    <?php
+    echo '</li>';
+  }
+  ?> 
+          </ul>
+        </div>
+        <div class="left carousel-control">
+          <a class="icon-prev"></a>
+        </div>
+        <div class="right carousel-control">
+          <a class="icon-next"></a>
+        </div>
+      </div>
+      <p class="caption wp-caption-text">
+        Photo by Bailey Theado/The Gazelle
+      </p>
+    </div>
+  </div>
+  <script src="<?php echo get_stylesheet_directory_uri(); ?>/javascripts/slideshow.js?v=1" type="text/javascript"></script>
+  <?php
+}
+
+add_shortcode('slideshow', 'make_slideshow');
+
 add_filter('manage_posts_columns', 'my_columns');
 function my_columns($columns) {
     $columns['views'] = 'Views';

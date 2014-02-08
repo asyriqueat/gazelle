@@ -66,7 +66,7 @@
     <div class="bar bar-<?php echo strtolower(get_cat()); ?>">
       <h5>More in <?php echo get_cat(); ?></h5>
     </div>
-    <div id="scroll-wrap">
+    <div class="scroll-wrap">
       <div id="more-scroll">
         <div class="scroller">
           <ul>
