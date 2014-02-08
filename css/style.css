@@ -89,6 +89,10 @@ body, html {
     .carousel-control a.active:hover {
       cursor: pointer;
       opacity: 1; }
+  .carousel-control:hover {
+    cursor: pointer; }
+    .carousel-control:hover a.active {
+      opacity: 1; }
 
 #archives .col-12 {
   padding-left: 10px;
@@ -173,17 +177,17 @@ body, html {
         margin-top: 10px; }
 
 /*Carousel css*/
-#other-scroll, #more-scroll {
+#other-scroll, #more-scroll, .slideshow {
   overflow: hidden;
   height: 200px;
   padding: 0px; }
-  #other-scroll .scroller, #more-scroll .scroller {
+  #other-scroll .scroller, #more-scroll .scroller, .slideshow .scroller {
     width: 2000px;
     height: 100%; }
-    #other-scroll .scroller ul, #more-scroll .scroller ul {
+    #other-scroll .scroller ul, #more-scroll .scroller ul, .slideshow .scroller ul {
       width: 100%;
       height: 100%; }
-      #other-scroll .scroller ul li, #more-scroll .scroller ul li {
+      #other-scroll .scroller ul li, #more-scroll .scroller ul li, .slideshow .scroller ul li {
         width: 300px;
         height: 100%;
         float: left; }
@@ -444,50 +448,50 @@ body, html {
       background-color: #00aa87; }
     #article .row-more .bar.bar-media {
       background-color: #00aa87; }
-  #article .row-more #scroll-wrap {
+  #article .row-more .scroll-wrap {
     position: relative; }
-    #article .row-more #scroll-wrap #more-scroll {
+    #article .row-more .scroll-wrap #more-scroll {
       padding: 0;
       overflow: hidden; }
-      #article .row-more #scroll-wrap #more-scroll ul li {
+      #article .row-more .scroll-wrap #more-scroll ul li {
         margin-right: 10px; }
-        #article .row-more #scroll-wrap #more-scroll ul li .image {
+        #article .row-more .scroll-wrap #more-scroll ul li .image {
           height: 300px; }
-          #article .row-more #scroll-wrap #more-scroll ul li .image .image-overlay {
+          #article .row-more .scroll-wrap #more-scroll ul li .image .image-overlay {
             width: 100%;
             display: block;
             min-height: 40px;
             background: rgba(0, 0, 0, 0.7);
             position: absolute; }
-            #article .row-more #scroll-wrap #more-scroll ul li .image .image-overlay .image-overlay-text {
+            #article .row-more .scroll-wrap #more-scroll ul li .image .image-overlay .image-overlay-text {
               display: block;
               width: 100%;
               padding: 10px 10px; }
-              #article .row-more #scroll-wrap #more-scroll ul li .image .image-overlay .image-overlay-text h5 {
+              #article .row-more .scroll-wrap #more-scroll ul li .image .image-overlay .image-overlay-text h5 {
                 color: white;
                 margin-bottom: 0px;
                 font-weight: 300; }
-        #article .row-more #scroll-wrap #more-scroll ul li:hover .overlay-features {
+        #article .row-more .scroll-wrap #more-scroll ul li:hover .overlay-features {
           background-color: rgba(0, 149, 184, 0.8); }
-        #article .row-more #scroll-wrap #more-scroll ul li:hover .overlay-opinion {
+        #article .row-more .scroll-wrap #more-scroll ul li:hover .overlay-opinion {
           background-color: rgba(0, 170, 135, 0.8); }
-        #article .row-more #scroll-wrap #more-scroll ul li:hover .overlay-news {
+        #article .row-more .scroll-wrap #more-scroll ul li:hover .overlay-news {
           background-color: rgba(220, 74, 52, 0.8); }
-        #article .row-more #scroll-wrap #more-scroll ul li:hover .overlay-media {
+        #article .row-more .scroll-wrap #more-scroll ul li:hover .overlay-media {
           background-color: rgba(204, 150, 86, 0.8); }
-        #article .row-more #scroll-wrap #more-scroll ul li:hover .overlay-uncategorized {
+        #article .row-more .scroll-wrap #more-scroll ul li:hover .overlay-uncategorized {
           background-color: rgba(45, 48, 48, 0.8); }
-        #article .row-more #scroll-wrap #more-scroll ul li:hover small {
+        #article .row-more .scroll-wrap #more-scroll ul li:hover small {
           color: white; }
-      #article .row-more #scroll-wrap #more-scroll .carousel-control {
+      #article .row-more .scroll-wrap #more-scroll .carousel-control {
         background: none;
         width: 10px; }
-        #article .row-more #scroll-wrap #more-scroll .carousel-control a {
+        #article .row-more .scroll-wrap #more-scroll .carousel-control a {
           font-size: 2em;
           top: 42.5%; }
-        #article .row-more #scroll-wrap #more-scroll .carousel-control.left {
+        #article .row-more .scroll-wrap #more-scroll .carousel-control.left {
           left: -10px; }
-        #article .row-more #scroll-wrap #more-scroll .carousel-control.right {
+        #article .row-more .scroll-wrap #more-scroll .carousel-control.right {
           right: -10px; }
 #article .row-comments .fb-comments {
   width: 100%; }
@@ -923,6 +927,10 @@ body, html {
       width: -moz-calc(100% + 150px);
       width: -webkit-calc(100% + 150px);
       width: calc(100% + 150px); }
+  #article .row-share {
+    padding: 0 60px; }
+    #article .row-share .col-12 {
+      padding: 0; }
   #article .row-author {
     padding: 0px 15px; }
   #article .row-more {
@@ -1178,6 +1186,9 @@ body, html {
         width: -moz-calc(100% + 310px);
         width: -webkit-calc(100% + 310px);
         width: calc(100% + 310px); } }
+  @media screen and (min-width: 768px) and (min-width: 1200px) {
+    #article .row-share {
+      padding: 0 140px; } }
     @media screen and (min-width: 768px) and (min-width: 768px) and (max-width: 1200px) {
       .editors-row #editor-labels {
         height: 400px; } }
@@ -1252,7 +1263,84 @@ body, html {
       #header #nav .nav-list .nav-element {
         padding-right: 30px;
         padding-left: 30px; } }
+/* Slideshow */
+@media screen and (min-width: 768px) {
+  .slideshow-container {
+    width: -moz-calc(100% + 30px);
+    width: -webkit-calc(100% + 30px);
+    width: calc(100% + 30px);
+    margin: 0 -15px; } }
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  font-size: 0; }
+  .slideshow .carousel-control {
+    width: 8%; }
+    .slideshow .carousel-control.hover a.active {
+      color: white;
+      opacity: 1; }
+    .slideshow .carousel-control.left {
+      left: 45px;
+      background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.0001)));
+      background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.2) 0), color-stop(rgba(0, 0, 0, 0.0001) 100%));
+      background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.0001) 100%);
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.0001) 100%); }
+    .slideshow .carousel-control.right {
+      right: 45px;
+      background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.2)));
+      background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.0001) 0), color-stop(rgba(0, 0, 0, 0.2) 100%));
+      background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0, rgba(0, 0, 0, 0.2) 100%);
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0, rgba(0, 0, 0, 0.2) 100%); }
+    .slideshow .carousel-control a {
+      font-size: 3em;
+      width: 10px;
+      color: white;
+      margin-top: -45px; }
+  @media screen and (max-width: 380px) {
+    .slideshow {
+      height: 160px; } }
+  @media screen and (min-width: 380px) {
+    .slideshow {
+      height: 242px; } }
+  @media screen and (min-width: 768px) {
+    .slideshow {
+      height: 350px; }
+      .slideshow .carousel-control.left {
+        left: 0px; }
+      .slideshow .carousel-control.right {
+        right: 0px; }
+      .slideshow .carousel-control a {
+        font-size: 3.5em;
+        margin-top: -50px; } }
+  @media screen and (min-width: 992px) {
+    .slideshow {
+      height: 455px; }
+      .slideshow .carousel-control a {
+        font-size: 4em; } }
+  @media screen and (min-width: 1200px) {
+    .slideshow {
+      height: 570px; } }
+  .slideshow .scroller ul li {
+    width: 100%;
+    height: 100%; }
+    .slideshow .scroller ul li .image {
+      height: 100%; }
+
 /* Helpers */
+.full-width {
+  margin: 10px -60px;
+  width: -moz-calc(100% + 120px);
+  width: -webkit-calc(100% + 120px);
+  width: calc(100% + 120px); }
+  @media screen and (min-width: 1200px) {
+    .full-width {
+      margin: 10px -140px;
+      width: -moz-calc(100% + 280px);
+      width: -webkit-calc(100% + 280px);
+      width: calc(100% + 280px); } }
+
 .blockquote-image {
   text-align: center;
   color: white;
