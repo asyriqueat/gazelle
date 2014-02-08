@@ -25,15 +25,6 @@ $(function() {
       resizeSlideshowScroller(slideshowScroll);
     }, 100);
 
-    $('.slideshow .scroller').bind('mousewheel', function(e) {
-      e.preventDefault();
-      var delta = e.originalEvent.wheelDelta;
-      if (delta > 0) {
-        slideshowScroll.goToPage(slideshowScroll.currentPage.pageX - 1, 0);
-      } else {
-        slideshowScroll.goToPage(slideshowScroll.currentPage.pageX + 1, 0);
-      }
-    });
     $(document).on("click", ".slideshow .right", function(e) {
       slideshowScroll.goToPage(slideshowScroll.currentPage.pageX + 1, 0);
     });
