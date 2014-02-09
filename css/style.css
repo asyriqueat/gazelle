@@ -1278,6 +1278,8 @@ body, html {
   font-size: 0; }
   .slideshow .carousel-control {
     width: 8%; }
+    .slideshow .carousel-control a:hover {
+      color: white !important; }
     .slideshow .carousel-control.hover a.active {
       color: white;
       opacity: 1; }

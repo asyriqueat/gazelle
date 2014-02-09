@@ -1743,6 +1743,9 @@ body, html {
   font-size: 0;
   .carousel-control {
     width: 8%;  
+    a:hover {
+      color: white !important;
+    }
     &.hover {
       a.active {
         color: white;
