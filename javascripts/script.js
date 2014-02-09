@@ -65,6 +65,8 @@ $(function() {
   $(function() {
     var home = $("#home");
     if (home.length > 0) {
+      var otherScrollItems = $("#other-scroll .scroller ul li");
+      var topScrollItems = $("#top-scroll .scroller ul li");
       var topScrollMoving = true;
       var otherScrollMoving = true;
       var oldWidth = $(window).width();
@@ -136,17 +138,37 @@ $(function() {
         if (delta > 0) {
           otherScroll.goToPage(otherScroll.currentPage.pageX - 1, 0);
         } else {
-          otherScroll.goToPage(otherScroll.currentPage.pageX + 1, 0);
+          if (size == "small") {
+            numItems = 1;
+          } else if (size == "medium") {
+            numItems = 2;
+          } else {
+            numItems = 3;
+          }
+          if (otherScroll.currentPage.pageX < ((otherScrollItems.length / numItems) - 1))
+            otherScroll.goToPage(otherScroll.currentPage.pageX + 1, 0);
         }
       });
       $(document).on("click", "#other-posts .right", function(e) {
-        otherScroll.goToPage(otherScroll.currentPage.pageX + 1, 0);
+        var numItems;
+        if (size == "small") {
+          numItems = 1;
+        } else if (size == "medium") {
+          numItems = 2;
+        } else {
+          numItems = 3;
+        }
+        console.log(numItems);
+        console.log(otherScroll.currentPage.pageX);
+        if (otherScroll.currentPage.pageX  < ((otherScrollItems.length / numItems) - 1))
+          otherScroll.goToPage(otherScroll.currentPage.pageX + 1, 0);
       });
       $(document).on("click", "#other-posts .left", function(e) {
         otherScroll.goToPage(otherScroll.currentPage.pageX - 1, 0);
       });
       $(document).on("click", "#top-scroll .right", function(e) {
-        topScroll.goToPage(topScroll.currentPage.pageX + 1, 0);
+        if (topScroll.currentPage.pageX < (topScrollItems.length - 1))
+          topScroll.goToPage(topScroll.currentPage.pageX + 1, 0);
       });
       $(document).on("click", "#top-scroll .left", function(e) {
         topScroll.goToPage(topScroll.currentPage.pageX - 1, 0);
@@ -160,7 +182,6 @@ $(function() {
 
     }
     function resizeScroller(otherScroll) {
-      var otherScrollItems = $("#other-scroll .scroller ul li");
       var width;
       if (size == "small") {
         width = otherScrollItems.width($("#other-scroll").width()).width();
@@ -223,7 +244,6 @@ $(function() {
         }
       }
 
-      var topScrollItems = $("#top-scroll .scroller ul li");
       var scroller = $("#top-scroll");
       var width = topScrollItems.width(scroller.width()).width();
       var height = topScrollItems.height(scroller.height()).height();
@@ -289,6 +309,7 @@ $(function() {
   $(function() { 
     var article = $("#article");
     if (article.length > 0) {
+      var moreScrollItems = $("#more-scroll .scroller ul li");
       var oldWidth = $(window).width();
       // more carousel
       setTimeout(function() {
@@ -328,11 +349,27 @@ $(function() {
         if (delta > 0) {
           moreScroll.goToPage(moreScroll.currentPage.pageX - 1, 0);
         } else {
-          moreScroll.goToPage(moreScroll.currentPage.pageX + 1, 0);
+          if (size == "small") {
+            numItems = 1;
+          } else if (size == "medium") {
+            numItems = 2;
+          } else {
+            numItems = 3;
+          }
+          if (moreScroll.currentPage.pageX < ((moreScrollItems.length / numItems) - 1))
+            moreScroll.goToPage(moreScroll.currentPage.pageX + 1, 0);
         }
       });
       $(document).on("click", "#more-scroll .right", function(e) {
-        moreScroll.goToPage(moreScroll.currentPage.pageX + 1, 0);
+        if (size == "small") {
+          numItems = 1;
+        } else if (size == "medium") {
+          numItems = 2;
+        } else {
+          numItems = 3;
+        }
+        if (moreScroll.currentPage.pageX < ((moreScrollItems.length / numItems) - 1))
+          moreScroll.goToPage(moreScroll.currentPage.pageX + 1, 0);
       });
       $(document).on("click", "#more-scroll .left", function(e) {
         moreScroll.goToPage(moreScroll.currentPage.pageX - 1, 0);
@@ -345,7 +382,6 @@ $(function() {
       });
     }
     function resizeMoreScroller(moreScroll) {
-      var moreScrollItems = $("#more-scroll .scroller ul li");
       var width;
       if (size == "small") {
         width = moreScrollItems.width($("#more-scroll").width() - 9).width();

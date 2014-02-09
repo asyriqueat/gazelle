@@ -1,14 +1,16 @@
 // slideshow javascript
 $(function() {
   var slideshow = $(".slideshow");
+  var slideshowScrollItems = $(".slideshow .scroller ul li");
+  var oldPage = 0;
   // check that the slideshow exists
   if (slideshow.length > 0) {
     setTimeout(function() {
       slideshowScroll = new IScroll(".slideshow", {scrollY: false, scrollX: true, eventPassthrough: true, snap: true});
-      var slideshowScrollItems = $(".slideshow .scroller ul li");
       var captionSelector = $(".slideshow-container .caption");
       slideshowScroll.on("scrollStart", function() {
-        captionSelector.animate({opacity: 0}, 200);
+        //captionSelector.animate({opacity: 0}, 200);
+        //console.log("scroll starting");
       });
       slideshowScroll.on('scrollEnd', function() {
         check = slideshowScrollItems.length - (slideshowScroll.currentPage.pageX + 1) > 0;
@@ -22,8 +24,12 @@ $(function() {
         } else {
           $(".slideshow .icon-next").removeClass("active");
         }
-        var caption = slideshowScrollItems.eq(slideshowScroll.currentPage.pageX).children("div").html();
-        captionSelector.html(caption).animate({opacity: 1}, 200);
+        var pageNumber = slideshowScroll.currentPage.pageX;
+        var caption = slideshowScrollItems.eq(pageNumber).children("div").html();
+        if (oldPage != pageNumber) {
+          captionSelector.html(caption).animate({opacity: 0}, 200, function() {captionSelector.animate({opacity: 1}, 200);});
+          oldPage = pageNumber;
+        }
       });
       if (slideshowScrollItems.length > 1) {
         $(".slideshow .icon-next").addClass("active");
@@ -32,7 +38,9 @@ $(function() {
     }, 100);
 
     $(document).on("click", ".slideshow .right", function(e) {
-      slideshowScroll.goToPage(slideshowScroll.currentPage.pageX + 1, 0);
+      // adding a check because there is an extra 10px to prevent overflowing the div
+      if (slideshowScroll.currentPage.pageX < (slideshowScrollItems.length - 1))
+        slideshowScroll.goToPage(slideshowScroll.currentPage.pageX + 1, 0);
     });
     $(document).on("click", ".slideshow .left", function(e) {
       slideshowScroll.goToPage(slideshowScroll.currentPage.pageX - 1, 0);
