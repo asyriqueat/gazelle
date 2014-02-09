@@ -1753,14 +1753,12 @@ body, html {
       }
     }
     &.left {
-      left: 45px;
       background-image: -webkit-gradient(linear,0 top,100% top,from(rgba(0,0,0,0.2)),to(rgba(0,0,0,0.0001)));
       background-image: -webkit-linear-gradient(left,color-stop(rgba(0,0,0,0.2) 0),color-stop(rgba(0,0,0,0.0001) 100%));
       background-image: -moz-linear-gradient(left,rgba(0,0,0,0.2) 0,rgba(0,0,0,0.0001) 100%);
       background-image: linear-gradient(to right,rgba(0,0,0,0.2) 0,rgba(0,0,0,0.0001) 100%);
     }
     &.right {
-      right: 45px;
       background-image: -webkit-gradient(linear,0 top,100% top,from(rgba(0,0,0,0.0001)),to(rgba(0,0,0,0.2)));
       background-image: -webkit-linear-gradient(left,color-stop(rgba(0,0,0,0.0001) 0),color-stop(rgba(0,0,0,0.2) 100%));
       background-image: -moz-linear-gradient(left,rgba(0,0,0,0.0001) 0,rgba(0,0,0,0.2) 100%);
@@ -1820,10 +1818,16 @@ body, html {
 
 /* Helpers */
 .full-width {
-  margin: 10px -60px;
-  width: -moz-calc(100% + 120px);
-  width: -webkit-calc(100% + 120px);
-  width: calc(100% + 120px);
+  margin: 10px -15px;
+  width: -moz-calc(100% + 30px);
+  width: -webkit-calc(100% + 30px);
+  width: calc(100% + 30px);
+  @media screen and (min-width: 768px) {
+    margin: 10px -60px;
+    width: -moz-calc(100% + 120px);
+    width: -webkit-calc(100% + 120px);
+    width: calc(100% + 120px);
+  }
   @media screen and (min-width: 1200px) {
     margin: 10px -140px;
     width: -moz-calc(100% + 280px);
