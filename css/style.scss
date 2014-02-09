@@ -1779,12 +1779,6 @@ body, html {
   }
   @media screen and (min-width: 768px) {
     .carousel-control {
-      &.left {
-        left: 0px;
-      }
-      &.right {
-        right: 0px;
-      }
       a {
         font-size: 3.5em;
         margin-top: -50px;

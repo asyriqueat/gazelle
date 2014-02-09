@@ -1307,10 +1307,6 @@ body, html {
   @media screen and (min-width: 768px) {
     .slideshow {
       height: 350px; }
-      .slideshow .carousel-control.left {
-        left: 0px; }
-      .slideshow .carousel-control.right {
-        right: 0px; }
       .slideshow .carousel-control a {
         font-size: 3.5em;
         margin-top: -50px; } }
