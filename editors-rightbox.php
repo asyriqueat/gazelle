@@ -19,11 +19,11 @@
           </a>
         </li>
         <li>
-          <a href="<?php echo get_site_url().'/issue/author/olivia-bergen/'; ?> ">
+          <a href="<?php echo get_site_url().'/issue/author/olivia-bergenn/'; ?> ">
             <img src="http://thegazelle.s3.amazonaws.com/gazelle/2013/09/olivia.png" class="img-circle">
             <!-- <h6>Days of Our Lives</h6> -->
           </a>
-          <a href="<?php echo get_site_url().'/issue/author/olivia-bergen/'; ?> ">
+          <a href="<?php echo get_site_url().'/issue/author/olivia-bergenn/'; ?> ">
             <small class="text-muted">Olivia Bergen</small>
           </a>
         </li>
