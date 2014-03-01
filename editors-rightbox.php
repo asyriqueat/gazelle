@@ -12,7 +12,7 @@
         <li>
           <a href="<?php echo get_site_url().'/issue/author/muhammad-usman/'; ?> ">
             <img src="http://thegazelle.s3.amazonaws.com/gazelle/2013/10/usman.png" class="img-circle">
-            <h6>Peace and Conflict</h6>
+            <!-- <h6>Peace and Conflict</h6> -->
           </a>
           <a href="<?php echo get_site_url().'/issue/author/muhammad-usman/'; ?> ">
             <small class="text-muted">Muhammad Usman</small>
@@ -21,7 +21,7 @@
         <li>
           <a href="<?php echo get_site_url().'/issue/author/olivia-bergen/'; ?> ">
             <img src="http://thegazelle.s3.amazonaws.com/gazelle/2013/09/olivia.png" class="img-circle">
-            <h6>Days of Our Lives</h6>
+            <!-- <h6>Days of Our Lives</h6> -->
           </a>
           <a href="<?php echo get_site_url().'/issue/author/olivia-bergen/'; ?> ">
             <small class="text-muted">Olivia Bergen</small>
@@ -30,7 +30,7 @@
         <li>
           <a href="<?php echo get_site_url().'/issue/author/joshua-shirley/'; ?> ">
             <img src="http://thegazelle.s3.amazonaws.com/gazelle/2013/10/josh.png" class="img-circle">
-            <h6>Controversial Things about Australia</h6>
+            <!-- <h6>Controversial Things about Australia</h6> -->
           </a>
           <a href="<?php echo get_site_url().'/issue/author/joshua-shirley/'; ?> ">
             <small class="text-muted">Joshua Shirley</small>
