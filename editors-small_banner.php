@@ -78,51 +78,7 @@
             </div>
         </div>
       </div>
-    <div id="top-side" class="hidden-sm col-sm-4">
-      <ul class="nav nav-tabs">
-        <li class="active"><a href="#top-articles" data-toggle="tab">Trending</a></li>
-        <li><a href="#past-issue" data-toggle="tab">The Archives</a></li>
-      </ul>
-      <div class="tab-content">
-        <div id="top-articles" class="tab-pane active fade in">
-          <?php top_articles(); ?>
-        </div>
-        <div id="past-issue" class="tab-pane fade">
-          <?php
-          $currentIssue = get_query_var("issue"); ?>
-          <?php if (empty($currentIssue)) { 
-            $currentIssue = get_term(get_option('current_issue'), "issue"); 
-          } else {
-            $currentIssue = get_term_by("slug", $currentIssue, "issue");
-          }
-          $count = 0;
-          $args = array(
-            'orderby'       => "slug", 
-            'order'         => "DESC",
-            'exclude'       => get_option("exclude_issues") 
-          );
-          $terms = get_terms("issue", $args); 
-          ?>
-          <ul class="issues-list list-unstyled">
-          <?php usort($terms, "issues_sort"); ?>
-          <?php foreach ($terms as $term) { ?>
-            <?php if ($count == 4) { break; } ?>
-            <?php if ($currentIssue->slug != $term->slug) { ?>
-              <li class="issue-item"><a href='<?php echo site_url() . '/issue/' . $term->slug ?>'
-                title='View all posts in <?php echo $term->name ?>'><h6><?php echo $term->name ?></h6></a>
-                <small class="text-muted"><?php echo $term->description; ?></small>
-              </li>
-              <?php $count++ ?>
-            <?php } ?>
-          <?php } ?>
-            <br/>
-            <li class="issue-item"><a href='<?php echo site_url() . '/the-archives/' ?>'
-              title='View Archives'><small class="text-muted">View Archives</small></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+      <?php get_template_part( 'editors', 'rightbox'); ?>
   </div>
     <?php
         rewind_posts();

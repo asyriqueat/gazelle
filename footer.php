@@ -31,6 +31,11 @@
         <h4>Our Team</h4>
       </a>
     </li>
+    <li>
+      <a href="<?php echo $root . '/the-archives/' ?>" title="The Archives" rel="archives">
+        <h4>The Archives</h4>
+      </a>
+    </li>
   </ul>
 </div>
 </body>

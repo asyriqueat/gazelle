@@ -29,10 +29,17 @@ get_header(); ?>
       <div class="jumbotron">
         <div class="row">
           <div class="col-6 col-sm-4 avatar">
-          <?php   mt_profile_img( get_the_author_meta ("ID"), array(
+          <?php $author_id = get_the_author_meta ("ID"); 
+              $x = mt_profile_img($author_id, array(
                           'size' => '200',
-                          'echo' => true )
-                        ); ?>
+                          'echo' => false )
+                        ); 
+            if ($x) {
+              echo $x;
+            } else {
+              echo get_avatar($author_id, 200);
+            }
+          ?>
           </div><!-- .author-avatar -->
           <div class="col-6 col-sm-8">
             <h1><?php the_author(); ?></h1>

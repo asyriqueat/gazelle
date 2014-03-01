@@ -235,3 +235,6 @@ function issues_sort($a, $b) {
 }
 
 add_image_size("mt_profile_img", 500, 500, false);
+
+// we don't want the default avatar anywhere
+add_filter( 'mpp_avatar_override', '__return_true' );
