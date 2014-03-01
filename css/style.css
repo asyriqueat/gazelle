@@ -1028,12 +1028,12 @@ body, html {
     border-color: #bbbbbb;
     height: 258px; }
     .tab-content #columnists img {
-      height: 100px;
-      width: 100px;
+      height: 75px;
+      width: 75px;
       float: left; }
     .tab-content #columnists h6, .tab-content #columnists small {
       position: relative;
-      top: 50px; }
+      top: 20px; }
     .tab-content #columnists li {
       clear: both; }
       .tab-content #columnists li a:hover {
