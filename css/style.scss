@@ -1873,6 +1873,13 @@ body, html {
   }
 }
 
+.big-image {
+  img {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}
+
 /*Wordpress specific stuff*/
 html {
   body {

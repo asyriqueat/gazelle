@@ -209,6 +209,12 @@ function make_slideshow($atts, $content) {
 
 add_shortcode('slideshow', 'make_slideshow');
 
+function big_image($atts, $content) {
+  return "<div class='big-image'> $content </div>"
+}
+
+add_shortcode('big_image', 'big_image');
+
 add_filter('manage_posts_columns', 'my_columns');
 function my_columns($columns) {
     $columns['views'] = 'Views';
