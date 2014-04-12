@@ -244,3 +244,6 @@ add_image_size("mt_profile_img", 500, 500, false);
 
 // we don't want the default avatar anywhere
 add_filter( 'mpp_avatar_override', '__return_true' );
+
+// allow html in author page
+remove_filter('pre_user_description', 'wp_filter_kses');
