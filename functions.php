@@ -1,6 +1,6 @@
 <?php
-function gridster() { 
-  $query = gridster_query(); 
+function gridster() {
+  $query = gridster_query();
   $max_row = 0; ?>
   <div data-root='<?php echo site_url(); ?>' class="gridster">
     <div id="grid-buttons" class="row">
@@ -15,16 +15,16 @@ function gridster() {
   <?php
     $params = current_issue(gridlock_future(array_merge(get_option("gridlock_grid_query"), array('orderby' => 'date', 'order' => 'DESC', "post_status" => "publish", "tag__not_in" => get_term_by("name", "pick", "post_tag")->term_id))));
     $gridster_query = new WP_Query($params);
-    while ( $gridster_query->have_posts() ) : $gridster_query->the_post(); 
-      if (get_post_meta( get_the_ID(), "_gridlock", true) > 1) { 
-          $gridlock =  explode(".", get_post_meta( get_the_ID(), "_gridlock", true)); 
-          $index = $gridlock[1][0]; 
-          $span = $gridlock[1][1]; 
+    while ( $gridster_query->have_posts() ) : $gridster_query->the_post();
+      if (get_post_meta( get_the_ID(), "_gridlock", true) > 1) {
+          $gridlock =  explode(".", get_post_meta( get_the_ID(), "_gridlock", true));
+          $index = $gridlock[1][0];
+          $span = $gridlock[1][1];
           $row = $gridlock[0]; ?>
           <li data-row="<?php echo $row ?>" data-col="<?php echo $index ?>" data-sizex="<?php echo $span ?>" data-sizey="1" data-post_id=<?php the_ID(); ?>>
             <div class="gridster-box">
               <div class="row gridster-title">
-                <?php the_title(); ?> 
+                <?php the_title(); ?>
               </div>
               <div class="row">
                 <button type="button" class="btn btn-info btn-block toggle-btn">Toggle Size</button>
@@ -34,7 +34,7 @@ function gridster() {
               </div>
             </div>
           </li>
-      <?php } 
+      <?php }
     endwhile;
     ?>
     </ul>
@@ -45,7 +45,7 @@ function ungridded_posts() {
   $params = current_issue(gridlock_future(array_merge(get_option("gridlock_grid_query"), array('orderby' => 'date', 'order' => 'DESC', "post_status" => "publish", "tag__not_in" => get_term_by("name", "pick", "post_tag")->term_id))));
   $unassigned = new WP_Query($params);
   echo "<ul id='ungridded' class='list-unstyled'>";
-  while ( $unassigned->have_posts() ) : $unassigned->the_post(); 
+  while ( $unassigned->have_posts() ) : $unassigned->the_post();
     $gridlock_meta = get_post_meta(get_the_ID(), "_gridlock", true);
     if (!isset($gridlock_meta) || $gridlock_meta < 1) {
       echo "<li><a href='#' data-post_id=" . get_the_ID() . " class='text-primary'>+" . get_the_title() . "</a></li>";
@@ -109,11 +109,11 @@ function top_articles() {
 
 function archive_list() {
   $args = array(
-    'orderby'       => "slug", 
+    'orderby'       => "slug",
     'order'         => "DESC",
     'exclude'       => get_option("exclude_issues")
   );
-  $terms = get_terms("issue", $args); 
+  $terms = get_terms("issue", $args);
   $count = 0;
   ?>
   <div id="archives" class="container">
@@ -188,7 +188,7 @@ function make_slideshow($atts, $content) {
     <?php
     echo '</li>';
   }
-  ?> 
+  ?>
           </ul>
         </div>
         <div class="left carousel-control">
@@ -247,3 +247,6 @@ add_filter( 'mpp_avatar_override', '__return_true' );
 
 // allow html in author page
 remove_filter('pre_user_description', 'wp_filter_kses');
+
+//Prevent WP_AutoP from running when in the Loop
+remove_filter('the_content', 'wpautop');
