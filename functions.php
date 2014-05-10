@@ -247,6 +247,3 @@ add_filter( 'mpp_avatar_override', '__return_true' );
 
 // allow html in author page
 remove_filter('pre_user_description', 'wp_filter_kses');
-
-//Prevent WP_AutoP from running when in the Loop
-remove_filter('the_content', 'wpautop');
