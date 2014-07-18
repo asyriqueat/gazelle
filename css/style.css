@@ -1413,12 +1413,15 @@ html body #article p.wp-caption-text {
   }
   .ifscroll-header-news{
     background-color:#dc4a34;
+    z-index: -1;
   }
   .ifscroll-header-features{
     background-color:#0095b8;
+    z-index: -1;
   }
   .ifscroll-header-opinion{
     background-color:#00aa87;
+    z-index: -1;
   }
 }
 
@@ -1428,16 +1431,13 @@ html body #article p.wp-caption-text {
   font-size: 3.9em;
   margin-bottom: 20px;}
   @media screen and (min-width: 768px) {
+    .ifscroll-issue-news{
+      padding:0px 37%;
+    }
     .ifscroll-issue-news h3{
       color: #333;
       font-size:2.5em;
-      margin-bottom:10px;
-      left:50%;
-      margin-top:1px;
-      margin-left:-81px;
       background-color:white;
-      width:150px;
-      position:absolute;
       }
   }
 
@@ -1447,16 +1447,13 @@ html body #article p.wp-caption-text {
   font-size: 3.9em;
   margin-bottom: 20px;}
   @media screen and (min-width: 768px) {
-    .ifscroll-issue-news h3{
+    .ifscroll-issue-features{
+      padding:0px 37%;
+    }
+    .ifscroll-issue-features h3{
       color: #333;
       font-size:2.5em;
-      margin-bottom:10px;
-      left:50%;
-      margin-top:1px;
-      margin-left:-81px;
       background-color:white;
-      width:150px;
-      position:absolute;
       }
   }
 
@@ -1466,15 +1463,12 @@ html body #article p.wp-caption-text {
   font-size: 3.9em;
   margin-bottom: 20px;}
   @media screen and (min-width: 768px) {
-    .ifscroll-issue-news h3{
+    .ifscroll-issue-opinion{
+      padding:0px 37%;
+    }
+    .ifscroll-issue-opinion h3{
       color: #333;
       font-size:2.5em;
-      margin-bottom:10px;
-      left:50%;
-      margin-top:1px;
-      margin-left:-81px;
       background-color:white;
-      width:150px;
-      position:absolute;
       }
   }
