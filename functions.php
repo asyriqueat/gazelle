@@ -247,3 +247,17 @@ add_filter( 'mpp_avatar_override', '__return_true' );
 
 // allow html in author page
 remove_filter('pre_user_description', 'wp_filter_kses');
+
+//Infinite scroll
+function gazelle_infinitepaginate(){
+  $issuenum   = $_POST["issue_num"];
+  $category   = $_POST['category'];
+
+  $infinite_posts = new WP_Query(array_merge(array("issue" => $issuenum, "category_name" => $category), get_option("gridlock_query")) );
+  include(locate_template('ifscroll_loop.php'));
+
+  exit;
+ }
+ add_action('wp_ajax_infinite_scroll', 'gazelle_infinitepaginate');
+ add_action('wp_ajax_nopriv_infinite_scroll', 'gazelle_infinitepaginate');
+ ?>
