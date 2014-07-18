@@ -49,6 +49,7 @@ $(window).scroll(function(){
     if ($(window).scrollTop() == $(document).height() - $(window).height()){
             // run our call for pagination
             console.log("Reached end!");
+            console.log(issueNumber);
             loadScroll(issueNumber);
             }
 });
