@@ -251,7 +251,7 @@ remove_filter('pre_user_description', 'wp_filter_kses');
 //Infinite scroll
 function gazelle_infinitepaginate(){
   $contentFile  = $_POST['content_file'];
-  $issuenum   = $_POST["issue_num");
+  $issuenum   = $_POST["issue_num"];
   $category   = $_POST['category'];
 
   $infinite_posts = new WP_Query(array_merge(array("issue" => $issuenum, "category_name" => get_query_var("category_name"), get_option("gridlock_query")) ));
