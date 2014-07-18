@@ -254,7 +254,8 @@ function gazelle_infinitepaginate(){
   $issuenum   = $_POST["issue_num"];
   $category   = $_POST['category'];
 
-  $infinite_posts = new WP_Query(array_merge(array("issue" => $issuenum, "category_name" => get_query_var("category_name"), get_option("gridlock_query")) ));
+  $infinite_posts = new WP_Query(array_merge(array("issue" => $issuenum, "category_name" => $category), get_option("gridlock_query")) );
+  echo $infinite_posts;
   get_template_part($contentFile);
 
   exit;
