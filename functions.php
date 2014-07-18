@@ -254,7 +254,7 @@ function gazelle_infinitepaginate(){
   $category   = $_POST['category'];
 
   $infinite_posts = new WP_Query(array_merge(array("issue" => $issuenum, "category_name" => $category), get_option("gridlock_query")) );
-  include(locate_template("/app/public/wp-content/themes/gazelle/ifscroll_loop.php"));
+  include(locate_template('ifscroll_loop.php'));
 
   exit;
  }
