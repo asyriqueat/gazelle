@@ -43,8 +43,9 @@ get_header(); ?>
   <?php } ?>
 </div>
 <script type="text/javascript">
+var count = 0;
 var urlArray = $(location).attr('href').split("/");
-var issueNumber = parseInt(urlArray[($.inArray("issue", urlArray) + 1)]);
+var issueNumber = (parseInt(urlArray[($.inArray("issue", urlArray) + 1)]) - count);
 var issueCategory = urlArray[($.inArray("issue", urlArray) + 2)];
 $(window).scroll(function(){
     if ($(window).scrollTop() == $(document).height() - $(window).height()){
@@ -52,6 +53,7 @@ $(window).scroll(function(){
             console.log("Reached end!");
             console.log(issueNumber);
             loadScroll(issueNumber);
+            count = count + 1;
             }
 });
 
