@@ -43,7 +43,7 @@ get_header(); ?>
   <?php } ?>
 </div>
 <script type="text/javascript">
-var count = 0;
+var count = 1;
 var urlArray = $(location).attr('href').split("/");
 var issueNumber = parseInt(urlArray[($.inArray("issue", urlArray) + 1)]);
 var issueCategory = urlArray[($.inArray("issue", urlArray) + 2)];
