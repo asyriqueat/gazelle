@@ -45,14 +45,14 @@ get_header(); ?>
 <script type="text/javascript">
 var count = 0;
 var urlArray = $(location).attr('href').split("/");
-var issueNumber = (parseInt(urlArray[($.inArray("issue", urlArray) + 1)]) - count);
+var issueNumber = parseInt(urlArray[($.inArray("issue", urlArray) + 1)]);
 var issueCategory = urlArray[($.inArray("issue", urlArray) + 2)];
 $(window).scroll(function(){
     if ($(window).scrollTop() == $(document).height() - $(window).height()){
             // run our call for pagination
             console.log("Reached end!");
-            console.log(issueNumber);
-            loadScroll(issueNumber);
+            console.log(issueNumber - count);
+            loadScroll(issueNumber - count);
             count = count + 1;
             }
 });
