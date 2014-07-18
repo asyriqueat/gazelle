@@ -58,7 +58,8 @@ $(window).scroll(function(){
 });
 
 function loadScroll(issueNumber) {
-  $.ajax({
+  if (issueNumber > 0) {
+    $.ajax({
       url: "<?php bloginfo('wpurl') ?>/wp-admin/admin-ajax.php",
       type:'POST',
       data: "action=infinite_scroll&issue_num="+ issueNumber + '&category=' + issueCategory,
@@ -67,6 +68,13 @@ function loadScroll(issueNumber) {
       }
   });
   return false;
+  }
+  else if (issueNumber == 0){
+    $(".list").append("<div class='article-container col-12'><h1 style='text-align:center;'>Whoa! Looks like we're fresh out of articles! Come back later for more!</h1></div>");
+  }
+  else {
+    return false;
+  }
 }
 </script>
 
