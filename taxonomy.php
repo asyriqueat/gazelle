@@ -59,7 +59,7 @@ function loadScroll(issueNumber) {
   $.ajax({
       url: "<?php bloginfo('wpurl') ?>/wp-admin/admin-ajax.php",
       type:'POST',
-      data: "action=infinite_scroll&issue_num="+ issueNumber + '&category=' + issueCategory + '&content_file=ifscroll_loop',
+      data: "action=infinite_scroll&issue_num="+ issueNumber + '&category=' + issueCategory,
       success: function(html){
           $(".list").append(html);    // This will be the div where our content will be loaded
       }

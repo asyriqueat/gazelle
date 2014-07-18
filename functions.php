@@ -250,12 +250,11 @@ remove_filter('pre_user_description', 'wp_filter_kses');
 
 //Infinite scroll
 function gazelle_infinitepaginate(){
-  $contentFile  = $_POST['content_file'];
   $issuenum   = $_POST["issue_num"];
   $category   = $_POST['category'];
 
   $infinite_posts = new WP_Query(array_merge(array("issue" => $issuenum, "category_name" => $category), get_option("gridlock_query")) );
-  include(locate_template($contentFile + ".php"));
+  include(locate_template("/app/public/wp-content/themes/gazelle/ifscroll_loop.php"));
 
   exit;
  }
