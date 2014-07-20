@@ -9,8 +9,8 @@
  */
   // lock the current issue so that we can check for custom issues
   $currentIssue = get_query_var("issue"); ?>
-  <?php if (empty($currentIssue)) { 
-    $currentIssue = get_term(get_option('current_issue'), "issue"); 
+  <?php if (empty($currentIssue)) {
+    $currentIssue = get_term(get_option('current_issue'), "issue");
   } else {
     $currentIssue = get_term_by("slug", $currentIssue, "issue");
   }
@@ -24,7 +24,7 @@
 <title><?php echo bloginfo('name') . (is_home() ? "" : ' - ' . wp_title('', false)); ?></title>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/css/style.css?v=15" />
+<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/css/style.css?v=16" />
 <link href='//fonts.googleapis.com/css?family=Lora|Roboto+Condensed' rel='stylesheet' type='text/css'>
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -41,8 +41,8 @@
 <div id="main" class="container">
   <div id="header">
     <?php $issue = get_query_var("issue") ?>
-    <?php if (empty($issue)) { 
-      $issue = get_term(get_option('current_issue'), "issue"); 
+    <?php if (empty($issue)) {
+      $issue = get_term(get_option('current_issue'), "issue");
     } else {
       $issue = get_term_by("slug", $issue, "issue");
     }
@@ -68,7 +68,7 @@
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/tumblr.png">
           </a>
         </div>
-      </div>	
+      </div>
     </div>
     <div id="nav">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr ( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
@@ -100,7 +100,7 @@
       <?php get_search_form(); ?>
     </div>
 
-      
+
   </div>
-			
+
   <div id="body" class="container">
