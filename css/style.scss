@@ -489,11 +489,15 @@ body, html {
         width: 150px;
         position: relative;
         left: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
         &.left {
           float: left;
+          margin-right: 10px;
         }
         &.right {
           float: right;
+          margin-left: 10px;
         }
       }
     }
@@ -1229,6 +1233,10 @@ body, html {
         width: -moz-calc(100% + 150px);
         width: -webkit-calc(100% + 150px);
         width: calc(100% + 150px);
+        &.side-image {
+          margin-left: -75px;
+          margin-righT: -75px;
+        }
         &.left.side-image {
           left: -75px;
         }
