@@ -146,7 +146,7 @@ function make_side_image($atts, $content) {
     "image" => "#",
     "direction" => "left",
   ), $atts, "image"));
-  return "<img src='{$image}' class='side-image {$left}'>"
+  return "<img src='{$image}' class='side-image {$left}'>";
 }
 
 add_shortcode("side-image", "make_side_image");
