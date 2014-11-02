@@ -141,6 +141,16 @@ function archive_list() {
 
 add_shortcode('archives', 'archive_list');
 
+function make_side_image($atts, $content) {
+  extract( shortcode_atts( array(
+    "image" => "#",
+    "direction" => "left",
+  ), $atts, "image"));
+  return "<img src='{$image}' class='side-image {$left}'>"
+}
+
+add_shortcode("side-image", "make_side_image");
+
 function make_tooltip($atts, $content) {
   extract( shortcode_atts( array(
     "tooltip" => "",
@@ -150,6 +160,7 @@ function make_tooltip($atts, $content) {
     . "<script>$('.tooltip-link').tooltip();</script>";
 
 }
+
 
 add_shortcode('tooltip', 'make_tooltip');
 

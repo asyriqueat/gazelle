@@ -485,6 +485,17 @@ body, html {
       width: -moz-calc(100% + 30px);
       width: -webkit-calc(100% + 30px);
       width: calc(100% + 30px);
+      &.side-image {
+        width: 150px;
+        position: relative;
+        left: 0px;
+        &.left {
+          float: left;
+        }
+        &.right {
+          float: right;
+        }
+      }
     }
     .alignleft {
       max-width: 50%;
@@ -1218,11 +1229,17 @@ body, html {
         width: -moz-calc(100% + 150px);
         width: -webkit-calc(100% + 150px);
         width: calc(100% + 150px);
+        &.side-image {
+          left: -75px;
+        }
         @media screen and (min-width: 1200px) {
           margin: 10px -155px;
           width: -moz-calc(100% + 310px);
           width: -webkit-calc(100% + 310px);
           width: calc(100% + 310px);
+          &.side-image {
+            left: 0px;
+          }
         }
       }
     }
