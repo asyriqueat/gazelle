@@ -1234,8 +1234,10 @@ body, html {
         width: -webkit-calc(100% + 150px);
         width: calc(100% + 150px);
         &.side-image {
-          margin-left: -75px;
-          margin-righT: -75px;
+          &.left, &.right {
+            margin-left: -75px;
+            margin-right: -75px;
+          }
         }
         &.left.side-image {
           left: -75px;
