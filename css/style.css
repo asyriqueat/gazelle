@@ -372,11 +372,15 @@ body, html {
   #article .row-content img.side-image {
     width: 150px;
     position: relative;
-    left: 0px; }
+    left: 0px;
+    margin-left: 0px;
+    margin-right: 0px; }
     #article .row-content img.side-image.left {
-      float: left; }
+      float: left;
+      margin-right: 10px; }
     #article .row-content img.side-image.right {
-      float: right; }
+      float: right;
+      margin-left: 10px; }
 #article .row-content .alignleft {
   max-width: 50%;
   float: left;
@@ -942,6 +946,9 @@ body, html {
       width: -moz-calc(100% + 150px);
       width: -webkit-calc(100% + 150px);
       width: calc(100% + 150px); }
+      #article .row-content img.side-image {
+        margin-left: -75px;
+        margin-righT: -75px; }
       #article .row-content img.left.side-image {
         left: -75px; }
       #article .row-content img.right.side-image {
