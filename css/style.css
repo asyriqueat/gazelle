@@ -942,8 +942,10 @@ body, html {
       width: -moz-calc(100% + 150px);
       width: -webkit-calc(100% + 150px);
       width: calc(100% + 150px); }
-      #article .row-content img.side-image {
+      #article .row-content img.left.side-image {
         left: -75px; }
+      #article .row-content img.right.side-image {
+        left: 75px; }
   #article .row-share {
     padding: 0 60px; }
     #article .row-share .col-12 {

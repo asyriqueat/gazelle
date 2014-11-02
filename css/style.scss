@@ -1229,8 +1229,11 @@ body, html {
         width: -moz-calc(100% + 150px);
         width: -webkit-calc(100% + 150px);
         width: calc(100% + 150px);
-        &.side-image {
+        &.left.side-image {
           left: -75px;
+        }
+        &.right.side-image {
+          left: 75px;
         }
         @media screen and (min-width: 1200px) {
           margin: 10px -155px;
