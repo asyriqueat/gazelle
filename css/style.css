@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  *
  * Main stylesheet for Gridlock theme
@@ -368,6 +369,18 @@ body, html {
   width: -moz-calc(100% + 30px);
   width: -webkit-calc(100% + 30px);
   width: calc(100% + 30px); }
+  #article .row-content img.side-image {
+    width: 150px;
+    position: relative;
+    left: 0px;
+    margin-left: 0px;
+    margin-right: 0px; }
+    #article .row-content img.side-image.left {
+      float: left;
+      margin-right: 10px; }
+    #article .row-content img.side-image.right {
+      float: right;
+      margin-left: 10px; }
 #article .row-content .alignleft {
   max-width: 50%;
   float: left;
@@ -933,6 +946,13 @@ body, html {
       width: -moz-calc(100% + 150px);
       width: -webkit-calc(100% + 150px);
       width: calc(100% + 150px); }
+      #article .row-content img.side-image.left, #article .row-content img.side-image.right {
+        margin-left: -75px;
+        margin-right: -75px; }
+      #article .row-content img.left.side-image {
+        left: -75px; }
+      #article .row-content img.right.side-image {
+        left: 75px; }
   #article .row-share {
     padding: 0 60px; }
     #article .row-share .col-12 {
@@ -1204,7 +1224,9 @@ body, html {
         margin: 10px -155px;
         width: -moz-calc(100% + 310px);
         width: -webkit-calc(100% + 310px);
-        width: calc(100% + 310px); } }
+        width: calc(100% + 310px); }
+        #article .row-content img.side-image {
+          left: 0px; } }
   @media screen and (min-width: 768px) and (min-width: 1200px) {
     #article .row-share {
       padding: 0 140px; } }
@@ -1402,73 +1424,65 @@ html body #article p.wp-caption-text {
 /* Infinite scroll stuff */
 @media screen and (min-width: 768px) {
   .ifscroll-head {
-  position:relative;
-  height:70px
-  }
+    position: relative;
+    height: 70px; }
+
   .ifscroll-row {
-    height:11px;
-    position:absolute;
-    margin-top:15px;
-    width:100%;
-  }
-  .ifscroll-header-news{
-    background-color:#dc4a34;
-    z-index: -1;
-  }
-  .ifscroll-header-features{
-    background-color:#0095b8;
-    z-index: -1;
-  }
-  .ifscroll-header-opinion{
-    background-color:#00aa87;
-    z-index: -1;
-  }
-}
+    height: 11px;
+    position: absolute;
+    margin-top: 15px;
+    width: 100%; }
 
-.ifscroll-issue-news h3{
-  text-align:center;
-  color:#dc4a34;
-  font-size: 3.9em;
-  margin-bottom: 20px;}
-  @media screen and (min-width: 768px) {
-    .ifscroll-issue-news{
-      padding:0px 37%;
-    }
-    .ifscroll-issue-news h3{
-      color: #333;
-      font-size:2.5em;
-      background-color:white;
-      }
-  }
+  .ifscroll-header-news {
+    background-color: #dc4a34;
+    z-index: -1; }
 
-.ifscroll-issue-features h3{
-  text-align:center;
-  color:#0095b8;
-  font-size: 3.9em;
-  margin-bottom: 20px;}
-  @media screen and (min-width: 768px) {
-    .ifscroll-issue-features{
-      padding:0px 37%;
-    }
-    .ifscroll-issue-features h3{
-      color: #333;
-      font-size:2.5em;
-      background-color:white;
-      }
-  }
+  .ifscroll-header-features {
+    background-color: #0095b8;
+    z-index: -1; }
 
-.ifscroll-issue-opinion h3{
-  text-align:center;
-  color:#00aa87;
+  .ifscroll-header-opinion {
+    background-color: #00aa87;
+    z-index: -1; } }
+.ifscroll-issue-news h3 {
+  text-align: center;
+  color: #dc4a34;
   font-size: 3.9em;
-  margin-bottom: 20px;}
-  @media screen and (min-width: 768px) {
-    .ifscroll-issue-opinion{
-      padding:0px 37%;
-    }
-    .ifscroll-issue-opinion h3{
-      color: #333;
-      font-size:2.5em;
-      background-color:white;
-      }
-  }
+  margin-bottom: 20px; }
+
+@media screen and (min-width: 768px) {
+  .ifscroll-issue-news {
+    padding: 0px 37%; }
+
+  .ifscroll-issue-news h3 {
+    color: #333;
+    font-size: 2.5em;
+    background-color: white; } }
+.ifscroll-issue-features h3 {
+  text-align: center;
+  color: #0095b8;
+  font-size: 3.9em;
+  margin-bottom: 20px; }
+
+@media screen and (min-width: 768px) {
+  .ifscroll-issue-features {
+    padding: 0px 37%; }
+
+  .ifscroll-issue-features h3 {
+    color: #333;
+    font-size: 2.5em;
+    background-color: white; } }
+.ifscroll-issue-opinion h3 {
+  text-align: center;
+  color: #00aa87;
+  font-size: 3.9em;
+  margin-bottom: 20px; }
+
+@media screen and (min-width: 768px) {
+  .ifscroll-issue-opinion {
+    padding: 0px 37%; }
+
+  .ifscroll-issue-opinion h3 {
+    color: #333;
+    font-size: 2.5em;
+    background-color: white; } }
