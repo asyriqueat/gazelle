@@ -288,9 +288,7 @@ $x = mt_profile_img($id, array(
             'size' => '200',
             'echo' => false )
           );
-echo $user->display_name;
-echo $user->first_name;
-echo $user->last_name;
+
 echo '<section class="profile profile-' . $id . '">
     <h3>' . $name . '</h3>
         ' . (($x) ? $x : get_avatar($id, 200)) . '
