@@ -287,14 +287,11 @@ $id = $user->ID;
 $x = mt_profile_img($id, array(
             'size' => '200',
             'echo' => false )
-          ); 
+          );
+
 echo '<section class="profile profile-' . $id . '">
     <h3>' . $name . '</h3>
-        ' . if ($x) {
-              echo $x;
-            } else {
-              echo get_avatar($id, 200);
-            } . '
+        ' . (($x) ? echo $x : echo get_avatar($id, 200)) . '
         <span></span>
         <p>' . $description . '</p>
         <a href="http://www.thegazelle.org/contact/?user=' . $id . '>Send email</a>
