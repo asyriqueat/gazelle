@@ -291,7 +291,7 @@ $x = mt_profile_img($id, array(
 
 echo '<section class="profile profile-' . $id . '">
     <h3>' . $name . '</h3>
-        ' . (($x) ? echo $x : echo get_avatar($id, 200)) . '
+        ' . (($x) ? $x : get_avatar($id, 200)) . '
         <span></span>
         <p>' . $description . '</p>
         <a href="http://www.thegazelle.org/contact/?user=' . $id . '>Send email</a>
