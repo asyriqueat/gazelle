@@ -281,9 +281,9 @@ function gzl_bio($atts) {
 
 $user = get_user_by('login',$username);
 
-$name = $user->display_name;
-$description = $user->description;
-$id = $user->ID;
+$name = $user_info->display_name;
+$description = $user_info->description;
+$id = $user_info->ID;
 $x = mt_profile_img($id, array(
             'size' => '200',
             'echo' => false )
