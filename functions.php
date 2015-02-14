@@ -291,6 +291,7 @@ $x = mt_profile_img($id, array(
 
 echo '<section class="profile profile-' . $id . '">
     <h3>' . $name . '</h3>
+    <h4>' . $role . '</h4>
         ' . (($x) ? $x : get_avatar($id, 200)) . '
         <span></span>
         <p>' . $description . '</p>
