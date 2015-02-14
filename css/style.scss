@@ -20,12 +20,14 @@ $misc: #2D3030;
 $features: #0095b8;
 $opinions: #00aa87;
 $news: #dc4a34;
-$media: #CC9656;
+$creative: #CC9656;
+$video: #9F5F9F;
 $misc-rgba: rgba(45,48,48,0.8);
 $features-rgba: rgba(0,149,184,0.8);
 $opinions-rgba: rgba(0,170,135,0.8);
 $news-rgba: rgba(220,74,52,0.8);
-$media-rgba: rgba(204,150,86,0.8);
+$creative-rgba: rgba(204,150,86,0.8);
+$video-rgba: rgba(159, 95, 159, 0.8);
 
 body, html {
   height: 100%;
@@ -199,8 +201,11 @@ body, html {
       &.header-opinion {
         background-color: $opinions;
       }
-      &.header-media {
-        background-color: $media;
+      &.header-creative {
+        background-color: $creative;
+      }
+      &.header-video {
+        background-color: $video;
       }
     }
     .category-headline {
@@ -386,11 +391,20 @@ body, html {
     }
   }
 }
-.text-media {
+.text-creative {
   a {
-    color: $media;
+    color: $creative;
     &:hover {
-      color: $media;
+      color: $creative;
+      text-decoration: underline;
+    }
+  }
+}
+.text-video {
+  a {
+    color: $video;
+    &:hover {
+      color: $video;
       text-decoration: underline;
     }
   }
@@ -415,8 +429,11 @@ body, html {
   &.colorbox-news {
     background-color: $news;
   }
-  &.colorbox-media {
-    background-color: $media;
+  &.colorbox-creative {
+    background-color: $creative;
+  }
+  &.colorbox-video {
+    background-color: $video;
   }
 }
 .image {
@@ -463,8 +480,11 @@ body, html {
     &.opinion {
       border-color: $opinions-rgba;
     }
-    &.media {
-      border-color: $media-rgba;
+    &.creative {
+      border-color: $creative-rgba;
+    }
+    &.video {
+      border-color: $video-rgba;
     }
     h4 {
       text-transform: none;
@@ -648,8 +668,11 @@ body, html {
               .overlay-news {
                 background-color: $news-rgba;
               }
-              .overlay-media {
-                background-color: $media-rgba;
+              .overlay-creative {
+                background-color: $creative-rgba;
+              }
+              .overlay-video {
+                background-color: $video-rgba;
               }
               .overlay-uncategorized {
                 background-color: $misc-rgba;
@@ -795,10 +818,17 @@ body, html {
       text-decoration: none;
     }
   }
-  .row-media {
-    border-color: $media;
+  .row-creative {
+    border-color: $creative;
     a:hover, h5:hover {
-      color: $media;
+      color: $creative;
+      text-decoration: none;
+    }
+  }
+  .row-video {
+    border-color: $video;
+    a:hover, h5:hover {
+      color: $video;
       text-decoration: none;
     }
   }
@@ -1049,10 +1079,16 @@ body, html {
               color: $opinions;
             }
           }
-          &#media {
-            border-color: $media;
+          &#creative {
+            border-color: $creative;
             &:hover {
-              color: $media;
+              color: $creative;
+            }
+          }
+          &#video {
+            border-color: $video;
+            &:hover {
+              color: $video;
             }
           }
         }
@@ -1411,10 +1447,17 @@ body, html {
           }
         }
       }
-      &.row-media{
+      &.row-creative{
         h6, a {
           &:hover {
-            color: $media;
+            color: $creative;
+          }
+        }
+      }
+      &.row-video{
+        h6, a {
+          &:hover {
+            color: $video;
           }
         }
       }
@@ -1579,8 +1622,11 @@ body, html {
         .row-news .image-overlay {
           background-color: $news-rgba;
         }
-        .row-media .image-overlay {
-          background-color: $media-rgba;
+        .row-creative .image-overlay {
+          background-color: $creative-rgba;
+        }
+        .row-video .image-overlay {
+          background-color: $video-rgba;
         }
         .row-uncategorized .image-overlay {
           background-color: $misc-rgba;
@@ -1729,12 +1775,19 @@ body, html {
       .nav-list {
         .nav-element {
           font-size:1.3em;
-					@media screen and (min-width: 992px) {
+					@media screen and (min-width: 1200px) {
 						padding-right: 30px;
 						padding-left: 30px;
 					}
+          @media screen and (min-width: 992px) {
+            padding-right: 15px;
+            padding-left: 15px;
+          }
           div {
             width: 100px;
+            @media screen and (min-width: 768px) and (max-width: 991px) {
+              width: 83px;  
+            }
           }
         }
       }

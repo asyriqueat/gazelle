@@ -97,7 +97,7 @@
           </div>
           </a>
           <a href="<?php echo esc_url( home_url( '/' ) ) . 'category/video/' ?>" title="Video" rel="category">
-          <div class="nav-element">
+          <div class="nav-element" style="@media screen and (max-width: 768px){display: none;}">
             <div id="video">Video</div>
           </div>
           </a>
