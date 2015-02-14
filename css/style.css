@@ -797,10 +797,14 @@ body, html {
             border-color: #00aa87; }
             #header #nav .nav-list .nav-element div#opinion:hover {
               color: #00aa87; }
-          #header #nav .nav-list .nav-element div#media {
+          #header #nav .nav-list .nav-element div#creative {
             border-color: #cc9656; }
-            #header #nav .nav-list .nav-element div#media:hover {
+            #header #nav .nav-list .nav-element div#creative:hover {
               color: #cc9656; }
+          #header #nav .nav-list .nav-element div#video {
+            border-color: #9f5f9f; }
+            #header #nav .nav-list .nav-element div#video:hover {
+              color: #9f5f9f; }
     #header #nav form {
       position: absolute;
       margin: 0px;

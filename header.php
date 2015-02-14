@@ -91,9 +91,14 @@
             <div id="opinion">Opinion</div>
           </div>
           </a>
-          <a href="<?php echo esc_url( home_url( '/' ) ) . 'category/media/' ?>" title="Media" rel="category">
+          <a href="<?php echo esc_url( home_url( '/' ) ) . 'category/creative/' ?>" title="Creative" rel="category">
           <div class="nav-element">
-            <div id="media">Media</div>
+            <div id="creative">Creative</div>
+          </div>
+          </a>
+          <a href="<?php echo esc_url( home_url( '/' ) ) . 'category/video/' ?>" title="Video" rel="category">
+          <div class="nav-element">
+            <div id="video">Video</div>
           </div>
           </a>
         </div>
