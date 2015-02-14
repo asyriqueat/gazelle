@@ -281,14 +281,16 @@ function gzl_bio($atts) {
 
 $user = get_user_by('login',$username);
 
-$name = $user_info->display_name;
-$description = $user_info->description;
-$id = $user_info->ID;
+$name = $user->display_name;
+$description = $user->description;
+$id = $user->ID;
 $x = mt_profile_img($id, array(
             'size' => '200',
             'echo' => false )
           );
-
+echo $user->display_name;
+echo $user->first_name;
+echo $user->last_name;
 echo '<section class="profile profile-' . $id . '">
     <h3>' . $name . '</h3>
         ' . (($x) ? $x : get_avatar($id, 200)) . '
