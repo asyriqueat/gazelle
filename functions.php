@@ -271,4 +271,37 @@ function gazelle_infinitepaginate(){
  }
  add_action('wp_ajax_infinite_scroll', 'gazelle_infinitepaginate');
  add_action('wp_ajax_nopriv_infinite_scroll', 'gazelle_infinitepaginate');
+ 
+//Author page shortcode
+function gzl_bio($atts) {
+   extract(shortcode_atts(array(
+      'username' => 'Unknown Author',
+      'role' => 'Staff',
+   ), $atts));
+
+$user = get_user_by('login',$username);
+
+$name = $user->display_name;
+$description = $user->description;
+$id = $user->ID;
+$x = mt_profile_img($id, array(
+            'size' => '200',
+            'echo' => false )
+          ); 
+echo '<section class="profile profile-' . $id . '">
+    <h3>' . $name . '</h3>
+        ' . if ($x) {
+              echo $x;
+            } else {
+              echo get_avatar($id, 200);
+            } . '
+        <span></span>
+        <p>' . $description . '</p>
+        <a href="http://www.thegazelle.org/contact/?user=' . $id . '>Send email</a>
+    </section>';
+}
+
+
+
+add_shortcode('gzl_bio', 'gzl_bio');
  ?>
