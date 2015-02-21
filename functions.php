@@ -289,7 +289,7 @@ $x = mt_profile_img($id, array(
             'echo' => false )
           );
 
-echo '<div class="row profile profile-' . $id . '">
+return '<div class="row profile profile-' . $id . '">
         <div class="col-md-5">
           ' . (($x) ? $x : get_avatar($id, 200)) . '
         </div>
