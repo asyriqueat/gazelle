@@ -1502,8 +1502,8 @@ html body #article p.wp-caption-text {
     font-size: 2.5em;
     background-color: white; } }
 
-.profile {
+div.row.profile {
   margin: 3% 0; }
-  .profile img {
+  div.row.profile img {
     width: 65%;
     max-width: 220px; }
