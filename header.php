@@ -23,6 +23,7 @@
 <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
 <title><?php echo bloginfo('name') . (is_home() ? "" : ' - ' . wp_title('', false)); ?></title>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/css/style.css?v=24" />
 <link href='//fonts.googleapis.com/css?family=Lora|Roboto+Condensed' rel='stylesheet' type='text/css'>
@@ -30,7 +31,6 @@
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <script src="//code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/javascripts/bootstrap.min.js" type="text/javascript"></script>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/javascripts/iscroll.js" type="text/javascript"></script>
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/javascripts/script.js?v=7" type="text/javascript"></script>
 <meta name="description" content="The Gazelle is a weekly student publication, serving the NYU Abu Dhabi community and the greater Global Network University at NYU.">
