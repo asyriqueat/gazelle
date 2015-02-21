@@ -289,14 +289,17 @@ $x = mt_profile_img($id, array(
             'echo' => false )
           );
 
-echo '<section class="profile profile-' . $id . '">
-    <h3>' . $name . '</h3>
-    <h4>' . $role . '</h4>
-        ' . (($x) ? $x : get_avatar($id, 200)) . '
-        <span></span>
-        <p>' . $description . '</p>
-        <a href="http://www.thegazelle.org/contact/?user=' . $id . '">Send email</a>
-    </section>';
+echo '<div class="row profile profile-' . $id . '">
+        <div class="col-md-5">
+          ' . (($x) ? $x : get_avatar($id, 200)) . '
+        </div>
+        <div class="col-md-7">
+          <h3>' . $name . '</h3>
+          <h4>' . $role . '</h4>
+          <p>' . $description . '</p>
+          <a href="http://www.thegazelle.org/contact/?user=' . $id . '">Send email</a>
+        </div>
+      </div>';
 }
 
 
