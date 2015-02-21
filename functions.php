@@ -285,7 +285,6 @@ $name = $user->display_name;
 $description = $user->description;
 $id = $user->ID;
 $x = mt_profile_img($id, array(
-            'size' => '200',
             'echo' => false )
           );
 
