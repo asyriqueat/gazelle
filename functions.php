@@ -295,7 +295,7 @@ echo '<section class="profile profile-' . $id . '">
         ' . (($x) ? $x : get_avatar($id, 200)) . '
         <span></span>
         <p>' . $description . '</p>
-        <a href="http://www.thegazelle.org/contact/?user=' . $id . '>Send email</a>
+        <a href="http://www.thegazelle.org/contact/?user=' . $id . '">Send email</a>
     </section>';
 }
 
