@@ -271,7 +271,11 @@ function gazelle_infinitepaginate(){
  }
  add_action('wp_ajax_infinite_scroll', 'gazelle_infinitepaginate');
  add_action('wp_ajax_nopriv_infinite_scroll', 'gazelle_infinitepaginate');
- 
+// Remove old Jquery
+add_action('wp_enqueue_scripts', 'no_more_jquery');
+function no_more_jquery(){
+    wp_deregister_script('jquery');
+}
 //Author page shortcode
 function gzl_bio($atts) {
    extract(shortcode_atts(array(
