@@ -103,7 +103,7 @@
           </div>
           </a>
           <a href="<?php echo esc_url( home_url( '/' ) ) . 'category/research/' ?>" title="Research" rel="category">
-          <div class="nav-element" style="@media screen and (max-width: 768px){display: none;}">
+          <div class="nav-element" style="@media screen and (max-width: 1200px){display: none;}">
             <div id="research">Research</div>
           </div>
           </a>
