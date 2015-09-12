@@ -22,12 +22,14 @@ $opinions: #00aa87;
 $news: #dc4a34;
 $creative: #CC9656;
 $video: #9F5F9F;
+$research: #000099;
 $misc-rgba: rgba(45,48,48,0.8);
 $features-rgba: rgba(0,149,184,0.8);
 $opinions-rgba: rgba(0,170,135,0.8);
 $news-rgba: rgba(220,74,52,0.8);
 $creative-rgba: rgba(204,150,86,0.8);
 $video-rgba: rgba(159, 95, 159, 0.8);
+$research-rgba: rgba(0, 0, 153, 0.8);
 
 body, html {
   height: 100%;
@@ -206,6 +208,9 @@ body, html {
       }
       &.header-video {
         background-color: $video;
+      }
+      &.header-research {
+        background-color: $research;
       }
     }
     .category-headline {
@@ -409,6 +414,15 @@ body, html {
     }
   }
 }
+.text-research {
+  a {
+    color: $research;
+    &:hover {
+      color: $research;
+      text-decoration: underline;
+    }
+  }
+}
 .river {
   padding: 0px 10px;
 }
@@ -434,6 +448,9 @@ body, html {
   }
   &.colorbox-video {
     background-color: $video;
+  }
+  &.colorbox-research {
+    background-color: $research;
   }
 }
 .image {
@@ -485,6 +502,9 @@ body, html {
     }
     &.video {
       border-color: $video-rgba;
+    }
+    &.research {
+      border-color: $research-rgba;
     }
     h4 {
       text-transform: none;
@@ -674,6 +694,9 @@ body, html {
               .overlay-video {
                 background-color: $video-rgba;
               }
+              .overlay-research {
+                background-color: $research-rgba;
+              }
               .overlay-uncategorized {
                 background-color: $misc-rgba;
               }
@@ -829,6 +852,13 @@ body, html {
     border-color: $video;
     a:hover, h5:hover {
       color: $video;
+      text-decoration: none;
+    }
+  }
+  .row-research {
+    border-color: $research;
+    a:hover, h5:hover {
+      color: $research;
       text-decoration: none;
     }
   }
@@ -1089,6 +1119,12 @@ body, html {
             border-color: $video;
             &:hover {
               color: $video;
+            }
+          }
+          &#research {
+            border-color: $research;
+            &:hover {
+              color: $research;
             }
           }
         }
@@ -1461,6 +1497,13 @@ body, html {
           }
         }
       }
+      &.row-research{
+        h6, a {
+          &:hover {
+            color: $research;
+          }
+        }
+      }
 
       @media screen and (min-width: 768px) and (max-width: 1200px) {
         height: 100px;
@@ -1627,6 +1670,9 @@ body, html {
         }
         .row-video .image-overlay {
           background-color: $video-rgba;
+        }
+        .row-research .image-overlay {
+          background-color: $research-rgba;
         }
         .row-uncategorized .image-overlay {
           background-color: $misc-rgba;

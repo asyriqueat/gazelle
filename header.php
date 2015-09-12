@@ -102,6 +102,11 @@
             <div id="video">Video</div>
           </div>
           </a>
+          <a href="<?php echo esc_url( home_url( '/' ) ) . 'category/research/' ?>" title="Research" rel="category">
+          <div class="nav-element" style="@media screen and (max-width: 768px){display: none;}">
+            <div id="research">Research</div>
+          </div>
+          </a>
         </div>
       <?php get_search_form(); ?>
     </div>
