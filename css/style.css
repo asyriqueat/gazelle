@@ -1552,3 +1552,7 @@ div.row.profile {
   div.row.profile img {
     width: 65%;
     max-width: 220px; }
+
+@media screen and (max-width: 1200px) {
+  .hide-below-desktop {
+    display: none !important; } }
