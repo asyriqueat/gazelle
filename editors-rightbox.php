@@ -15,7 +15,7 @@
             <h6>Dohl</h6>
           </a>
           <a href="<?php echo get_site_url().'/issue/author/muhammad-usman/'; ?> ">
-            <small class="text-muted">Muhammad Usman</small>
+            <small class="text-muted">Usman</small>
           </a>
         </li>
         <li>
